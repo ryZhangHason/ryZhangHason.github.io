@@ -24,7 +24,7 @@ author:
   avatar           : "WechatIMG1721.png"
   name             : "Ruiyu ZHANG"
   pronouns         : # example: "she/her"  
-  bio              : "Organizational Behavior"
+  bio              : "College Student"
   location         : "Hong Kong"
   employer         : 
   uri              : # URL
@@ -35,7 +35,7 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   impactstory      : # URL
   orcid            :  
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           :  
   researchgate     : # URL
 
   # Repositories and software development
