@@ -24,6 +24,10 @@ Publications
 ------
   - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). China Quarterly. Forthcoming. 2024.
 
+Analytical Skills
+------
+Python, R, Stata, NLP, Deep Learning, Causal Inference.
+
 Contact
 ------
 Feel free to reach out via email: ruiyu.zhang@polyu.edu.hk
