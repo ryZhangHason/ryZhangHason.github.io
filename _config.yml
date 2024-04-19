@@ -8,8 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Ruiyu Zhang 
-                            张瑞瑜"
+title                    : "Ruiyu Zhang 张瑞瑜"
 title_separator          : "-"
 name                     : &name "Ruiyu ZHANG"
 description              : &description "personal description"
@@ -23,7 +22,8 @@ repository               : "ryzhanghason/ryzhanghason.github.io"
 author:
   # Biographic information
   avatar           : "WechatIMG1721.png"
-  name             : "Ruiyu ZHANG"
+  name             : "Ruiyu ZHANG
+                      张瑞瑜"
   pronouns         : # example: "she/her"  
   bio              : "College Student"
   location         : "Hong Kong"
