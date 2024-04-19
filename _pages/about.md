@@ -1,13 +1,25 @@
 ---
 permalink: /
-title: "academicpages"
+title: "Welcome to my Academic Webpage"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-Hason
+I am a college student at The Hong Kong Polytechnic University, majoring in Social Policy.
 
-For more info
+About Me
+    I am a passionate researcher in the fields of Organizational Behavior, Bureaucracy, and Computational Methods in Social Science.
+    
+Research
+    My ongoing research projects include:
+    - Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network
+    - Housing Struggles in Hong Kong: Socio-Political Catalysts and Strategic Responses
+    - As Instruments of National Directives: Evolving Priorities in Corporate Responsibility in Chinese Central State-owned Enterprises
+    
+Publications
+    - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). China Quarterly. Forthcoming. 2024.
+
+Contact
 ------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+Feel free to reach out via email: ruiyu.zhang@polyu.edu.hk
