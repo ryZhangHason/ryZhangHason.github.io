@@ -6,11 +6,11 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a college student at The Hong Kong Polytechnic University, majoring in Social Policy.
+I am a college student at the Hong Kong Polytechnic University, majoring in Social Policy.
 
 About Me
 ------
-I am a passionate researcher in the fields of Organizational Behavior, Bureaucracy, and Computational Methods in Social Science.
+I am a passionate researcher in the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
     
 Research
 ------
