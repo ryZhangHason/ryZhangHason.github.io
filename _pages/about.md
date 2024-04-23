@@ -10,17 +10,17 @@ redirect_from:
 
 I am a college student at the Hong Kong Polytechnic University, majoring in Social Policy and researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
     
+Publications
+------
+  - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). China Quarterly. Forthcoming. 2024.
+
 Research
 ------
 My ongoing research projects include:
  
  - Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network
  - Housing Struggles in Hong Kong: Socio-Political Catalysts and Strategic Responses
- - As Instruments of National Directives: Evolving Priorities in Corporate Responsibility in Chinese Central State-owned Enterprises
-    
-Publications
-------
-  - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). China Quarterly. Forthcoming. 2024.
+ - As Instruments of National Directives: Evolving Priorities in Corporate Responsibility in Chinese Central State-owned Enterprises    
 
 Analytical Skills
 ------
