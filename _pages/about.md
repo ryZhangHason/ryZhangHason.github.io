@@ -12,7 +12,7 @@ I am a college student at the Hong Kong Polytechnic University, majoring in Soci
     
 Publications
 ------
-  - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). China Quarterly. Forthcoming. 2024.
+  - "Executive Recruitment, the Double-Hundred Action and China’s State-Owned Enterprise Reform" (with Chengpang Lee). The China Quarterly. 2024. https://doi.org/10.1017/S0305741024000481
 
 Research
 ------
