@@ -12,7 +12,7 @@ I am a college student at the Hong Kong Polytechnic University, majoring in Soci
     
 Publications
 ------
-  - "From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform" (with Chengpang Lee). *The China Quarterly*. 2024.[https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
+  - "From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform" (with Chengpang Lee). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
 
 Research
 ------
