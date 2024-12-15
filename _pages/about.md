@@ -14,7 +14,7 @@ Publications
 ------
   - "From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform" (with Chengpang Lee). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
 
-  - "Achieving Semantic Consistency Using BERT: Application of Pre-training Semantic Representations Model in Social Sciences Research" (with Lin Nie, Ce Zhao, Qingyang Chen). *Preprint*. 2024. [Available at SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698)
+  - "Achieving Semantic Consistency Using BERT: Application of Pre-training Semantic Representations Model in Social Sciences Research" (with Lin Nie, Ce Zhao, Qingyang Chen). *Preprint*. 2024. Available at [arXiv](https://arxiv.org/abs/2412.04505)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698)
     
 Research
 ------
