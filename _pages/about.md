@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-I am a research assistant at the Hong Kong Polytechnic University, researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
+I am a research assistant in the Department of Applied Social Sciences, The Hong Kong Polytechnic University, researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
     
 Publications
 ------
