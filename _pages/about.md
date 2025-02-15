@@ -14,7 +14,7 @@ Publications
 ------
  - "Enhancing Citizen-Government Communication with AI: Evaluating the Impact of AI-Assisted Interactions on Communication Quality and Satisfaction" (with Lin Nie). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2501.10715)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5107547)
 
-In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, politeness, clarity, and trust. 
+In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, responsiveness, clarity, and trust. 
 
  - "From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform" (with Chengpang Lee). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
 
