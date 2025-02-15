@@ -7,7 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-<div class="justify-text">
 
 I am a research assistant in the Department of Applied Social Sciences, The Hong Kong Polytechnic University, researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
     
@@ -37,4 +36,3 @@ Contact
 ------
 Feel free to reach out via email: ruiyu.zhang@polyu.edu.hk
 
-</div>
