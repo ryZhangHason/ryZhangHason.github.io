@@ -26,10 +26,6 @@ My ongoing research projects include:
  - Housing Struggles in Hong Kong: Socio-Political Catalysts and Strategic Responses
  - As Instruments of National Directives: Evolving Priorities in Corporate Responsibility in Chinese Central State-owned Enterprises    
 
-Analytical Skills
-------
-Python, R, Stata, NLP, Deep Learning, Causal Inference.
-
 Contact
 ------
 Feel free to reach out via email: ruiyu.zhang@polyu.edu.hk
