@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-I am a college student at the Hong Kong Polytechnic University, majoring in Social Policy and researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
+I am a research assistant at the Hong Kong Polytechnic University, researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
     
 Publications
 ------
