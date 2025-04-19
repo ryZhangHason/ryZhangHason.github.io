@@ -13,8 +13,7 @@ I am a research assistant in the Department of Applied Social Sciences, The Hong
 Publications
 ------
 
- - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management
-*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
+ - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
 
 This study explores the drivers of sustainability practices among small and medium-sized enterprises (SMEs) in Hong Kong and investigates how social networks moderate these influences. Drawing on original survey data, we identify key internal and external factors—such as organizational commitment, regulatory pressure, and customer demand—that shape SMEs’ engagement across five sustainability dimensions: employment, supplier assessment, environmental management, social contribution, and innovation. Crucially, we find that SMEs with stronger social network engagement benefit more from external drivers, amplifying the positive effects of government support, industry benchmarks, and customer expectations. 
 
