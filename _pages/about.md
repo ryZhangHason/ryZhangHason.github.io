@@ -31,15 +31,7 @@ Our study delved into the transformative ambitions of the double-hundred action 
 
  - "**Achieving Semantic Consistency: Contextualized Word Representations for Political Text Analysis**" (with Lin Nie, Ce Zhao, Qingyang Chen). *Preprint*. 2024. Available at [arXiv](https://arxiv.org/abs/2412.04505)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698)
 
-In our exploration of political text analysis, we set out to address the challenge of maintaining semantic stability over time. By comparing traditional static embeddings with contextual models using two decades of People’s Daily articles, our research evaluated how well each approach captures both enduring meanings and subtle semantic shifts. The results indicate that contextual models not only provide greater semantic consistency but also detect nuanced variations that static methods often miss. 
-    
-Research
-------
-My ongoing research projects include:
- 
- - Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network
- - Housing Struggles in Hong Kong: Socio-Political Catalysts and Strategic Responses
- - As Instruments of National Directives: Evolving Priorities in Corporate Responsibility in Chinese Central State-owned Enterprises    
+In our exploration of political text analysis, we set out to address the challenge of maintaining semantic stability over time. By comparing traditional static embeddings with contextual models using two decades of People’s Daily articles, our research evaluated how well each approach captures both enduring meanings and subtle semantic shifts. The results indicate that contextual models not only provide greater semantic consistency but also detect nuanced variations that static methods often miss.   
 
 Contact
 ------
