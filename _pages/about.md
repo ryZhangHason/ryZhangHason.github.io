@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-I am a research assistant in the Department of Applied Social Sciences, The Hong Kong Polytechnic University, researching the fields of Organization Studies, Bureaucracy, and Computational Methods in Social Science.
+I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
     
 Publications
 ------
@@ -35,5 +35,5 @@ In our exploration of political text analysis, we set out to address the challen
 
 Contact
 ------
-Feel free to reach out via email: ruiyu.zhang@polyu.edu.hk
+Feel free to reach out via email: ruiyuzh@connect.hku.hk
 
