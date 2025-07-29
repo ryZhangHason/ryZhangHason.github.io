@@ -17,7 +17,7 @@ Publications
 
 Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
 
- - "**Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities**" (with Lin Nie, Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [Research Square](https://www.researchsquare.com/article/rs-6249412/v1)
+ - "**Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities**" (with Lin Nie, Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2412.04505)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698)
 
 In our study, we explored the relationship between eco-efficiency and the local governments' engagement in collaborative environmental governance with citizens. By analyzing provincial-level data from China and employing advanced textual analysis methods, our findings reveal that localities with higher eco-efficiency are significantly more likely to adopt co-productive responses to environmental complaints.
 
