@@ -20,7 +20,7 @@ In our work on representation learning for structured data, we tackle the persis
 <figure style="text-align: center;">
   <img src="/images/SE-VAE_Architecture_F1.png" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 50%; height: auto;">
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
   <figcaption><em>Figure.</em> SE-VAE Architecture</figcaption>
 </figure>
 
