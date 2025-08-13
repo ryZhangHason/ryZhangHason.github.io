@@ -18,7 +18,7 @@ Publications
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
 
 <figure>
-  <img src="_pages/SE-VAE_Architecture_F1.png" alt="SE-VAE architecture diagram" style="max-width: 80%;">
+  <img src="/SE-VAE_Architecture_F1.png" alt="SE-VAE architecture diagram" style="max-width: 80%;">
   <figcaption><em>Figure 1.</em> SE-VAE architecture embedding measurement structure into latent space.</figcaption>
 </figure>
 
