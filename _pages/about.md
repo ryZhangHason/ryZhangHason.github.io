@@ -18,9 +18,11 @@ Publications
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
 
 <figure>
-  <img src="SE-VAE_Architecture_F1.png" alt="SE-VAE architecture diagram" style="max-width: 80%;">
+  <img src="SE-VAE_Architecture_F1.png" alt="SE-VAE Architecture" style="max-width: 50%;">
   <figcaption><em>Figure 1.</em> SE-VAE architecture embedding measurement structure into latent space.</figcaption>
 </figure>
+
+---
 
  - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
 
