@@ -10,7 +10,7 @@ redirect_from:
 
 I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
     
-Publications
+Works
 ------
 
  - "**Structural Equation-VAE: Disentangled Latent Representations for Tabular Data**" (with Ce Zhao, Xin Zhao, Lin Nie, Wai-Fung Lam). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208)
