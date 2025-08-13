@@ -13,6 +13,10 @@ I am a graduate student in the Department of Politics and Public Administration,
 Publications
 ------
 
+ - "**Structural Equation-VAE: Disentangled Latent Representations for Tabular Data**" (with Ce Zhao, Xin Zhao, Lin Nie, Wai-Fung Lam). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208)
+
+In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
+
  - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
 
 Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
