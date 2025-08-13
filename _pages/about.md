@@ -17,6 +17,11 @@ Publications
 
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
 
+<figure>
+  <img src="_pages/SE-VAE_Architecture_F1.png" alt="SE-VAE architecture diagram" style="max-width: 80%;">
+  <figcaption><em>Figure 1.</em> SE-VAE architecture embedding measurement structure into latent space.</figcaption>
+</figure>
+
  - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
 
 Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
