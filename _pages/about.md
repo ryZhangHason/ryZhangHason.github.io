@@ -38,7 +38,7 @@ In our study, we explored the relationship between eco-efficiency and the local 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Catalyst for Citizen Co-production_F2.jpg" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+       style="display: block; margin: 0 auto; width: 50%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> SHAP Analysis of Co-Production Prediction
   </figcaption>
