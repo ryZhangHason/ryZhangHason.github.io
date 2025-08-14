@@ -25,7 +25,6 @@ In our work on representation learning for structured data, we tackle the persis
     <em>Figure.</em> SE-VAE Architecture
   </figcaption>
 </figure>
-
 ---
 
  - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
@@ -35,6 +34,17 @@ Our study examines what drives small and medium-sized enterprises (SMEs) to adop
  - "**Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities**" (with Lin Nie, Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2504.13290)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5220860)
 
 In our study, we explored the relationship between eco-efficiency and the local governments' engagement in collaborative environmental governance with citizens. By analyzing provincial-level data from China and employing advanced textual analysis methods, our findings reveal that localities with higher eco-efficiency are significantly more likely to adopt co-productive responses to environmental complaints.
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Catalyst for Citizen Co-production_F2.jpg" 
+       alt="SE-VAE Architecture" 
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> SHAP Analysis of Co-Production Prediction
+  </figcaption>
+</figure>
+
+---
 
  - "**Enhancing Citizen-Government Communication with AI: Evaluating the Impact of AI-Assisted Interactions on Communication Quality and Satisfaction**" (with Lin Nie). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2501.10715)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5107547)
 
