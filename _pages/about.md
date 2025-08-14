@@ -64,7 +64,7 @@ In our investigation of AI-assisted interactions, we sought to understand how ar
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+       style="display: block; margin: 0 auto; width: 60%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Paired T-Test Results of Comparison of Civil Servant Perceptions
   </figcaption>
@@ -79,7 +79,7 @@ Our study delved into the transformative ambitions of the double-hundred action 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/The Bifurcated Corporate Leadership under the DHA.jpg" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 60%; height: auto;">
+       style="display: block; margin: 0 auto; width: 50%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> The Bifurcated Corporate Leadership under the Double-hundred Action
   </figcaption>
@@ -94,7 +94,7 @@ In our exploration of political text analysis, we set out to address the challen
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Comparison of Key Metrics Between BERT and Word2Vec Over Different Time Spans.png" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+       style="display: block; margin: 0 auto; width: 90%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Comparison of Key Metrics Between BERT and Word2Vec Over Different Time Spans
   </figcaption>
