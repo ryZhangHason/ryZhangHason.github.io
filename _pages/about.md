@@ -64,7 +64,7 @@ In our investigation of AI-assisted interactions, we sought to understand how ar
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png" 
        alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 60%; height: auto;">
+       style="display: block; margin: 0 auto; width: 70%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Paired T-Test Results of Comparison of Civil Servant Perceptions
   </figcaption>
