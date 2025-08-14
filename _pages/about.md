@@ -31,6 +31,17 @@ In our work on representation learning for structured data, we tackle the persis
 
 Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
 
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure.png" 
+       alt="SE-VAE Architecture" 
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure
+  </figcaption>
+</figure>
+
+---
+
  - "**Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities**" (with Lin Nie, Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2504.13290)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5220860)
 
 In our study, we explored the relationship between eco-efficiency and the local governments' engagement in collaborative environmental governance with citizens. By analyzing provincial-level data from China and employing advanced textual analysis methods, our findings reveal that localities with higher eco-efficiency are significantly more likely to adopt co-productive responses to environmental complaints.
