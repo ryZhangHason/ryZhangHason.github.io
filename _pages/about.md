@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "About Me - Ruiyu Zhang 张瑞瑜"
 author_profile: true
 redirect_from: 
   - /about/
@@ -16,6 +16,8 @@ Works
  - "**Structural Equation-VAE: Disentangled Latent Representations for Tabular Data**" (with Ce Zhao, Xin Zhao, Lin Nie, Wai-Fung Lam). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208)
 
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
+
+You can apply SE-VAE directly from PyPI with <pre><code class="language-bash">pip install sevae</code></pre> For full documentation and tutorials, visit the [SE-VAE project page](https://pypi.org/project/sevae/).
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/SE-VAE_Architecture_F1.png" 
