@@ -17,7 +17,11 @@ Works
 
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
 
-You can apply SE-VAE directly from PyPI with <pre><code class="language-bash">pip install sevae</code></pre> For full documentation and tutorials, visit the [SE-VAE project page](https://pypi.org/project/sevae/).
+You can apply SE-VAE directly from PyPI:
+```bash
+pip install sevae
+```
+For full documentation and tutorials, visit the [SE-VAE project page](https://pypi.org/project/sevae/).
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/SE-VAE_Architecture_F1.png" 
@@ -27,6 +31,7 @@ You can apply SE-VAE directly from PyPI with <pre><code class="language-bash">pi
     <em>Figure.</em> SE-VAE Architecture
   </figcaption>
 </figure>
+
 ---
 
  - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with Lin Nie and Wai-Fung Lam). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
