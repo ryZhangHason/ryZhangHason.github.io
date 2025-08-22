@@ -13,6 +13,27 @@ I am a graduate student in the Department of Politics and Public Administration,
 Works
 ------
 
+ - "**HEAS: Hierarchical Evolutionary Agent Simulation Framework for Cross-Scale Modeling and Multi-Objective Search**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.15555)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5400479)
+
+We developed HEAS (Hierarchical Evolutionary Agent Simulation) as a framework to combine layered agent-based modeling with evolutionary optimization. In HEAS, models are expressed as modular “streams” scheduled in layers that read and write to a shared context, making cross-scale feedbacks—from environment to groups, agents, and aggregators—explicit and transparent. With a simple API (simulate, optimize, evaluate), HEAS supports multi-objective search (e.g., NSGA-II), reproducible tournament evaluation, and PyTorch integration for policy learning, enabling researchers to build, compare, and extend simulations across ecological, organizational, and policy domains. 
+
+You can apply HEAS directly from PyPI:
+```bash
+pip install heas
+```
+For full documentation and tutorials, visit the [HEAS project page](https://pypi.org/project/heas/).
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/SE-VAE_Architecture_F1.png" 
+       alt="SE-VAE Architecture" 
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> Abstract Stream–layer Architecture in HEAS
+  </figcaption>
+</figure>
+
+---
+
  - "**Structural Equation-VAE: Disentangled Latent Representations for Tabular Data**" (with Ce Zhao, Xin Zhao, [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208)
 
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
