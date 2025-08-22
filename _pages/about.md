@@ -24,7 +24,7 @@ pip install heas
 For full documentation and tutorials, visit the [HEAS project page](https://pypi.org/project/heas/).
 
 <figure style="text-align: center; display: inline-block;">
-  <img src="/images/SE-VAE_Architecture_F1.png" 
+  <img src="/images/HEAS_Plot1.png" 
        alt="SE-VAE Architecture" 
        style="display: block; margin: 0 auto; width: 80%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
