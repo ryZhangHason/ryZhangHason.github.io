@@ -100,7 +100,7 @@ In our investigation of AI-assisted interactions, we sought to understand how ar
 
 ---
 
- - "**From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform**" (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
+ - "**From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform**" (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599)). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
 
 Our study delved into the transformative ambitions of the double-hundred action programme, a reform designed to modernize China’s state-owned enterprises by expanding the pool of top executive talent beyond traditional cadres. Through extensive fieldwork and detailed ethnography at a selected enterprise, we explored how this policy is reshaping recruitment, performance evaluation, and remuneration practices. While our findings highlight strong support for the initiative and notable shifts in organizational dynamics, they also reveal that traditional influences endure, particularly in key board appointments. This work deepens our understanding of the delicate balance between progressive reform and longstanding institutional practices.
 
