@@ -79,9 +79,9 @@ redirect_from:
     margin-top: 20px;
   }
   .author__sidebar {
-    margin-left: -5rem; /* optional: pull sidebar closer */
+  margin-left: -2.5rem !important;
+  padding-left: 0;
   }
-}
 </style>
 
 <div class="main-content-wrapper">
