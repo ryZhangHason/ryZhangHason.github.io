@@ -11,17 +11,20 @@ redirect_from:
 <style>
 .main-content-wrapper {
   display: flex;
-  gap: 30px;
+  flex-direction: row;
+  gap: 25px;
   align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 .main-text-content {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
+  max-width: calc(100% - 285px);
 }
 
 .publications-sidebar {
-  flex-shrink: 0;
+  flex: 0 0 260px;
   width: 260px;
   padding: 18px;
   background-color: #f8f9fa;
@@ -32,6 +35,7 @@ redirect_from:
   font-size: 0.88em;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
+  align-self: flex-start;
 }
 
 .publications-sidebar h3 {
@@ -67,8 +71,13 @@ redirect_from:
     flex-direction: column;
   }
 
+  .main-text-content {
+    max-width: 100%;
+  }
+
   .publications-sidebar {
     width: 100%;
+    flex: 0 0 auto;
     position: relative;
     top: 0;
   }
