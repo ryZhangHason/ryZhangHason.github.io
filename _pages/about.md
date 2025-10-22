@@ -9,17 +9,27 @@ redirect_from:
 
 
 <style>
+.main-content-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.main-text-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .publications-sidebar {
-  float: right;
-  width: 300px;
-  margin: 0 0 20px 30px;
-  padding: 20px;
+  flex-shrink: 0;
+  width: 260px;
+  padding: 18px;
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 6px;
   position: sticky;
   top: 80px;
-  font-size: 0.9em;
+  font-size: 0.88em;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
 }
@@ -27,18 +37,18 @@ redirect_from:
 .publications-sidebar h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: 1.2em;
+  font-size: 1.15em;
   border-bottom: 2px solid #007bff;
   padding-bottom: 8px;
 }
 
 .publications-sidebar ol {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 18px;
 }
 
 .publications-sidebar li {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   line-height: 1.4;
 }
 
@@ -51,29 +61,22 @@ redirect_from:
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+
   .publications-sidebar {
-    float: none;
     width: 100%;
-    margin: 0 0 20px 0;
     position: relative;
     top: 0;
   }
 }
 </style>
 
-<div class="publications-sidebar">
-  <h3>Publications</h3>
-  <ol>
-    <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
-    <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
-    <li><a href="#sme-sustainability">Sustainability of SMEs in Hong Kong</a> (2025)</li>
-    <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
-    <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
-    <li><a href="#cadres-managers">From Cadres to Managers</a> (2024)</li>
-    <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024)</li>
-  </ol>
-</div>
+<div class="main-content-wrapper">
+
+<div class="main-text-content" markdown="1">
 
 I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
 
@@ -207,4 +210,21 @@ In our exploration of political text analysis, we set out to address the challen
 Contact
 ------
 Feel free to reach out via email: ruiyuzh@connect.hku.hk
+
+</div>
+
+<div class="publications-sidebar">
+  <h3>Publications</h3>
+  <ol>
+    <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
+    <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
+    <li><a href="#sme-sustainability">Sustainability of SMEs in Hong Kong</a> (2025)</li>
+    <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
+    <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
+    <li><a href="#cadres-managers">From Cadres to Managers</a> (2024)</li>
+    <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024)</li>
+  </ol>
+</div>
+
+</div>
 
