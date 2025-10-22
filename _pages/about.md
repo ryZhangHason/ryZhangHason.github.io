@@ -9,40 +9,29 @@ redirect_from:
 
 
 <style>
+/* Clear simple layout */
 .main-content-wrapper {
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 25px;
-  align-items: flex-start !important;
-  flex-wrap: nowrap !important;
+  display: table;
   width: 100%;
-  box-sizing: border-box;
+  table-layout: fixed;
 }
 
 .main-text-content {
-  flex: 1 1 0% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  overflow-x: hidden;
-  box-sizing: border-box;
+  display: table-cell;
+  width: auto;
+  padding-right: 20px;
+  vertical-align: top;
 }
 
 .publications-sidebar {
-  flex: 0 0 auto !important;
-  width: 260px !important;
-  min-width: 260px !important;
-  max-width: 260px !important;
-  padding: 18px;
+  display: table-cell;
+  width: 240px;
+  padding: 15px;
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 6px;
-  position: sticky;
-  top: 80px;
   font-size: 0.88em;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-  align-self: flex-start;
-  box-sizing: border-box;
+  vertical-align: top;
 }
 
 .publications-sidebar h3 {
@@ -53,22 +42,15 @@ redirect_from:
   padding-bottom: 8px;
 }
 
-.publications-sidebar ol,
 .publications-sidebar ul {
-  margin: 0 !important;
-  padding-left: 18px !important;
-  list-style-position: inside;
-}
-
-.publications-sidebar ul.publications-list {
-  list-style-type: disc !important;
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
 }
 
 .publications-sidebar li {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   line-height: 1.4;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .publications-sidebar a {
@@ -82,20 +64,19 @@ redirect_from:
 
 @media (max-width: 1100px) {
   .main-content-wrapper {
-    flex-direction: column !important;
+    display: block;
   }
 
   .main-text-content {
-    max-width: 100% !important;
+    display: block;
+    width: 100%;
+    padding-right: 0;
   }
 
   .publications-sidebar {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    flex: 0 0 auto !important;
-    position: relative;
-    top: 0;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 </style>
