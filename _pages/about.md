@@ -11,15 +11,17 @@ redirect_from:
 <style>
 .publications-sidebar {
   float: right;
-  width: 280px;
-  margin: 0 0 20px 20px;
-  padding: 15px;
+  width: 300px;
+  margin: 0 0 20px 30px;
+  padding: 20px;
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 6px;
   position: sticky;
-  top: 20px;
+  top: 80px;
   font-size: 0.9em;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
 .publications-sidebar h3 {
