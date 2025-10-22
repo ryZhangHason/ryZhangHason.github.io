@@ -21,7 +21,7 @@
   }
 
   @include breakpoint($large) {
-    @include span(2 of 12);
+    @include span(1.5 of 12);
     @include prefix(0.5 of 12);
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
@@ -33,7 +33,7 @@
   }
 
   @include breakpoint($x-large) {
-    max-width: $sidebar-link-max-width;
+    max-width: 200px;
     padding-right: 0;
   }
 
@@ -91,7 +91,7 @@
   }
 
   img {
-    max-width: 175px;
+    max-width: 150px;
     border-radius: 50%;
 
     @include breakpoint($large) {
