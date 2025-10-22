@@ -42,7 +42,8 @@ redirect_from:
   padding-bottom: 8px;
 }
 
-.publications-sidebar ol {
+.publications-sidebar ol,
+.publications-sidebar ul {
   margin: 0;
   padding-left: 18px;
 }
