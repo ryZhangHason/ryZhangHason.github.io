@@ -232,7 +232,7 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
       <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
       <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
       <li><a href="#cadres-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
-      <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024)</li>
+      <li><a href="#semantic-consistency">Contextualized Word Representations for Political Text Analysis</a> (2024)</li>
     </ul>
   </div> <!-- end of publications-sidebar -->
 
