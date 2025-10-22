@@ -78,6 +78,9 @@ redirect_from:
     width: 100%;
     margin-top: 20px;
   }
+  .author__sidebar {
+    margin-left: -1.5rem; /* optional: pull sidebar closer */
+  }
 }
 </style>
 
