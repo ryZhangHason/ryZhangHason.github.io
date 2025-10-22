@@ -42,7 +42,8 @@ redirect_from:
   padding-bottom: 8px;
 }
 
-.publications-sidebar ol {
+.publications-sidebar ol,
+.publications-sidebar ul {
   margin: 0;
   padding-left: 18px;
 }
@@ -215,15 +216,15 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
 
 <div class="publications-sidebar">
   <h3>Publications</h3>
-  <ol>
-    <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
-    <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
-    <li><a href="#sme-sustainability">Sustainability of SMEs in Hong Kong</a> (2025)</li>
-    <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
-    <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
-    <li><a href="#cadres-managers">From Cadres to Managers</a> (2024)</li>
-    <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024)</li>
-  </ol>
+  <ul class="publications-list">
+    <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025).</li>
+    <li><a href="#se-vae">Structural Equation-VAE</a> (2025).</li>
+    <li><a href="#sme-sustainability">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
+    <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025).</li>
+    <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025).</li>
+    <li><a href="#cadres-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
+    <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024).</li>
+  </ul>
 </div>
 
 </div>
