@@ -30,14 +30,14 @@ redirect_from:
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 6px;
-  font-size: 0.88em;
+  font-size: 0.80em;
   vertical-align: top;
 }
 
 .publications-sidebar h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: 1.15em;
+  font-size: 1.1em;
   border-bottom: 2px solid #007bff;
   padding-bottom: 8px;
 }
