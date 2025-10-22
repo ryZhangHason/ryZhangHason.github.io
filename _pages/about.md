@@ -8,17 +8,72 @@ redirect_from:
 ---
 
 
-I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
+<style>
+.publications-sidebar {
+  float: right;
+  width: 280px;
+  margin: 0 0 20px 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  position: sticky;
+  top: 20px;
+  font-size: 0.9em;
+}
 
-Publications
-------
-1. [HEAS: Hierarchical Evolutionary Agent Simulation Framework for Cross-Scale Modeling and Multi-Objective Search](#heas) (2025, Preprint)
-2. [Structural Equation-VAE: Disentangled Latent Representations for Tabular Data](#se-vae) (2025, Preprint)
-3. [Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network](#sme-sustainability) (2025, *Corporate Social Responsibility and Environmental Management*)
-4. [Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities](#eco-efficiency) (2025, Preprint)
-5. [Enhancing Citizen-Government Communication with AI: Evaluating the Impact of AI-Assisted Interactions on Communication Quality and Satisfaction](#ai-communication) (2025, Preprint)
-6. [From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform](#cadres-managers) (2024, *The China Quarterly*)
-7. [Achieving Semantic Consistency: Contextualized Word Representations for Political Text Analysis](#semantic-consistency) (2024, Preprint)
+.publications-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.publications-sidebar ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.publications-sidebar li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.publications-sidebar a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.publications-sidebar a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .publications-sidebar {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+    position: relative;
+    top: 0;
+  }
+}
+</style>
+
+<div class="publications-sidebar">
+  <h3>Publications</h3>
+  <ol>
+    <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
+    <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
+    <li><a href="#sme-sustainability">Sustainability of SMEs in Hong Kong</a> (2025)</li>
+    <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
+    <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
+    <li><a href="#cadres-managers">From Cadres to Managers</a> (2024)</li>
+    <li><a href="#semantic-consistency">Achieving Semantic Consistency</a> (2024)</li>
+  </ol>
+</div>
+
+I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
 
 Works
 ------
