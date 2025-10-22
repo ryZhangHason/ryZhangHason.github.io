@@ -79,7 +79,7 @@ redirect_from:
     margin-top: 20px;
   }
   .author__sidebar {
-    margin-left: -1.5rem; /* optional: pull sidebar closer */
+    margin-left: -5rem; /* optional: pull sidebar closer */
   }
 }
 </style>
