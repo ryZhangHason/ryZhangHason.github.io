@@ -11,60 +11,68 @@ redirect_from:
 <style>
 /* Clear simple layout */
 .main-content-wrapper {
-  display: table;
+  display: flex;
   width: 100%;
-  table-layout: fixed;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .main-text-content {
-  display: table-cell;
-  width: auto;
-  padding-right: 20px;
-  vertical-align: top;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-right: 0;
 }
 
 .publications-sidebar {
-  display: table-cell;
-  width: 240px;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  font-size: 0.80em;
-  vertical-align: top;
+  flex: 0 0 280px;
+  width: 280px;
+  padding: 16px 16px 14px;
+  background: linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%);
+  border: 1px solid #d8e4f3;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(24, 58, 106, 0.08);
+  font-size: 0.82em;
+  position: sticky;
+  top: 70px;
+  align-self: flex-start;
+  height: fit-content;
 }
 
 .publications-sidebar h3 {
   margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.1em;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 1.05em;
+  color: #1f4f8f;
+  border-bottom: 1px solid #cfe0f4;
+  padding-bottom: 6px;
+  letter-spacing: 0.2px;
 }
 
 .publications-sidebar ul {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 16px;
   list-style-type: disc;
 }
 
 .publications-sidebar li {
-  margin-bottom: 8px;
-  line-height: 1.4;
+  margin-bottom: 7px;
+  line-height: 1.45;
 }
 
 .publications-sidebar a {
-  color: #007bff;
+  color: #1f5fa8;
   text-decoration: none;
 }
 
 .publications-sidebar a:hover {
+  color: #143f73;
   text-decoration: underline;
 }
 
 @media (max-width: 1100px) {
   .main-content-wrapper {
     display: block;
+    gap: 0;
   }
 
   .main-text-content {
@@ -77,6 +85,7 @@ redirect_from:
     display: block;
     width: 100%;
     margin-top: 20px;
+    position: static;
   }
   .author__sidebar {
   margin-left: -30rem !important;
@@ -94,6 +103,29 @@ I am a graduate student in the Department of Politics and Public Administration,
 Works
 ------
 
+<a name="pearl"></a>
+
+ - "**PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning with Deployment-Driven Insights from Digital Governance Communication Systems**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599), Qihao Wang, Xin Zhao). *Preprint*. 2026. Available at [arXiv](https://arxiv.org/abs/2601.17495)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6130326)
+
+We study deployed systems where new text inputs are routed by retrieving similar past cases—such as citizen messages in digital governance platforms. When this fails, the issue is often poorly aligned embedding neighborhoods rather than the language model itself. We propose PEARL (Prototype-Enhanced Aligned Representation Learning), a label-efficient method that softly aligns embeddings toward class prototypes to improve local neighborhood structure without changing dimensionality or requiring heavy retraining. Our approach bridges the gap between unsupervised post-processing and fully supervised projection, and yields strong gains precisely in the label-scarce settings where similarity-based systems are most brittle.
+
+You can apply PEARL directly from PyPI:
+```bash
+pip install pearl-h
+```
+For full documentation and tutorials, visit the [PEARL project page](https://pypi.org/project/pearl-H/).
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Figure_PEARL.png" 
+       alt="PEARL Overview" 
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> PEARL overview
+  </figcaption>
+</figure>
+
+---
+
 <a name="heas"></a>
 
  - "**HEAS: Hierarchical Evolutionary Agent Simulation Framework for Cross-Scale Modeling and Multi-Objective Search**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.15555)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5400479)
@@ -105,6 +137,7 @@ You can apply HEAS directly from PyPI:
 pip install heas
 ```
 For full documentation and tutorials, visit the [HEAS project page](https://pypi.org/project/heas/).
+We also developed a lightweight web app to explore HEAS with an interactive tool, available at [https://ryzhanghason.github.io/heas/](https://ryzhanghason.github.io/heas/).
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/HEAS_Plot1.png" 
@@ -116,6 +149,7 @@ For full documentation and tutorials, visit the [HEAS project page](https://pypi
 </figure>
 
 ---
+
 
 <a name="se-vae"></a>
 
@@ -233,6 +267,7 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
   <div class="publications-sidebar">
     <h3>Publications</h3>
     <ul>
+      <li><a href="#pearl">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
       <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
       <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
       <li><a href="#sme-sustainability">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
@@ -244,10 +279,3 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
   </div> <!-- end of publications-sidebar -->
 
 </div> <!-- end of main-content-wrapper -->
-
-
-
-
-
-
-
