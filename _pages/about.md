@@ -120,7 +120,7 @@ For full documentation and tutorials, visit the [PEARL project page](https://pyp
        alt="PEARL Overview" 
        style="display: block; margin: 0 auto; width: 80%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> PEARL overview
+    <em>Figure.</em> Neighborhood Geometry Illustration.
   </figcaption>
 </figure>
 
