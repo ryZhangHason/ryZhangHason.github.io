@@ -104,8 +104,7 @@ Works
 ------
 <a name="ai-communication"></a>
 
- - "**Enhancing Communication Quality between Government and Citizens: The Role of AI Modification
-**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986)
+ - "**Enhancing Communication Quality between Government and Citizens: The Role of AI Modification**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986)
 
 In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, responsiveness, clarity, and trust. 
 
