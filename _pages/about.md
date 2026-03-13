@@ -102,7 +102,23 @@ I am a graduate student in the Department of Politics and Public Administration,
 
 Works
 ------
+<a name="ai-communication"></a>
 
+ - "**Enhancing Communication Quality between Government and Citizens: The Role of AI Modification
+**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986)
+
+In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, responsiveness, clarity, and trust. 
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png" 
+       alt="SE-VAE Architecture" 
+       style="display: block; margin: 0 auto; width: 70%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> Paired T-Test Results of Comparison of Civil Servant Perceptions
+  </figcaption>
+</figure>
+
+---
 <a name="pearl"></a>
 
  - "**PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning with Deployment-Driven Insights from Digital Governance Communication Systems**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599), Qihao Wang, Xin Zhao). *Preprint*. 2026. Available at [arXiv](https://arxiv.org/abs/2601.17495)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6130326)
@@ -208,22 +224,6 @@ In our study, we explored the relationship between eco-efficiency and the local 
 
 ---
 
-<a name="ai-communication"></a>
-
- - "**Enhancing Citizen-Government Communication with AI: Evaluating the Impact of AI-Assisted Interactions on Communication Quality and Satisfaction**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2501.10715)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5107547)
-
-In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, responsiveness, clarity, and trust. 
-
-<figure style="text-align: center; display: inline-block;">
-  <img src="/images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png" 
-       alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 70%; height: auto;">
-  <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> Paired T-Test Results of Comparison of Civil Servant Perceptions
-  </figcaption>
-</figure>
-
----
 
 <a name="cadres-managers"></a>
 
@@ -267,12 +267,12 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
   <div class="publications-sidebar">
     <h3>Publications</h3>
     <ul>
+      <li><a href="#ai-communication">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
       <li><a href="#pearl">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
       <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
       <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
       <li><a href="#sme-sustainability">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
       <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
-      <li><a href="#ai-communication">Enhancing Citizen-Government Communication with AI</a> (2025)</li>
       <li><a href="#cadres-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
       <li><a href="#semantic-consistency">Contextualized Word Representations for Political Text Analysis</a> (2024)</li>
     </ul>
