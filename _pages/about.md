@@ -109,11 +109,11 @@ Works
 In our investigation of AI-assisted interactions, we sought to understand how artificial intelligence might elevate the quality of communication between citizens and civil servants.  We  compared traditional and AI-enhanced communication across diverse scenarios—from routine service requests to emergency concerns. Our analyses demonstrated that AI modifications can significantly improve key dimensions such as satisfaction, responsiveness, clarity, and trust. 
 
 <figure style="text-align: center; display: inline-block;">
-  <img src="/images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png" 
+  <img src="/images/Enhance_Figure1.png" 
        alt="SE-VAE Architecture" 
        style="display: block; margin: 0 auto; width: 70%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> Paired T-Test Results of Comparison of Civil Servant Perceptions
+    <em>Figure.</em> Analytical framework
   </figcaption>
 </figure>
 
