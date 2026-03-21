@@ -9,14 +9,14 @@
   let pauseUntil = 0;
 
   const CAT_SIZE = 100;
-  const EDGE_PADDING = 2;
+  const EDGE_PADDING = 0;
   const TOP_CLEARANCE = 110;
   const SPEED = 24;
-  const BOUNCE_PIXELS = 48;
+  const BOUNCE_PIXELS = 36;
   const PAUSE_MIN_MS = 500;
   const PAUSE_MAX_MS = 1500;
-  const STOP_CHANCE = 0.0011;
-  const REVERSE_CHANCE = 0.0015;
+  const STOP_CHANCE = 0.0016;
+  const REVERSE_CHANCE = 0.0008;
 
   function enabled() {
     return desktopQuery.matches && !reducedMotionQuery.matches;
