@@ -1,22 +1,31 @@
 (function () {
   const desktopQuery = window.matchMedia("(min-width: 1024px)");
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const spritePath = "/images/Pixel%208%20position/svgviewer-output%20(main).svg";
+  const spritePath = "/images/Cat_Updated.svg";
+
+  const CAT_SIZE = 100;
+  const EDGE_PADDING = 26;
+  const FLOOR_RANGE_RATIO = 0.2;
+  const SPRITE_INSET = {
+    left: 28,
+    right: 28,
+    top: 24,
+    bottom: 26,
+  };
+  const SPEED = 28;
+  const FLOOR_BOUNCE_PIXELS = 24;
+  const WALL_BOB_PIXELS = 4;
+  const STOP_MIN_MS = 420;
+  const STOP_MAX_MS = 1100;
+  const STOP_CHANCE = 0.005;
+  const REVERSE_CHANCE = 0.003;
+  const TURN_PAUSE_MS = 90;
+  const WALL_REVERSE_MARGIN = 48;
 
   let cat = null;
   let rafId = null;
   let state = null;
   let pauseUntil = 0;
-
-  const CAT_SIZE = 100;
-  const EDGE_PADDING = 0;
-  const TOP_CLEARANCE = 110;
-  const SPEED = 24;
-  const BOUNCE_PIXELS = 36;
-  const PAUSE_MIN_MS = 500;
-  const PAUSE_MAX_MS = 1500;
-  const STOP_CHANCE = 0.0016;
-  const REVERSE_CHANCE = 0.0008;
 
   function enabled() {
     return desktopQuery.matches && !reducedMotionQuery.matches;
@@ -29,45 +38,138 @@
   function buildBounds() {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const left = EDGE_PADDING;
-    const top = TOP_CLEARANCE;
-    const right = Math.max(left, width - CAT_SIZE - EDGE_PADDING);
-    const bottom = Math.max(top, height - CAT_SIZE - EDGE_PADDING);
+    const left = EDGE_PADDING - SPRITE_INSET.left;
+    const top = EDGE_PADDING - SPRITE_INSET.top;
+    const right = width - EDGE_PADDING - (CAT_SIZE - SPRITE_INSET.right);
+    const bottom = height - EDGE_PADDING - (CAT_SIZE - SPRITE_INSET.bottom);
 
-    return { left, top, right, bottom };
+    return {
+      left,
+      top,
+      right: Math.max(left, right),
+      bottom: Math.max(top, bottom),
+    };
   }
 
-  function orientationFor(surface, direction) {
-    if (surface === "floor") {
-      return direction === 1 ? "rotate(0deg)" : "scaleX(-1)";
+  function stateMeta(mode) {
+    const floorOrigin = `${Math.round(CAT_SIZE / 2)}px ${CAT_SIZE - SPRITE_INSET.bottom}px`;
+    const leftWallOrigin = `${SPRITE_INSET.left}px ${Math.round(CAT_SIZE / 2)}px`;
+    const rightWallOrigin = `${CAT_SIZE - SPRITE_INSET.right}px ${Math.round(CAT_SIZE / 2)}px`;
+
+    if (mode === "floor-right") {
+      return {
+        rotation: "rotate(0deg)",
+        origin: floorOrigin,
+      };
     }
 
-    if (surface === "left-wall") {
-      return direction === 1 ? "rotate(90deg)" : "rotate(-90deg)";
+    if (mode === "floor-left") {
+      return {
+        rotation: "scaleX(-1)",
+        origin: floorOrigin,
+      };
     }
 
-    return direction === 1 ? "rotate(-90deg)" : "rotate(90deg)";
+    if (mode === "left-wall-down") {
+      return {
+        rotation: "rotate(90deg)",
+        origin: leftWallOrigin,
+      };
+    }
+
+    if (mode === "left-wall-up") {
+      return {
+        rotation: "rotate(90deg) scaleX(-1)",
+        origin: leftWallOrigin,
+      };
+    }
+
+    if (mode === "right-wall-down") {
+      return {
+        rotation: "rotate(-90deg)",
+        origin: rightWallOrigin,
+      };
+    }
+
+    return {
+      rotation: "rotate(-90deg) scaleX(-1)",
+      origin: rightWallOrigin,
+    };
   }
 
-  function bounceOffset(surface, progress) {
-    const amplitude = Math.round(Math.abs(Math.sin(progress * Math.PI * 2)) * BOUNCE_PIXELS);
-
-    if (surface === "floor") {
-      return { x: 0, y: -amplitude };
-    }
-
-    if (surface === "left-wall") {
-      return { x: amplitude, y: 0 };
-    }
-
-    return { x: -amplitude, y: 0 };
+  function isFloor(mode) {
+    return mode === "floor-right" || mode === "floor-left";
   }
 
-  function placeCat(x, y, transform, bounce) {
-    if (!cat) return;
-    cat.style.left = `${x + bounce.x}px`;
-    cat.style.top = `${y + bounce.y}px`;
-    cat.style.transform = transform;
+  function isLeftWall(mode) {
+    return mode === "left-wall-down" || mode === "left-wall-up";
+  }
+
+  function isRightWall(mode) {
+    return mode === "right-wall-down" || mode === "right-wall-up";
+  }
+
+  function currentDirection(mode) {
+    if (mode === "floor-right" || mode === "left-wall-down" || mode === "right-wall-down") {
+      return 1;
+    }
+
+    return -1;
+  }
+
+  function edgeTransform(mode, progress) {
+    const wave = Math.abs(Math.sin(progress * Math.PI * 2));
+
+    if (isFloor(mode)) {
+      const bounce = Math.round(wave * FLOOR_BOUNCE_PIXELS);
+      return `translate3d(0, ${-bounce}px, 0)`;
+    }
+
+    const bob = Math.round(Math.sin(progress * Math.PI * 2) * WALL_BOB_PIXELS);
+    return `translate3d(0, ${bob}px, 0)`;
+  }
+
+  function anchoredPosition(mode, progress, bounds) {
+    if (mode === "floor-right" || mode === "floor-left") {
+      return {
+        x: progress,
+        y: bounds.bottom,
+      };
+    }
+
+    if (mode === "left-wall-down" || mode === "left-wall-up") {
+      return {
+        x: bounds.left,
+        y: progress,
+      };
+    }
+
+    return {
+      x: bounds.right,
+      y: progress,
+    };
+  }
+
+  function pathLimits(mode, bounds) {
+    if (isFloor(mode)) {
+      const floorMax = bounds.left + (bounds.right - bounds.left) * FLOOR_RANGE_RATIO;
+      return { min: bounds.left, max: Math.max(bounds.left, floorMax) };
+    }
+
+    return { min: bounds.top, max: bounds.bottom };
+  }
+
+  function placeCat(mode, progress, bounceProgress) {
+    if (!cat || !state) return;
+
+    const meta = stateMeta(mode);
+    const pos = anchoredPosition(mode, progress, state.bounds);
+    const bounce = edgeTransform(mode, bounceProgress);
+
+    cat.style.left = `${pos.x}px`;
+    cat.style.top = `${pos.y}px`;
+    cat.style.transformOrigin = meta.origin;
+    cat.style.transform = `${meta.rotation} ${bounce}`;
   }
 
   function ensureCat() {
@@ -99,93 +201,88 @@
     const bounds = buildBounds();
     state = {
       bounds,
-      surface: "left-wall",
-      direction: 1,
-      progress: 0,
-      x: bounds.left,
-      y: bounds.top,
+      mode: "floor-right",
+      progress: bounds.left,
+      traveled: 0,
       lastTime: null,
     };
     pauseUntil = 0;
-    placeCat(state.x, state.y, orientationFor(state.surface, state.direction), { x: 0, y: 0 });
+    placeCat(state.mode, state.progress, 0);
   }
 
-  function syncPositionFromState() {
-    const { bounds, surface, progress } = state;
-
-    if (surface === "left-wall") {
-      state.x = bounds.left;
-      state.y = progress;
-      return;
-    }
-
-    if (surface === "right-wall") {
-      state.x = bounds.right;
-      state.y = progress;
-      return;
-    }
-
-    state.x = progress;
-    state.y = bounds.bottom;
-  }
-
-  function transitionAtBoundary() {
-    const { bounds, surface, direction } = state;
-
-    if (surface === "left-wall") {
-      if (direction > 0) {
-        state.surface = "floor";
-        state.direction = 1;
-        state.progress = bounds.left;
-      } else {
-        state.direction = 1;
-        state.progress = bounds.top;
-      }
-      return;
-    }
-
-    if (surface === "right-wall") {
-      if (direction > 0) {
-        state.direction = -1;
-        state.progress = bounds.bottom;
-      } else {
-        state.surface = "floor";
-        state.direction = -1;
-        state.progress = bounds.right;
-      }
-      return;
-    }
-
-    if (direction > 0) {
-      state.surface = "right-wall";
-      state.direction = -1;
-      state.progress = bounds.bottom;
-    } else {
-      state.surface = "left-wall";
-      state.direction = -1;
-      state.progress = bounds.bottom;
-    }
+  function nextModeAtBoundary(mode) {
+    if (mode === "left-wall-down") return "floor-right";
+    if (mode === "floor-right") return "floor-left";
+    if (mode === "floor-left") return "left-wall-up";
+    if (mode === "left-wall-up") return "left-wall-down";
+    if (mode === "right-wall-down") return "right-wall-up";
+    return "left-wall-down";
   }
 
   function maybePause(now) {
     if (Math.random() < STOP_CHANCE) {
-      pauseUntil = now + randomBetween(PAUSE_MIN_MS, PAUSE_MAX_MS);
+      pauseUntil = now + randomBetween(STOP_MIN_MS, STOP_MAX_MS);
       return true;
     }
 
     return false;
   }
 
-  function maybeReverse() {
-    if (Math.random() >= REVERSE_CHANCE) return;
+  function maybeReverse(now) {
+    if (Math.random() >= REVERSE_CHANCE) return false;
 
-    if (state.surface === "floor") {
-      state.direction *= -1;
-      return;
+    if (isFloor(state.mode)) {
+      state.mode = state.mode === "floor-right" ? "floor-left" : "floor-right";
+      state.traveled = 0;
+      pauseUntil = now + TURN_PAUSE_MS;
+      return true;
     }
 
-    if (state.progress > state.bounds.top + 30 && state.progress < state.bounds.bottom - 30) {
-      state.direction *= -1;
+    const { min, max } = pathLimits(state.mode, state.bounds);
+    if (state.progress <= min + WALL_REVERSE_MARGIN || state.progress >= max - WALL_REVERSE_MARGIN) {
+      return false;
+    }
+
+    if (state.mode === "left-wall-down") state.mode = "left-wall-up";
+    else if (state.mode === "left-wall-up") state.mode = "left-wall-down";
+    else if (state.mode === "right-wall-down") state.mode = "right-wall-up";
+    else if (state.mode === "right-wall-up") state.mode = "right-wall-down";
+    else return false;
+
+    state.traveled = 0;
+    pauseUntil = now + TURN_PAUSE_MS;
+    return true;
+  }
+
+  function advance(now, dt) {
+    const { min, max } = pathLimits(state.mode, state.bounds);
+    let remaining = SPEED * dt;
+
+    while (remaining > 0) {
+      const direction = currentDirection(state.mode);
+      const distanceToEdge = direction > 0 ? max - state.progress : state.progress - min;
+
+      if (remaining < distanceToEdge) {
+        state.progress += direction * remaining;
+        state.traveled += remaining;
+        remaining = 0;
+      } else {
+        state.progress = direction > 0 ? max : min;
+        state.traveled = 0;
+        remaining -= Math.max(distanceToEdge, 0);
+        state.mode = nextModeAtBoundary(state.mode);
+        const nextLimits = pathLimits(state.mode, state.bounds);
+
+        if (state.mode === "floor-right") state.progress = nextLimits.min;
+        else if (state.mode === "floor-left") state.progress = nextLimits.max;
+        else if (state.mode === "left-wall-down") state.progress = state.bounds.top;
+        else if (state.mode === "left-wall-up") state.progress = state.bounds.bottom;
+        else if (state.mode === "right-wall-down") state.progress = state.bounds.top;
+        else if (state.mode === "right-wall-up") state.progress = state.bounds.bottom;
+
+        pauseUntil = now + TURN_PAUSE_MS;
+        break;
+      }
     }
   }
 
@@ -209,48 +306,25 @@
     state.bounds = buildBounds();
 
     if (pauseUntil > now) {
-      syncPositionFromState();
-      placeCat(state.x, state.y, orientationFor(state.surface, state.direction), { x: 0, y: 0 });
+      placeCat(state.mode, state.progress, 0);
       rafId = requestAnimationFrame(step);
       return;
     }
 
     if (maybePause(now)) {
-      syncPositionFromState();
-      placeCat(state.x, state.y, orientationFor(state.surface, state.direction), { x: 0, y: 0 });
+      placeCat(state.mode, state.progress, 0);
       rafId = requestAnimationFrame(step);
       return;
     }
 
-    maybeReverse();
-
-    const bounds = state.bounds;
-    let min;
-    let max;
-
-    if (state.surface === "floor") {
-      min = bounds.left;
-      max = bounds.right;
-    } else {
-      min = bounds.top;
-      max = bounds.bottom;
+    if (maybeReverse(now)) {
+      placeCat(state.mode, state.progress, 0);
+      rafId = requestAnimationFrame(step);
+      return;
     }
 
-    state.progress += state.direction * SPEED * dt;
-
-    if (state.progress >= max) {
-      state.progress = max;
-      transitionAtBoundary();
-      pauseUntil = now + 260;
-    } else if (state.progress <= min) {
-      state.progress = min;
-      transitionAtBoundary();
-      pauseUntil = now + 260;
-    }
-
-    syncPositionFromState();
-    const bounce = bounceOffset(state.surface, state.progress / 16);
-    placeCat(state.x, state.y, orientationFor(state.surface, state.direction), bounce);
+    advance(now, dt);
+    placeCat(state.mode, state.progress, state.traveled / 16);
     rafId = requestAnimationFrame(step);
   }
 
