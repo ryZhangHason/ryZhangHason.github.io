@@ -141,6 +141,12 @@ analytics:
   google:
     tracking_id          :
 
+visitor_analytics:
+  endpoint               :
+  admin_api_base         :
+  heartbeat_interval_ms  : 15000
+  session_timeout_ms     : 1800000
+
 
 # Reading Files
 include:

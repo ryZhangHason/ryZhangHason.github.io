@@ -1,0 +1,10 @@
+{
+  "name": "visitor-analytics-backend",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "db:init": "wrangler d1 execute visitor-analytics --file=./sql/schema.sql"
+  }
+}
