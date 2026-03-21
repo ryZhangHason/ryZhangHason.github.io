@@ -8,11 +8,11 @@
   let state = null;
   let pauseUntil = 0;
 
-  const CAT_SIZE = 92;
-  const EDGE_PADDING = 18;
+  const CAT_SIZE = 100;
+  const EDGE_PADDING = 2;
   const TOP_CLEARANCE = 110;
-  const SPEED = 34;
-  const BOUNCE_PIXELS = 24;
+  const SPEED = 24;
+  const BOUNCE_PIXELS = 48;
   const PAUSE_MIN_MS = 500;
   const PAUSE_MAX_MS = 1500;
   const STOP_CHANCE = 0.0011;
