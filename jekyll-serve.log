@@ -1,0 +1,820 @@
+Configuration file: D:/ryZhangHason.github.io/_config.yml
+            Source: D:/ryZhangHason.github.io
+       Destination: D:/ryZhangHason.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+                    done in 4.653 seconds.
+ Auto-regeneration: enabled for 'D:/ryZhangHason.github.io'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2026-03-20 23:42:40
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+[2026-03-20 23:42:43] ERROR Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. @ io_fillbuf - fd:6 
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/httpserver.rb:82:in `eof?'
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/httpserver.rb:82:in `run'
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/server.rb:309:in `block in start_thread'
+                    ...done in 3.6710577 seconds.
+                    
+      Regenerating: 227 file(s) changed at 2026-03-20 23:42:44
+                    jekyll-serve.log
+                    _includes/head/custom.html
+                    _includes/head.html
+                    _includes/masthead.html
+                    _includes/nav_list
+                    _includes/page__hero.html
+                    _includes/page__taxonomy.html
+                    _includes/paginator.html
+                    _includes/post_pagination.html
+                    _includes/read-time.html
+                    _includes/scripts.html
+                    _includes/seo.html
+                    _includes/sidebar.html
+                    _includes/social-share.html
+                    _includes/tag-list.html
+                    _includes/toc
+                    _layouts/archive-taxonomy.html
+                    _layouts/archive.html
+                    _layouts/compress.html
+                    _layouts/default.html
+                    _layouts/single.html
+                    _layouts/splash.html
+                    _layouts/talk.html
+                    _pages/404.md
+                    _pages/about.md
+                    _pages/archive-layout-with-content.md
+                    _pages/category-archive.html
+                    _pages/collection-archive.html
+                    _pages/cv.md
+                    _pages/google90d6a294171dda5e.html
+                    _pages/markdown.md
+                    _pages/non-menu-page.md
+                    _pages/page-archive.html
+                    _pages/pixel-cat-preview.md
+                    _pages/portfolio.html
+                    _pages/publications.md
+                    _pages/sitemap.md
+                    _pages/tag-archive.html
+                    _pages/talkmap.html
+                    _pages/talks.html
+                    _pages/teaching.html
+                    _pages/terms.md
+                    _pages/year-archive.html
+                    _portfolio/portfolio-1.md
+                    _portfolio/portfolio-2.html
+                    _posts/2012-08-14-blog-post-1.md
+                    _posts/2013-08-14-blog-post-2.md
+                    _posts/2014-08-14-blog-post-3.md
+                    _posts/2015-08-14-blog-post-4.md
+                    _posts/2199-01-01-future-post.md
+                    _publications/2009-10-01-paper-title-number-1.md
+                    _publications/2010-10-01-paper-title-number-2.md
+                    _publications/2015-10-01-paper-title-number-3.md
+                    _publications/2024-02-17-paper-title-number-4.md
+                    _sass/vendor/breakpoint/parsers/double/_default-pair.scss
+                    _sass/vendor/breakpoint/parsers/double/_default.scss
+                    _sass/vendor/breakpoint/parsers/double/_double-string.scss
+                    _sass/vendor/breakpoint/parsers/resolution/_resolution.scss
+                    _sass/vendor/breakpoint/parsers/single/_default.scss
+                    _sass/vendor/breakpoint/parsers/triple/_default.scss
+                    _sass/vendor/breakpoint/parsers/_double.scss
+                    _sass/vendor/breakpoint/parsers/_query.scss
+                    _sass/vendor/breakpoint/parsers/_resolution.scss
+                    _sass/vendor/breakpoint/parsers/_single.scss
+                    _sass/vendor/breakpoint/parsers/_triple.scss
+                    _sass/vendor/breakpoint/_breakpoint.scss
+                    _sass/vendor/breakpoint/_context.scss
+                    _sass/vendor/breakpoint/_helpers.scss
+                    _sass/vendor/breakpoint/_legacy-settings.scss
+                    _sass/vendor/breakpoint/_no-query.scss
+                    _sass/vendor/breakpoint/_parsers.scss
+                    _sass/vendor/breakpoint/_respond-to.scss
+                    _sass/vendor/breakpoint/_settings.scss
+                    _sass/vendor/font-awesome/brands.scss
+                    _sass/vendor/font-awesome/fontawesome.scss
+                    _sass/vendor/font-awesome/regular.scss
+                    _sass/vendor/font-awesome/solid.scss
+                    _sass/vendor/font-awesome/v4-shims.scss
+                    _sass/vendor/font-awesome/_animated.scss
+                    _sass/vendor/font-awesome/_bordered-pulled.scss
+                    _sass/vendor/font-awesome/_core.scss
+                    _sass/vendor/font-awesome/_fixed-width.scss
+                    _sass/vendor/font-awesome/_functions.scss
+                    _sass/vendor/font-awesome/_icons.scss
+                    _sass/vendor/font-awesome/_list.scss
+                    _sass/vendor/font-awesome/_mixins.scss
+                    _sass/vendor/font-awesome/_rotated-flipped.scss
+                    _sass/vendor/font-awesome/_screen-reader.scss
+                    _sass/vendor/font-awesome/_shims.scss
+                    _sass/vendor/font-awesome/_sizing.scss
+                    _sass/vendor/font-awesome/_stacked.scss
+                    _sass/vendor/font-awesome/_variables.scss
+                    _sass/vendor/magnific-popup/_magnific-popup.scss
+                    _sass/vendor/magnific-popup/_settings.scss
+                    _sass/vendor/susy/susy/language/susy/_background.scss
+                    _sass/vendor/susy/susy/language/susy/_bleed.scss
+                    _sass/vendor/susy/susy/language/susy/_box-sizing.scss
+                    _sass/vendor/susy/susy/language/susy/_breakpoint-plugin.scss
+                    _sass/vendor/susy/susy/language/susy/_container.scss
+                    _sass/vendor/susy/susy/language/susy/_context.scss
+                    _sass/vendor/susy/susy/language/susy/_gallery.scss
+                    _sass/vendor/susy/susy/language/susy/_grids.scss
+                    _sass/vendor/susy/susy/language/susy/_gutters.scss
+                    _sass/vendor/susy/susy/language/susy/_isolate.scss
+                    _sass/vendor/susy/susy/language/susy/_margins.scss
+                    _sass/vendor/susy/susy/language/susy/_padding.scss
+                    _sass/vendor/susy/susy/language/susy/_rows.scss
+                    _sass/vendor/susy/susy/language/susy/_settings.scss
+                    _sass/vendor/susy/susy/language/susy/_span.scss
+                    _sass/vendor/susy/susy/language/susy/_validation.scss
+                    _sass/vendor/susy/susy/language/susyone/_background.scss
+                    _sass/vendor/susy/susy/language/susyone/_functions.scss
+                    _sass/vendor/susy/susy/language/susyone/_grid.scss
+                    _sass/vendor/susy/susy/language/susyone/_isolation.scss
+                    _sass/vendor/susy/susy/language/susyone/_margin.scss
+                    _sass/vendor/susy/susy/language/susyone/_media.scss
+                    _sass/vendor/susy/susy/language/susyone/_padding.scss
+                    _sass/vendor/susy/susy/language/susyone/_settings.scss
+                    _sass/vendor/susy/susy/language/_susy.scss
+                    _sass/vendor/susy/susy/language/_susyone.scss
+                    _sass/vendor/susy/susy/output/float/_container.scss
+                    _sass/vendor/susy/susy/output/float/_end.scss
+                    _sass/vendor/susy/susy/output/float/_isolate.scss
+                    _sass/vendor/susy/susy/output/float/_span.scss
+                    _sass/vendor/susy/susy/output/shared/_background.scss
+                    _sass/vendor/susy/susy/output/shared/_container.scss
+                    _sass/vendor/susy/susy/output/shared/_direction.scss
+                    _sass/vendor/susy/susy/output/shared/_inspect.scss
+                    _sass/vendor/susy/susy/output/shared/_margins.scss
+                    _sass/vendor/susy/susy/output/shared/_output.scss
+                    _sass/vendor/susy/susy/output/shared/_padding.scss
+                    _sass/vendor/susy/susy/output/support/_background.scss
+                    _sass/vendor/susy/susy/output/support/_box-sizing.scss
+                    _sass/vendor/susy/susy/output/support/_clearfix.scss
+                    _sass/vendor/susy/susy/output/support/_prefix.scss
+                    _sass/vendor/susy/susy/output/support/_rem.scss
+                    _sass/vendor/susy/susy/output/support/_support.scss
+                    _sass/vendor/susy/susy/output/_float.scss
+                    _sass/vendor/susy/susy/output/_shared.scss
+                    _sass/vendor/susy/susy/output/_support.scss
+                    _sass/vendor/susy/susy/su/_grid.scss
+                    _sass/vendor/susy/susy/su/_settings.scss
+                    _sass/vendor/susy/susy/su/_utilities.scss
+                    _sass/vendor/susy/susy/su/_validation.scss
+                    _sass/vendor/susy/susy/_su.scss
+                    _sass/vendor/susy/_su.scss
+                    _sass/vendor/susy/_susy.scss
+                    _sass/vendor/susy/_susyone.scss
+                    _sass/_animations.scss
+                    _sass/_archive.scss
+                    _sass/_base.scss
+                    _sass/_buttons.scss
+                    _sass/_footer.scss
+                    _sass/_forms.scss
+                    _sass/_masthead.scss
+                    _sass/_mixins.scss
+                    _sass/_navigation.scss
+                    _sass/_notices.scss
+                    _sass/_page.scss
+                    _sass/_print.scss
+                    _sass/_reset.scss
+                    _sass/_sidebar.scss
+                    _sass/_syntax.scss
+                    _sass/_tables.scss
+                    _sass/_utilities.scss
+                    _sass/_variables.scss
+                    _talks/2012-03-01-talk-1.md
+                    _talks/2013-03-01-tutorial-1.md
+                    _talks/2014-02-01-talk-2.md
+                    _talks/2014-03-01-talk-3.md
+                    _teaching/2014-spring-teaching-1.md
+                    _teaching/2015-spring-teaching-2.md
+                    .github/ISSUE_TEMPLATE/bug_report.md
+                    .github/ISSUE_TEMPLATE/feature_request.md
+                    assets/css/academicons.css
+                    assets/css/academicons.min.css
+                    assets/css/collapse.css
+                    assets/css/main.scss
+                    assets/fonts/academicons.eot
+                    assets/fonts/academicons.svg
+                    assets/fonts/academicons.ttf
+                    assets/fonts/academicons.woff
+                    assets/js/collapse.js
+                    assets/js/main.min.js
+                    assets/js/pixel-cat-walker.js
+                    assets/webfonts/fa-brands-400.ttf
+                    assets/webfonts/fa-brands-400.woff2
+                    assets/webfonts/fa-regular-400.ttf
+                    assets/webfonts/fa-regular-400.woff2
+                    assets/webfonts/fa-solid-900.ttf
+                    assets/webfonts/fa-solid-900.woff2
+                    assets/webfonts/fa-v4compatibility.ttf
+                    assets/webfonts/fa-v4compatibility.woff2
+                    images/Pixel 8 position/previews/contact-sheet.png
+                    images/Pixel 8 position/previews/svgviewer-output (1).png
+                    images/Pixel 8 position/previews/svgviewer-output (2).png
+                    images/Pixel 8 position/previews/svgviewer-output (3).png
+                    images/Pixel 8 position/previews/svgviewer-output (4).png
+                    images/Pixel 8 position/previews/svgviewer-output (5).png
+                    images/Pixel 8 position/previews/svgviewer-output (6).png
+                    images/Pixel 8 position/previews/svgviewer-output (7).png
+                    images/Pixel 8 position/previews/svgviewer-output (main).png
+                    talkmap/leaflet_dist/leaflet.markercluster-src.js
+                    talkmap/leaflet_dist/leaflet.markercluster.js
+                    talkmap/leaflet_dist/MarkerCluster.css
+                    talkmap/leaflet_dist/MarkerCluster.Default.css
+                    talkmap/leaflet_dist/screen.css
+                    _data/comments/layout-comments/comment-1470944006665.yml
+                    _data/comments/layout-comments/comment-1470944162041.yml
+                    _data/comments/markup-syntax-highlighting/comment-1470969665387.yml
+                    _data/comments/welcome-to-jekyll/comment-1470942205700.yml
+                    _data/comments/welcome-to-jekyll/comment-1470942247755.yml
+                    _data/comments/welcome-to-jekyll/comment-1470942265819.yml
+                    _data/comments/welcome-to-jekyll/comment-1470942493518.yml
+                    _includes/analytics-providers/custom.html
+                    _includes/analytics-providers/google-analytics-4.html
+                    _includes/analytics-providers/google-universal.html
+                    _includes/analytics-providers/google.html
+                    _includes/comments-providers/custom.html
+                    _includes/comments-providers/discourse.html
+                    _includes/comments-providers/disqus.html
+                    _includes/comments-providers/facebook.html
+                    _includes/comments-providers/google-plus.html
+                    _includes/comments-providers/scripts.html
+                    _includes/comments-providers/staticman.html
+                    _includes/footer/custom.html
+                    .gitignore
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.581816 seconds.
+                    
+      Regenerating: 82 file(s) changed at 2026-03-20 23:42:48
+                    CONTRIBUTING.md
+                    files/paper1.pdf
+                    files/paper2.pdf
+                    files/paper3.pdf
+                    google90d6a294171dda5e.html
+                    images/3953273590_704e3899d5_m.jpg
+                    images/500x300.png
+                    images/bio-photo-2.jpg
+                    images/bio-photo.jpg
+                    images/browserconfig.xml
+                    images/cat-template-ref-2.png
+                    images/cat-template-ref.png
+                    images/Catalyst for Citizen Co-production_F2.jpg
+                    images/Comparison of Key Metrics Between BERT and Word2Vec Over Different Time Spans.png
+                    images/editing-talk.png
+                    images/Enhance_Figure1.png
+                    images/favicon.ico
+                    images/Figure 1 Analytical Framework.pdf
+                    images/Figure_PEARL.png
+                    images/foo-bar-identity-th.jpg
+                    images/foo-bar-identity.jpg
+                    images/HEAS_Plot1.png
+                    images/image-alignment-1200x4002.jpg
+                    images/image-alignment-150x150.jpg
+                    images/image-alignment-300x200.jpg
+                    images/image-alignment-580x300.jpg
+                    images/manifest.json
+                    images/Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure.png
+                    images/mstile-144x144.png
+                    images/mstile-150x150.png
+                    images/mstile-310x150.png
+                    images/mstile-310x310.png
+                    images/mstile-70x70.png
+                    images/New_Photo_1223.png
+                    images/Paired T-Test Results of Comparison of Civil Servant Perceptions.png
+                    images/paragraph-indent.png
+                    images/paragraph-no-indent.png
+                    images/pixel-cat.png
+                    images/pixel-cat.svg
+                    images/profile.png
+                    images/safari-pinned-tab.svg
+                    images/SE-VAE_Architecture_F1.png
+                    images/site-logo.png
+                    images/The Bifurcated Corporate Leadership under the DHA.jpg
+                    images/WechatIMG1721.png
+                    jekyll-serve.err.log
+                    jekyll-serve.log
+                    markdown_generator/publications.ipynb
+                    markdown_generator/publications.py
+                    markdown_generator/publications.tsv
+                    markdown_generator/PubsFromBib.ipynb
+                    markdown_generator/pubsFromBib.py
+                    markdown_generator/readme.md
+                    markdown_generator/talks.ipynb
+                    markdown_generator/talks.py
+                    markdown_generator/talks.tsv
+                    README.md
+                    sogousiteverification.txt
+                    talkmap/map.html
+                    talkmap/org-locations.js
+                    talkmap.ipynb
+                    talkmap.py
+                    _data/authors.yml
+                    _data/navigation.yml
+                    _data/ui-text.yml
+                    _drafts/post-draft.md
+                    _includes/analytics.html
+                    _includes/archive-single-cv.html
+                    _includes/archive-single-talk-cv.html
+                    _includes/archive-single-talk.html
+                    _includes/archive-single.html
+                    _includes/author-profile.html
+                    _includes/base_path
+                    _includes/breadcrumbs.html
+                    _includes/browser-upgrade.html
+                    _includes/category-list.html
+                    _includes/comment.html
+                    _includes/comments.html
+                    _includes/feature_row
+                    _includes/footer.html
+                    _includes/gallery
+                    _includes/group-by-array
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6926815 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:42:51
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+[2026-03-20 23:42:54] ERROR Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. @ io_fillbuf - fd:6 
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/httpserver.rb:82:in `eof?'
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/httpserver.rb:82:in `run'
+	C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/webrick-1.9.2/lib/webrick/server.rb:309:in `block in start_thread'
+                    ...done in 4.124137 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:42:56
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6928636 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:42:59
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6721299 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:03
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6157756 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:07
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 8.7151819 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:15
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 13.8654651 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:29
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.2248954 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:44
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.4278053 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:43:58
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.5698386 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:44:13
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.4175869 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:44:27
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.4709801 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:44:42
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 13.0508101 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:44:55
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7238706 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:44:58
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7011517 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:01
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6551824 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:03
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6650067 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:06
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6752242 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:09
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7201097 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:12
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6126133 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:14
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.620793 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:17
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6191847 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:20
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6848886 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:22
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6222836 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:25
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6639243 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:28
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6567902 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:30
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6951827 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:33
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6151219 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:36
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6412201 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:39
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6574692 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:41
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6695298 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:44
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6291307 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:47
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6876154 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:49
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.5523854 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:52
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6605277 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:55
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6485183 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:45:58
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.354175 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:01
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 4.4002341 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:05
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 4.1327981 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:10
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.7277111 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:13
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6340495 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:17
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5609503 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:21
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5244283 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:24
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5934965 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:28
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5088991 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:32
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6051784 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:35
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.4614919 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:39
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5284545 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:42
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6774011 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:46
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6137179 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:50
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5177831 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:53
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5768067 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:46:57
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5233138 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:01
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.518342 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:04
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6822728 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:08
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5470553 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:12
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6079513 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:15
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6875547 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:19
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5265191 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:22
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.4941985 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:26
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6045227 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:30
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5671672 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:33
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5332707 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:37
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6289834 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:41
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.540884 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:44
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.7320538 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:48
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6530839 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:47:52
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 9.6052653 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:01
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 15.0462219 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:17
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.9434054 seconds.
+                    
+      Regenerating: 2 file(s) changed at 2026-03-20 23:48:32
+                    jekyll-serve.log
+                    images/Pixel 8 position/svgviewer-output (main)-white.svg
+       Jekyll Feed: Generating feed for posts
+                    ...done in 14.9724138 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:47
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.8601007 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:49
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6710117 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:52
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7174156 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:55
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6963409 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:48:58
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7030181 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:01
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7408929 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:03
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7417264 seconds.
+                    
+      Regenerating: 2 file(s) changed at 2026-03-20 23:49:06
+                    jekyll-serve.log
+                    assets/js/pixel-cat-walker.js
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7234239 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:09
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7655795 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:12
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7357452 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:15
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6451556 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:17
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6839207 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:20
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6783255 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:23
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7227721 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:25
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6480626 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:28
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.7146561 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:31
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.6625508 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:34
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.80418 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:37
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.8310499 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:39
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6726108 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:43
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6898881 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:47
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5579267 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:51
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.7966792 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:54
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.6761242 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:49:58
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5968012 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2026-03-20 23:50:02
+                    jekyll-serve.log
+       Jekyll Feed: Generating feed for posts

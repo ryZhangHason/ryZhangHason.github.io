@@ -9,20 +9,26 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 3.10.0"
+gem "kramdown-parser-gfm"
 
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# `wdm` speeds up file watching on Windows, but older releases fail to build on
+# current RubyInstaller toolchains. Jekyll serves fine without it for local dev.
+gem "wdm", "~> 0.1.0", install_if: -> { false } if Gem.win_platform?
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
-  gem 'hawkins'
+  gem 'jekyll-gist'
+  gem 'jekyll-paginate'
+  gem 'jekyll-redirect-from'
   gem "webrick", "~> 1.8"
 end

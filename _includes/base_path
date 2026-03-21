@@ -1,5 +1,7 @@
 {% if site.url %}
   {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
+{% elsif site.github.url %}
   {% assign base_path = site.github.url %}
+{% else %}
+  {% assign base_path = site.baseurl | default: "" %}
 {% endif %}

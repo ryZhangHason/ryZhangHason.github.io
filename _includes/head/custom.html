@@ -23,6 +23,28 @@
 <meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<style>
+.pixel-cat-walker {
+  position: fixed;
+  width: 92px;
+  height: 92px;
+  left: 0;
+  top: 0;
+  z-index: 120;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform-origin: center center;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.16));
+}
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  .pixel-cat-walker {
+    display: none;
+  }
+}
+</style>
 
 
 <!-- Support for MatJax -->
