@@ -12,7 +12,7 @@
   const EDGE_PADDING = 18;
   const TOP_CLEARANCE = 110;
   const SPEED = 34;
-  const BOUNCE_PIXELS = 12;
+  const BOUNCE_PIXELS = 24;
   const PAUSE_MIN_MS = 500;
   const PAUSE_MAX_MS = 1500;
   const STOP_CHANCE = 0.0011;
