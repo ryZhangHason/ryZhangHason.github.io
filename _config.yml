@@ -137,15 +137,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          :
-
-visitor_analytics:
-  endpoint               :
-  admin_api_base         :
-  heartbeat_interval_ms  : 15000
-  session_timeout_ms     : 1800000
+    tracking_id          : # set your GA4 Measurement ID, for example G-XXXXXXXXXX
 
 
 # Reading Files
