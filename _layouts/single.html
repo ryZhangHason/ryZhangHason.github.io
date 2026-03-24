@@ -48,12 +48,12 @@ layout: default
         {{ content }}
 
         {% if page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}" data-ga4-event="file_download" data-ga4-content-type="{{ page.collection | default: 'content' }}" data-ga4-content-id="{{ page.url | default: page.id | default: page.title }}" data-ga4-content-name="{{ page.title | strip_html | escape_once }}" data-ga4-link-type="paper"><u>{{ page.paperurl }}</u></a></p>
         {% elsif page.citation %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }} </p>
         {% endif %}
 
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn" data-ga4-event="click" data-ga4-content-type="{{ page.collection | default: 'content' }}" data-ga4-content-id="{{ page.url | default: page.id | default: page.title }}" data-ga4-content-name="{{ page.title | strip_html | escape_once }}" data-ga4-link-type="direct_link">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
       <footer class="page__meta">
