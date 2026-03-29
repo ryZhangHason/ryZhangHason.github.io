@@ -1,0 +1,52 @@
+{% assign publication = include.publication %}
+{% assign publication_authors = publication.authors | default: "" %}
+{% assign citation_key = publication.citation_key | default: publication.slug | default: publication.title | slugify %}
+{% assign manual_bibtex = nil %}
+{% for collection in site.collections %}
+  {% if collection.label == 'bibtex' %}
+    {% for bib_entry in collection.docs %}
+      {% if bib_entry.key == citation_key %}
+        {% assign manual_bibtex = bib_entry %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if manual_bibtex %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if manual_bibtex and manual_bibtex.content != "" %}
+{{- manual_bibtex.content | strip_html | strip -}}
+{% else %}
+{% assign entry_type = publication.entry_type | default: 'article' %}
+{% assign container_title = publication.journal | default: publication.booktitle | default: publication.venue | default: site.title %}
+{% if publication.paperurl %}
+  {% if publication.paperurl contains '://' %}
+    {% assign publication_url = publication.paperurl %}
+  {% else %}
+    {% assign publication_url = publication.paperurl | prepend: site.url %}
+  {% endif %}
+{% else %}
+  {% assign publication_url = publication.url | prepend: site.url %}
+{% endif %}
+{% capture bibtex_output -%}
+@{{ entry_type }}{ {{ citation_key }},
+  title = { {{ publication.title | markdownify | strip_html | strip_newlines }} },
+  author = { {% if publication_authors != "" %}{% for author in publication_authors %}{{ author }}{% unless forloop.last %} and {% endunless %}{% endfor %}{% else %}{{ site.author.name }}{% endif %} },
+  {% if entry_type == 'inproceedings' or entry_type == 'incollection' or entry_type == 'conference' %}booktitle{% elsif entry_type == 'phdthesis' or entry_type == 'mastersthesis' %}school{% else %}journal{% endif %} = { {{ container_title }} },
+  year = { {{ publication.date | date: "%Y" }} }{% if publication.date %},
+  month = { {{ publication.date | date: "%b" | downcase }} }{% endif %}{% if publication.publisher %},
+  publisher = { {{ publication.publisher }} }{% endif %}{% if publication.volume %},
+  volume = { {{ publication.volume }} }{% endif %}{% if publication.number %},
+  number = { {{ publication.number }} }{% endif %}{% if publication.pages %},
+  pages = { {{ publication.pages }} }{% endif %}{% if publication.paperurl or publication.url %},
+  url = { {{ publication_url }} }{% endif %}{% if publication.arxiv %},
+  eprint = { {{ publication.arxiv | replace: 'https://arxiv.org/abs/', '' | replace: 'http://arxiv.org/abs/', '' | replace: 'arXiv:', '' }} },
+  archivePrefix = { arXiv }{% endif %}{% if publication.doi %},
+  doi = { {{ publication.doi }} }{% endif %}{% if publication.abstract %},
+  abstract = { {{ publication.abstract | markdownify | strip_html | strip_newlines }} }{% endif %}{% if publication.keywords %},
+  keywords = { {{ publication.keywords | join: ', ' }} }{% endif %}
+}
+{%- endcapture %}
+{{- bibtex_output | strip -}}
+{% endif %}

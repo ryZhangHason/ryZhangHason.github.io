@@ -26,7 +26,17 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.collection == 'publications' %}
+            <p class="publication-back-link"><a href="{{ base_path }}/#works">&larr; Back to home</a></p>
+          {% endif %}
+          {% if page.title %}
+            <div class="publication-heading publication-heading--single">
+              <h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+              {% if page.collection == 'publications' %}
+                {% include publication_cite_controls.html publication=page %}
+              {% endif %}
+            </div>
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
@@ -48,9 +58,9 @@ layout: default
         {{ content }}
 
         {% if page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}" data-ga4-event="file_download" data-ga4-content-type="{{ page.collection | default: 'content' }}" data-ga4-content-id="{{ page.url | default: page.id | default: page.title }}" data-ga4-content-name="{{ page.title | strip_html | escape_once }}" data-ga4-link-type="paper"><u>{{ page.paperurl }}</u></a></p>
+          <p style="font-size: smaller">Citation as: {{ page.citation }} <a href="{{ page.paperurl }}" data-ga4-event="file_download" data-ga4-content-type="{{ page.collection | default: 'content' }}" data-ga4-content-id="{{ page.url | default: page.id | default: page.title }}" data-ga4-content-name="{{ page.title | strip_html | escape_once }}" data-ga4-link-type="paper"><u>{{ page.paperurl }}</u></a></p>
         {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }} </p>
+          <p style="font-size: smaller">Citation as: {{ page.citation }} </p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn" data-ga4-event="click" data-ga4-content-type="{{ page.collection | default: 'content' }}" data-ga4-content-id="{{ page.url | default: page.id | default: page.title }}" data-ga4-content-name="{{ page.title | strip_html | escape_once }}" data-ga4-link-type="direct_link">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
@@ -63,7 +73,7 @@ layout: default
         {% include page__taxonomy.html %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
+      {% if page.share and page.collection != 'publications' %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
     </div>

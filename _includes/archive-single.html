@@ -26,36 +26,41 @@
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a
-          href="{{ post.link }}"
-          data-ga4-event="select_content"
-          data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
-          data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
-          data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
-          data-ga4-link-type="primary"
-        >{{ title }}</a> <a
-          href="{{ base_path }}{{ post.url }}"
-          rel="permalink"
-          data-ga4-event="select_content"
-          data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
-          data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
-          data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
-          data-ga4-link-type="permalink"
-        ><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a
-          href="{{ base_path }}{{ post.url }}"
-          rel="permalink"
-          data-ga4-event="select_content"
-          data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
-          data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
-          data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
-          data-ga4-link-type="permalink"
-        >{{ title }}</a>
+    <div class="publication-heading">
+      <h2 class="archive__item-title" itemprop="headline">
+        {% if post.link %}
+          <a
+            href="{{ post.link }}"
+            data-ga4-event="select_content"
+            data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
+            data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
+            data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
+            data-ga4-link-type="primary"
+          >{{ title }}</a> <a
+            href="{{ base_path }}{{ post.url }}"
+            rel="permalink"
+            data-ga4-event="select_content"
+            data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
+            data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
+            data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
+            data-ga4-link-type="permalink"
+          ><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a
+            href="{{ base_path }}{{ post.url }}"
+            rel="permalink"
+            data-ga4-event="select_content"
+            data-ga4-content-type="{{ post.collection | default: page.collection | default: 'content' }}"
+            data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}"
+            data-ga4-content-name="{{ post.title | strip_html | escape_once }}"
+            data-ga4-link-type="permalink"
+          >{{ title }}</a>
+        {% endif %}
+      </h2>
+      {% if post.collection == 'publications' %}
+        {% include publication_cite_controls.html publication=post %}
       {% endif %}
-    </h2>
+    </div>
     
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -76,9 +81,9 @@
     {% endif %}
     
     {% if post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}" data-ga4-event="file_download" data-ga4-content-type="{{ post.collection | default: 'publication' }}" data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}" data-ga4-content-name="{{ post.title | strip_html | escape_once }}" data-ga4-link-type="paper">{{ post.paperurl }}</a></p>
+      <p>Citation as: {{ post.citation }} <a href="{{ post.paperurl }}" data-ga4-event="file_download" data-ga4-content-type="{{ post.collection | default: 'publication' }}" data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}" data-ga4-content-name="{{ post.title | strip_html | escape_once }}" data-ga4-link-type="paper">{{ post.paperurl }}</a></p>
     {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }} </p>
+      <p>Citation as: {{ post.citation }} </p>
     {% elsif post.paperurl %}
       <p class="wordwrap">Download <a href=" {{ post.paperurl }} " data-ga4-event="file_download" data-ga4-content-type="{{ post.collection | default: 'publication' }}" data-ga4-content-id="{{ post.url | default: post.id | default: post.title }}" data-ga4-content-name="{{ post.title | strip_html | escape_once }}" data-ga4-link-type="paper">here</a></p>
     {% endif %}

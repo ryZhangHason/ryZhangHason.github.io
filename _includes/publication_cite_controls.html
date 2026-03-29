@@ -1,0 +1,75 @@
+{% assign publication = include.publication %}
+{% capture publication_bibtex %}
+{% include publication_bibtex.html publication=publication %}
+{% endcapture %}
+{% assign citation_key = publication.citation_key | default: publication.slug | default: publication.title | slugify %}
+{% assign publication_apa = site.data.generated_apa[citation_key] | default: "" %}
+{% assign modal_id = publication.url | default: publication.title | slugify | prepend: 'cite-' %}
+<div class="publication-cite" data-publication-cite>
+  <button
+    type="button"
+    class="btn btn--inverse btn--small publication-cite__trigger"
+    data-cite-open="{{ modal_id }}"
+    data-ga4-event="open_cite_modal"
+    data-ga4-content-type="{{ publication.collection | default: 'publication' }}"
+    data-ga4-content-id="{{ publication.url | default: publication.id | default: publication.title }}"
+    data-ga4-content-name="{{ publication.title | strip_html | escape_once }}"
+  >Cite</button>
+
+  <div class="publication-cite__modal" id="{{ modal_id }}" aria-hidden="true" hidden>
+    <div class="publication-cite__backdrop" data-cite-close></div>
+    <div class="publication-cite__dialog" role="dialog" aria-modal="true" aria-labelledby="{{ modal_id }}-title">
+      <button type="button" class="publication-cite__close" aria-label="Close citation dialog" data-cite-close>&times;</button>
+      <p class="publication-cite__eyebrow">Citation</p>
+      <h3 class="publication-cite__title" id="{{ modal_id }}-title">{{ publication.title }}</h3>
+      <p class="publication-cite__meta">
+        {% if publication.authors %}
+          {{ publication.authors | join: ", " }}
+        {% else %}
+          {{ site.author.name }}
+        {% endif %}
+        {% if publication.date %} · {{ publication.date | date: "%Y" }}{% endif %}
+        {% if publication.venue %} · {{ publication.venue }}{% endif %}
+      </p>
+      <div class="publication-cite__formats" role="tablist" aria-label="Citation formats">
+        <button type="button" class="publication-cite__format is-active" role="tab" aria-selected="true" data-cite-format-tab="apa">APA 7</button>
+        <button type="button" class="publication-cite__format" role="tab" aria-selected="false" data-cite-format-tab="bibtex">BibTeX</button>
+      </div>
+      <div class="publication-cite__panel" data-cite-format-panel="bibtex" data-citation-source="{{ modal_id }}-bibtex" hidden>
+        <pre class="publication-cite__code"><code>{{ publication_bibtex | strip | escape }}</code></pre>
+      </div>
+      <div class="publication-cite__panel is-active" data-cite-format-panel="apa" data-citation-source="{{ modal_id }}-apa">
+        <pre class="publication-cite__code publication-cite__code--plain"><code>{{ publication_apa | strip | escape }}</code></pre>
+      </div>
+      <script type="application/x-bibtex" id="{{ modal_id }}-bibtex">{{ publication_bibtex | strip }}</script>
+      <script type="application/x-apa" id="{{ modal_id }}-apa">{{ publication_apa | strip }}</script>
+      <div class="publication-cite__actions">
+        <button
+          type="button"
+          class="btn publication-cite__copy"
+          data-copy-citation
+          data-citation-format="apa"
+          data-copy-event="copy_apa7"
+          data-copy-label="Copy BibTeX"
+          data-copy-label-bibtex="Copy BibTeX"
+          data-copy-label-apa="Copy APA 7"
+          data-citation-source="{{ modal_id }}-apa"
+          data-ga4-content-type="{{ publication.collection | default: 'publication' }}"
+          data-ga4-content-id="{{ publication.url | default: publication.id | default: publication.title }}"
+          data-ga4-content-name="{{ publication.title | strip_html | escape_once }}"
+        >Copy APA 7</button>
+        {% if publication.paperurl %}
+          <a
+            href="{{ publication.paperurl }}"
+            class="btn btn--inverse publication-cite__paper"
+            data-ga4-event="file_download"
+            data-ga4-content-type="{{ publication.collection | default: 'publication' }}"
+            data-ga4-content-id="{{ publication.url | default: publication.id | default: publication.title }}"
+            data-ga4-content-name="{{ publication.title | strip_html | escape_once }}"
+            data-ga4-link-type="paper"
+          >Open Paper</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

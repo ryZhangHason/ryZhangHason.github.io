@@ -1,0 +1,8 @@
+{% assign publication = include.publication %}
+{% capture publication_bibtex %}
+{% include publication_bibtex.html publication=publication %}
+{% endcapture %}
+{% assign citation_key = publication.citation_key | default: publication.slug | default: publication.title | slugify %}
+{% assign publication_apa = site.data.generated_apa[citation_key] | default: "" %}
+{% assign modal_id = publication.url | default: publication.title | slugify | prepend: 'cite-' %}
+<span class="publication-cite publication-cite--inline" data-publication-cite><button type="button" class="btn btn--inverse btn--small publication-cite__trigger publication-cite__trigger--inline" data-cite-open="{{ modal_id }}" data-cite-title="{{ publication.title | strip_html | escape_once }}" data-cite-authors="{% if publication.authors %}{{ publication.authors | join: ', ' | escape_once }}{% else %}{{ site.author.name | escape_once }}{% endif %}" data-cite-year="{% if publication.date %}{{ publication.date | date: '%Y' }}{% endif %}" data-cite-venue="{{ publication.venue | default: publication.journal | escape_once }}" data-cite-paperurl="{{ publication.paperurl | escape_once }}" data-bibtex-source="{{ modal_id }}-bibtex" data-apa-source="{{ modal_id }}-apa" data-ga4-event="open_cite_modal" data-ga4-content-type="{{ publication.collection | default: 'publication' }}" data-ga4-content-id="{{ publication.url | default: publication.id | default: publication.title }}" data-ga4-content-name="{{ publication.title | strip_html | escape_once }}">Cite</button></span><script type="application/x-bibtex" id="{{ modal_id }}-bibtex">{{ publication_bibtex | strip }}</script><script type="application/x-apa" id="{{ modal_id }}-apa">{{ publication_apa | strip }}</script>

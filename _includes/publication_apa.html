@@ -1,0 +1,44 @@
+{% assign publication = include.publication %}
+{% if publication.authors %}
+  {% assign apa_authors = publication.authors %}
+{% else %}
+  {% assign apa_authors = site.author.name | split: '|||' %}
+{% endif %}
+{% assign container_title = publication.journal | default: publication.booktitle | default: publication.venue %}
+{% capture author_text -%}
+  {%- for author in apa_authors -%}
+    {%- assign author_parts = author | split: ' ' -%}
+    {%- assign surname = author_parts | last -%}
+    {%- capture initials -%}
+      {%- for part in author_parts -%}
+        {%- unless forloop.last -%}
+          {%- assign name_parts = part | split: '-' -%}
+          {%- for name_part in name_parts -%}
+            {{ name_part | slice: 0 }}.{% unless forloop.last %}-{% endunless %}
+          {%- endfor -%}
+          {% unless forloop.last %} {% endunless %}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {{ surname }}, {{ initials | strip }}{% if forloop.last == false and forloop.length == 2 %} & {% elsif forloop.last == false and forloop.rindex == 2 %}, & {% elsif forloop.last == false %}, {% endif %}
+  {%- endfor -%}
+{%- endcapture %}
+{% capture source_text -%}
+  {% if container_title != blank -%}
+    {{- container_title -}}
+    {%- if publication.volume %}, {{ publication.volume }}{% endif -%}
+    {%- if publication.number %}({{ publication.number }}){% endif -%}
+    {%- if publication.pages %}, {{ publication.pages }}{% endif -%}.
+  {%- endif %}
+{%- endcapture %}
+{% capture link_text -%}
+  {% if publication.doi -%}
+    https://doi.org/{{ publication.doi }}
+  {%- elsif publication.paperurl -%}
+    {{ publication.paperurl }}
+  {%- endif %}
+{%- endcapture %}
+{% capture apa_output -%}
+{{ author_text | strip }}{% if publication.date %} ({{ publication.date | date: "%Y" }}).{% endif %} {{ publication.title | markdownify | strip_html | strip_newlines }}. {% if source_text != blank %}{{ source_text | strip }} {% endif %}{% if link_text != blank %}{{ link_text | strip }}{% endif %}
+{%- endcapture %}
+{{ apa_output | strip_newlines | replace: '  ', ' ' | replace: '  ', ' ' | strip }}

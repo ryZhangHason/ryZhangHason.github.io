@@ -97,6 +97,14 @@ redirect_from:
 
   <!-- LEFT CELL: main text -->
   <div class="main-text-content" markdown="1">
+{% assign ai_communication_paper = site.publications | where: "permalink", "/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens" | first %}
+{% assign pearl_paper = site.publications | where: "permalink", "/publication/2026-01-01-pearl-prototype-enhanced-alignment" | first %}
+{% assign heas_paper = site.publications | where: "permalink", "/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework" | first %}
+{% assign se_vae_paper = site.publications | where: "permalink", "/publication/2025-01-01-structural-equation-vae" | first %}
+{% assign sme_sustainability_paper = site.publications | where: "permalink", "/publication/2025-01-01-sustainability-of-smes-in-hong-kong" | first %}
+{% assign eco_efficiency_paper = site.publications | where: "permalink", "/publication/2025-01-01-eco-efficiency-as-a-catalyst-for-citizen-co-production" | first %}
+{% assign cadres_managers_paper = site.publications | where: "permalink", "/publication/2024-01-01-from-cadres-to-managers" | first %}
+{% assign semantic_consistency_paper = site.publications | where: "permalink", "/publication/2024-01-01-achieving-semantic-consistency" | first %}
 
 I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
 
@@ -104,7 +112,7 @@ Works
 ------
 <a name="ai-communication"></a>
 
- - "**Enhancing Communication Quality between Government and Citizens: The Role of AI Modification**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986)
+ - **Enhancing Communication Quality between Government and Citizens: The Role of AI Modification** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986) {% include publication_cite_inline.html publication=ai_communication_paper %}
 
 Our study integrates critical AI scholarship with relational communication theories to explain how AI language modifications shape the quality of government–citizen communication. Distinguishing between informational-cognitive quality (clarity, ease of response) and expressive-constitutive quality (politeness, respectfulness, feeling heard, trust, urgency, empathy), we hypothesize that AI yields uncontested benefits for the former but contested effects for the latter, potentially enhancing relational markers while muting authentic emotional cues. Using a vignette-based survey with 220 citizens and 214 civil servants in China, we assess perceptions across five interaction contexts: service requests, policy inquiries, complaints, suggestions, and emergencies. Results from paired t-tests and mixed-effects regressions support the claim that AI enhances both informational-cognitive and expressive-constitutive quality from the perspectives of citizens and civil servants, with significant improvements in clarity, politeness, satisfaction, trust, and empathy, but provide no consistent evidence of urgency or empathy signals. These findings suggest that concerns over algorithmic emotional flattening may be overstated or context-specific.
 
@@ -120,7 +128,7 @@ Our study integrates critical AI scholarship with relational communication theor
 ---
 <a name="pearl"></a>
 
- - "**PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning with Deployment-Driven Insights from Digital Governance Communication Systems**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599), Qihao Wang, Xin Zhao). *Preprint*. 2026. Available at [arXiv](https://arxiv.org/abs/2601.17495)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6130326)
+ - **PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning with Deployment-Driven Insights from Digital Governance Communication Systems** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599), Qihao Wang, Xin Zhao). *Preprint*. 2026. Available at [arXiv](https://arxiv.org/abs/2601.17495)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6130326) {% include publication_cite_inline.html publication=pearl_paper %}
 
 We study deployed systems where new text inputs are routed by retrieving similar past cases—such as citizen messages in digital governance platforms. When this fails, the issue is often poorly aligned embedding neighborhoods rather than the language model itself. We propose PEARL (Prototype-Enhanced Aligned Representation Learning), a label-efficient method that softly aligns embeddings toward class prototypes to improve local neighborhood structure without changing dimensionality or requiring heavy retraining. Our approach bridges the gap between unsupervised post-processing and fully supervised projection, and yields strong gains precisely in the label-scarce settings where similarity-based systems are most brittle.
 
@@ -143,7 +151,7 @@ For full documentation and tutorials, visit the [PEARL project page](https://pyp
 
 <a name="heas"></a>
 
- - "**HEAS: Hierarchical Evolutionary Agent Simulation Framework for Cross-Scale Modeling and Multi-Objective Search**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.15555)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5400479)
+ - **HEAS: Hierarchical Evolutionary Agent Simulation Framework for Cross-Scale Modeling and Multi-Objective Search** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.15555)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5400479) {% include publication_cite_inline.html publication=heas_paper %}
 
 We developed HEAS (Hierarchical Evolutionary Agent Simulation) as a framework to combine layered agent-based modeling with evolutionary optimization. In HEAS, models are expressed as modular “streams” scheduled in layers that read and write to a shared context, making cross-scale feedbacks—from environment to groups, agents, and aggregators—explicit and transparent. With a simple API (simulate, optimize, evaluate), HEAS supports multi-objective search (e.g., NSGA-II), reproducible tournament evaluation, and PyTorch integration for policy learning, enabling researchers to build, compare, and extend simulations across ecological, organizational, and policy domains. 
 
@@ -168,7 +176,7 @@ We also developed a lightweight web app to explore HEAS with an interactive tool
 
 <a name="se-vae"></a>
 
- - "**Structural Equation-VAE: Disentangled Latent Representations for Tabular Data**" (with Ce Zhao, Xin Zhao, [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208)
+ - **Structural Equation-VAE: Disentangled Latent Representations for Tabular Data** (with Ce Zhao, Xin Zhao, [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2508.06347)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384208) {% include publication_cite_inline.html publication=se_vae_paper %}
 
 In our work on representation learning for structured data, we tackle the persistent challenge of aligning latent variables with theory-driven constructs. Drawing inspiration from structural equation modeling, we designed SE-VAE (Structural Equation-Variational Autoencoder) to embed measurement structure directly into a variational autoencoder, separating construct-specific signals from global nuisance variation. Evaluated on simulated tabular datasets, SE-VAE consistently recovered underlying factors more accurately and robustly than leading baselines, offering a principled framework for interpretable generative modeling in scientific and social research. 
 
@@ -191,7 +199,7 @@ For full documentation and tutorials, visit the [SE-VAE project page](https://py
 
 <a name="sme-sustainability"></a>
 
- - "**Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207)
+ - **Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207) {% include publication_cite_inline.html publication=sme_sustainability_paper %}
 
 Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
 
@@ -208,7 +216,7 @@ Our study examines what drives small and medium-sized enterprises (SMEs) to adop
 
 <a name="eco-efficiency"></a>
 
- - "**Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2504.13290)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5220860)
+ - **Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2504.13290)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5220860) {% include publication_cite_inline.html publication=eco_efficiency_paper %}
 
 In our study, we explored the relationship between eco-efficiency and the local governments' engagement in collaborative environmental governance with citizens. By analyzing provincial-level data from China and employing advanced textual analysis methods, our findings reveal that localities with higher eco-efficiency are significantly more likely to adopt co-productive responses to environmental complaints.
 
@@ -226,7 +234,7 @@ In our study, we explored the relationship between eco-efficiency and the local 
 
 <a name="cadres-managers"></a>
 
- - "**From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform**" (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599)). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481)
+ - **From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform** (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599)). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481) {% include publication_cite_inline.html publication=cadres_managers_paper %}
 
 Our study delved into the transformative ambitions of the double-hundred action programme, a reform designed to modernize China’s state-owned enterprises by expanding the pool of top executive talent beyond traditional cadres. Through extensive fieldwork and detailed ethnography at a selected enterprise, we explored how this policy is reshaping recruitment, performance evaluation, and remuneration practices. While our findings highlight strong support for the initiative and notable shifts in organizational dynamics, they also reveal that traditional influences endure, particularly in key board appointments. This work deepens our understanding of the delicate balance between progressive reform and longstanding institutional practices.
 
@@ -243,7 +251,7 @@ Our study delved into the transformative ambitions of the double-hundred action 
 
 <a name="semantic-consistency"></a>
 
- - "**Achieving Semantic Consistency: Contextualized Word Representations for Political Text Analysis**" (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), Ce Zhao, Qingyang Chen). *Preprint*. 2024. Available at [arXiv](https://arxiv.org/abs/2412.04505)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698)
+ - **Achieving Semantic Consistency: Contextualized Word Representations for Political Text Analysis** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), Ce Zhao, Qingyang Chen). *Preprint*. 2024. Available at [arXiv](https://arxiv.org/abs/2412.04505)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5043698) {% include publication_cite_inline.html publication=semantic_consistency_paper %}
 
 In our exploration of political text analysis, we set out to address the challenge of maintaining semantic stability over time. By comparing traditional static embeddings with contextual models using two decades of People’s Daily articles, our research evaluated how well each approach captures both enduring meanings and subtle semantic shifts. The results indicate that contextual models not only provide greater semantic consistency but also detect nuanced variations that static methods often miss.   
 
@@ -266,14 +274,14 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
   <div class="publications-sidebar">
     <h3>Publications</h3>
     <ul>
-      <li><a href="#ai-communication">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
-      <li><a href="#pearl">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
-      <li><a href="#heas">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
-      <li><a href="#se-vae">Structural Equation-VAE</a> (2025)</li>
-      <li><a href="#sme-sustainability">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
-      <li><a href="#eco-efficiency">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
-      <li><a href="#cadres-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
-      <li><a href="#semantic-consistency">Contextualized Word Representations for Political Text Analysis</a> (2024)</li>
+      <li><a href="/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
+      <li><a href="/publication/2026-01-01-pearl-prototype-enhanced-alignment">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
+      <li><a href="/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
+      <li><a href="/publication/2025-01-01-structural-equation-vae">Structural Equation-VAE</a> (2025)</li>
+      <li><a href="/publication/2025-01-01-sustainability-of-smes-in-hong-kong">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
+      <li><a href="/publication/2025-01-01-eco-efficiency-as-a-catalyst-for-citizen-co-production">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
+      <li><a href="/publication/2024-01-01-from-cadres-to-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
+      <li><a href="/publication/2024-01-01-achieving-semantic-consistency">Contextualized Word Representations for Political Text Analysis</a> (2024)</li>
     </ul>
   </div> <!-- end of publications-sidebar -->
 

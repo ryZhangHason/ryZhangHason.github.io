@@ -1,0 +1,127 @@
+{% assign publication = include.publication %}
+{% assign canonical_url = publication.url | prepend: site.url %}
+{% assign publication_authors = publication.authors | default: "" %}
+{% assign publication_url = publication.paperurl | default: canonical_url %}
+{% assign publication_type = publication.entry_type | default: 'article' %}
+{% assign container_title = publication.journal | default: publication.booktitle | default: publication.venue %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": {{ canonical_url | jsonify }},
+  "headline": {{ publication.title | markdownify | strip_html | strip_newlines | jsonify }},
+  "name": {{ publication.title | markdownify | strip_html | strip_newlines | jsonify }},
+  "datePublished": {{ publication.date | date: "%Y-%m-%d" | jsonify }},
+  "mainEntityOfPage": {{ canonical_url | jsonify }},
+  "url": {{ publication_url | jsonify }},
+  {% if publication.excerpt %}
+  "description": {{ publication.excerpt | markdownify | strip_html | strip_newlines | jsonify }},
+  {% endif %}
+  {% if publication.abstract %}
+  "abstract": {{ publication.abstract | markdownify | strip_html | strip_newlines | jsonify }},
+  {% endif %}
+  "author": [
+    {% if publication_authors != "" %}
+      {% for author in publication_authors %}
+      {
+        "@type": "Person",
+        "name": {{ author | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% else %}
+      {
+        "@type": "Person",
+        "name": {{ site.author.name | jsonify }}
+      }
+    {% endif %}
+  ]{% if publication.keywords %},
+  "keywords": {{ publication.keywords | jsonify }}{% endif %}{% if publication.paperurl or publication.arxiv or publication.doi %},
+  "identifier": [
+    {% assign has_previous_identifier = false %}
+    {% if publication.arxiv %}
+      {
+        "@type": "PropertyValue",
+        "propertyID": "arXiv",
+        "value": {{ publication.arxiv | replace: 'https://arxiv.org/abs/', '' | replace: 'http://arxiv.org/abs/', '' | replace: 'arXiv:', '' | jsonify }},
+        "url": {{ publication.arxiv | jsonify }}
+      }{% assign has_previous_identifier = true %}
+    {% endif %}
+    {% if publication.doi %}
+      {% if has_previous_identifier %},{% endif %}
+      {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": {{ publication.doi | jsonify }},
+        "url": {{ publication.doi | prepend: 'https://doi.org/' | jsonify }}
+      }{% assign has_previous_identifier = true %}
+    {% endif %}
+    {% if publication.paperurl %}
+      {% if has_previous_identifier %},{% endif %}
+      {
+        "@type": "PropertyValue",
+        "propertyID": "URL",
+        "value": {{ publication.paperurl | jsonify }}
+      }
+    {% endif %}
+  ]{% endif %}{% if container_title %},
+  "isPartOf": {
+    "@type": "{% if publication_type == 'inproceedings' or publication_type == 'conference' %}PublicationEvent{% elsif publication_type == 'phdthesis' or publication_type == 'mastersthesis' %}CollegeOrUniversity{% else %}Periodical{% endif %}",
+    "name": {{ container_title | jsonify }}
+  }{% endif %}{% if publication.publisher %},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ publication.publisher | jsonify }}
+  }{% endif %}{% if publication.volume %},
+  "volumeNumber": {{ publication.volume | jsonify }}{% endif %}{% if publication.number %},
+  "issueNumber": {{ publication.number | jsonify }}{% endif %}{% if publication.pages %},
+  "pagination": {{ publication.pages | jsonify }}{% endif %}{% if publication.paperurl or publication.arxiv or publication.doi %},
+  "sameAs": [
+    {% assign has_previous_link = false %}
+    {% if publication.paperurl %}
+      {{ publication.paperurl | jsonify }}{% assign has_previous_link = true %}
+    {% endif %}
+    {% if publication.arxiv %}
+      {% if has_previous_link %},{% endif %}
+      {{ publication.arxiv | jsonify }}{% assign has_previous_link = true %}
+    {% endif %}
+    {% if publication.doi %}
+      {% if has_previous_link %},{% endif %}
+      {{ publication.doi | prepend: 'https://doi.org/' | jsonify }}
+    {% endif %}
+  ]{% endif %}
+}
+</script>
+{% capture publication_bibtex %}
+{% include publication_bibtex.html publication=publication %}
+{% endcapture %}
+<meta name="citation_title" content="{{ publication.title | markdownify | strip_html | strip_newlines | escape_once }}">
+{% if publication_authors != "" %}
+  {% for author in publication_authors %}
+<meta name="citation_author" content="{{ author | escape_once }}">
+  {% endfor %}
+{% else %}
+<meta name="citation_author" content="{{ site.author.name | escape_once }}">
+{% endif %}
+<meta name="citation_publication_date" content="{{ publication.date | date: '%Y/%m/%d' }}">
+<meta name="citation_date" content="{{ publication.date | date: '%Y/%m/%d' }}">
+{% if publication.entry_type == 'inproceedings' or publication.entry_type == 'conference' %}
+  {% if publication.booktitle or publication.venue %}<meta name="citation_conference_title" content="{{ publication.booktitle | default: publication.venue | escape_once }}">{% endif %}
+{% elsif publication.entry_type == 'phdthesis' or publication.entry_type == 'mastersthesis' %}
+  {% if publication.school or publication.venue %}<meta name="citation_dissertation_institution" content="{{ publication.school | default: publication.venue | escape_once }}">{% endif %}
+{% else %}
+  {% if publication.journal or publication.venue %}<meta name="citation_journal_title" content="{{ publication.journal | default: publication.venue | escape_once }}">{% endif %}
+{% endif %}
+{% if publication.publisher %}<meta name="citation_publisher" content="{{ publication.publisher | escape_once }}">{% endif %}
+{% if publication.volume %}<meta name="citation_volume" content="{{ publication.volume | escape_once }}">{% endif %}
+{% if publication.number %}<meta name="citation_issue" content="{{ publication.number | escape_once }}">{% endif %}
+{% if publication.pages %}
+  {% assign page_parts = publication.pages | split: '--' %}
+  {% if page_parts.size == 1 %}{% assign page_parts = publication.pages | split: '-' %}{% endif %}
+  {% if page_parts.first %}<meta name="citation_firstpage" content="{{ page_parts.first | strip | escape_once }}">{% endif %}
+  {% if page_parts.size > 1 %}<meta name="citation_lastpage" content="{{ page_parts.last | strip | escape_once }}">{% endif %}
+{% endif %}
+{% if publication.paperurl and publication.paperurl contains '.pdf' %}<meta name="citation_pdf_url" content="{{ publication.paperurl | escape_once }}">{% endif %}
+{% if publication.arxiv %}<meta name="citation_arxiv_id" content="{{ publication.arxiv | replace: 'https://arxiv.org/abs/', '' | replace: 'http://arxiv.org/abs/', '' | replace: 'arXiv:', '' | escape_once }}">{% endif %}
+{% if publication.doi %}<meta name="citation_doi" content="{{ publication.doi | escape_once }}">{% endif %}
+<meta name="citation_abstract_html_url" content="{{ canonical_url | escape_once }}">
+<meta name="citation_bibtex" content="{{ publication_bibtex | strip | strip_newlines | escape_once }}">
