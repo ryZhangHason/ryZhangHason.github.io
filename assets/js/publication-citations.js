@@ -43,6 +43,18 @@
     return (text || "").replace(/\s+/g, " ").trim();
   }
 
+  function decodeHtmlEntities(text) {
+    var textarea;
+
+    if (!text || text.indexOf("&") === -1) {
+      return text || "";
+    }
+
+    textarea = document.createElement("textarea");
+    textarea.innerHTML = text;
+    return textarea.value;
+  }
+
   function stripOuterBraces(value) {
     var output = normalizeText(value);
 
@@ -423,7 +435,7 @@
     var bibtexSource = bibtexSourceId ? document.getElementById(bibtexSourceId) : null;
     var apaSource = apaSourceId ? document.getElementById(apaSourceId) : null;
     var bibtex = bibtexSource ? bibtexSource.textContent : "";
-    var apa = apaSource ? apaSource.textContent : "";
+    var apa = apaSource ? decodeHtmlEntities(apaSource.textContent) : "";
     var meta = [];
     var title = trigger.getAttribute("data-cite-title") || "";
     var authors = trigger.getAttribute("data-cite-authors") || "";
@@ -452,7 +464,7 @@
     bibtexPanel.setAttribute("data-citation-source", "");
     bibtexPanel.setAttribute("data-citation-inline", bibtex);
     if (!apa && bibtex) {
-      apa = bibtexToApa(bibtex) || normalizeText(bibtex);
+      apa = decodeHtmlEntities(bibtexToApa(bibtex) || normalizeText(bibtex));
     }
     apaPanel.querySelector("code").textContent = apa;
     apaPanel.setAttribute("data-citation-source", "");
