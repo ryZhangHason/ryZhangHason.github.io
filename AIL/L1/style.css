@@ -1,46 +1,118 @@
-/* Lesson 01 deck
- * Light teaching style tuned for long-form explanation and presenter mode.
+/* Lesson 01 deck — academic style
+ * EB Garamond (italic serif) headings, restrained single-accent palette,
+ * clean white/cream backgrounds, subtle entrance animations.
  */
 
-.tpl-lesson-01 .slide {
-  padding: 68px 84px 74px;
-  background:
-    radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
-    linear-gradient(180deg, color-mix(in srgb, var(--bg) 96%, white) 0%, var(--bg) 100%);
-  font-size: 18px;
+/* === ENTRANCE ANIMATIONS === */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
+.slide.is-active .card,
+.slide.is-active .agenda-row,
+.slide.is-active .ladder-step,
+.slide.is-active .takeaway,
+.slide.is-active .hero-note,
+.slide.is-active .prompt-box,
+.slide.is-active .compare-table,
+.slide.is-active .glossary .card {
+  animation: fadeUpIn 0.45s var(--ease) both;
+}
+
+.slide.is-active .card:nth-child(2),
+.slide.is-active .agenda-row:nth-child(2),
+.slide.is-active .ladder-step:nth-child(2),
+.slide.is-active .takeaway:nth-child(2) { animation-delay: 0.08s; }
+
+.slide.is-active .card:nth-child(3),
+.slide.is-active .agenda-row:nth-child(3),
+.slide.is-active .ladder-step:nth-child(3),
+.slide.is-active .takeaway:nth-child(3) { animation-delay: 0.16s; }
+
+.slide.is-active .card:nth-child(4),
+.slide.is-active .agenda-row:nth-child(4),
+.slide.is-active .ladder-step:nth-child(4),
+.slide.is-active .takeaway:nth-child(4) { animation-delay: 0.24s; }
+
+.slide.is-active .card:nth-child(5),
+.slide.is-active .agenda-row:nth-child(5),
+.slide.is-active .ladder-step:nth-child(5),
+.slide.is-active .takeaway:nth-child(5) { animation-delay: 0.32s; }
+
+.slide.is-active .card:nth-child(6),
+.slide.is-active .agenda-row:nth-child(6),
+.slide.is-active .ladder-step:nth-child(6) { animation-delay: 0.40s; }
+
+.slide.is-active .diagram-shell {
+  animation: fadeIn 0.5s var(--ease) 0.06s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .card,
+  .slide.is-active .agenda-row,
+  .slide.is-active .ladder-step,
+  .slide.is-active .takeaway,
+  .slide.is-active .hero-note,
+  .slide.is-active .prompt-box,
+  .slide.is-active .compare-table,
+  .slide.is-active .diagram-shell,
+  .slide.is-active .glossary .card { animation: none; }
+}
+
+/* === SLIDE BASE === */
+.tpl-lesson-01 .slide {
+  padding: clamp(44px, 5.5vh, 72px) clamp(52px, 6.5vw, 92px) clamp(44px, 5.5vh, 74px);
+  background: var(--bg);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-family: var(--font-sans);
+}
+
+/* === TYPOGRAPHY === */
 .tpl-lesson-01 .kicker {
-  margin: 0 0 18px;
-  font-family: var(--font-mono, monospace);
-  font-size: 14px;
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 0.85vw, 13px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: var(--accent-2);
 }
 
 .tpl-lesson-01 .h1 {
-  margin: 0 0 18px;
-  font-size: clamp(54px, 6vw, 88px);
-  line-height: 1.07;
-  letter-spacing: -0.035em;
-  max-width: 14ch;
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6.5vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-style: italic;
+  max-width: 16ch;
+  color: var(--text-1);
 }
 
 .tpl-lesson-01 .h2 {
-  margin: 0 0 18px;
-  font-size: clamp(38px, 4vw, 56px);
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
   line-height: 1.15;
-  letter-spacing: -0.025em;
-  max-width: 16ch;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  font-style: italic;
+  max-width: 22ch;
+  color: var(--text-1);
 }
 
 .tpl-lesson-01 .lede {
   max-width: 58rem;
   margin: 0;
-  font-size: 24px;
-  line-height: 1.55;
+  font-size: clamp(18px, 1.5vw, 24px);
+  line-height: 1.6;
   color: var(--text-2);
+  font-family: var(--font-serif);
 }
 
 .tpl-lesson-01 .accent {
@@ -49,38 +121,44 @@
 }
 
 .tpl-lesson-01 .mono {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono);
 }
 
+/* === PILLS === */
 .tpl-lesson-01 .pill-row,
 .tpl-lesson-01 .chip-row {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .tpl-lesson-01 .pill,
 .tpl-lesson-01 .chip {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 8px 14px;
-  background: color-mix(in srgb, var(--surface) 88%, white);
-  color: var(--text-2);
-  font-size: 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--accent);
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
 }
 
+/* === HERO NOTE === */
 .tpl-lesson-01 .hero-note {
-  margin-top: 30px;
+  margin-top: clamp(18px, 2vh, 30px);
   max-width: 58rem;
-  padding: 16px 20px;
-  border-left: 4px solid var(--accent);
-  background: color-mix(in srgb, var(--surface) 92%, white);
+  padding: clamp(12px, 1.3vh, 18px) 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
   color: var(--text-2);
-  line-height: 1.6;
-  font-size: 21px;
+  line-height: 1.65;
+  font-size: clamp(16px, 1.4vw, 21px);
+  font-family: var(--font-serif);
 }
 
+/* === SPEAKER === */
 .tpl-lesson-01 .speaker {
   display: flex;
   align-items: center;
@@ -89,47 +167,34 @@
 }
 
 .tpl-lesson-01 .speaker .av {
-  width: 42px;
-  height: 42px;
+  width: 40px; height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 35%, white));
+  background: var(--accent);
 }
 
-.tpl-lesson-01 .speaker b {
-  display: block;
-  font-size: 16px;
-}
+.tpl-lesson-01 .speaker b { display: block; font-size: 16px; }
+.tpl-lesson-01 .speaker span { color: var(--text-3); font-size: 13px; }
 
-.tpl-lesson-01 .speaker span {
-  color: var(--text-3);
-  font-size: 13px;
-}
-
-.tpl-lesson-01 .grid {
-  display: grid;
-  gap: 18px;
-}
-
-.tpl-lesson-01 .g2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.tpl-lesson-01 .g3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+/* === GRIDS & CARDS === */
+.tpl-lesson-01 .grid { display: grid; gap: 16px; }
+.tpl-lesson-01 .g2 { grid-template-columns: 1fr 1fr; }
+.tpl-lesson-01 .g3 { grid-template-columns: repeat(3, 1fr); }
 
 .tpl-lesson-01 .card {
-  padding: 22px 22px 20px;
-  border-radius: 18px;
+  padding: clamp(14px, 1.5vh, 22px) clamp(16px, 1.6vw, 22px);
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 90%, white);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
-.tpl-lesson-01 .card h4,
-.tpl-lesson-01 .card h3 {
-  margin: 0 0 10px;
-  font-size: 22px;
+.tpl-lesson-01 .card h3,
+.tpl-lesson-01 .card h4 {
+  margin: 0 0 8px;
+  font-size: clamp(17px, 1.4vw, 21px);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
   color: var(--text-1);
 }
 
@@ -137,19 +202,21 @@
 .tpl-lesson-01 .card li {
   margin: 0;
   color: var(--text-2);
-  font-size: 18px;
+  font-size: clamp(14px, 1.1vw, 17px);
   line-height: 1.6;
+  font-family: var(--font-serif);
 }
 
 .tpl-lesson-01 .card ul {
-  margin: 12px 0 0 18px;
+  margin: 10px 0 0 18px;
   padding: 0;
 }
 
+/* === AGENDA === */
 .tpl-lesson-01 .agenda {
   display: grid;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .tpl-lesson-01 .agenda-row {
@@ -157,34 +224,39 @@
   grid-template-columns: 56px 1fr auto;
   gap: 16px;
   align-items: center;
-  padding: 14px 18px;
+  padding: clamp(10px, 1.1vh, 15px) 18px;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--surface) 90%, white);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .tpl-lesson-01 .agenda-row .num,
 .tpl-lesson-01 .ladder-step .num,
 .tpl-lesson-01 .compare-table .tag {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono);
   font-weight: 700;
   color: var(--accent);
 }
 
 .tpl-lesson-01 .agenda-row .t {
-  font-size: 21px;
+  font-size: clamp(16px, 1.3vw, 20px);
   color: var(--text-1);
+  font-family: var(--font-serif);
 }
 
 .tpl-lesson-01 .agenda-row .d {
   color: var(--text-3);
-  font-size: 15px;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-family: var(--font-mono);
 }
 
+/* === LADDER / STAIRCASE === */
 .tpl-lesson-01 .ladder {
   display: grid;
-  gap: 12px;
-  margin-top: 26px;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .tpl-lesson-01 .ladder-step {
@@ -192,197 +264,185 @@
   grid-template-columns: 50px 1.1fr 1.7fr;
   gap: 16px;
   align-items: start;
-  padding: 14px 18px;
+  padding: clamp(10px, 1.1vh, 15px) 18px;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--surface) 90%, white);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .tpl-lesson-01 .ladder-step strong {
   display: block;
-  font-size: 22px;
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-family: var(--font-display);
+  font-style: italic;
   color: var(--text-1);
 }
 
 .tpl-lesson-01 .ladder-step p {
-  margin: 4px 0 0;
-  font-size: 17px;
-  line-height: 1.6;
+  margin: 3px 0 0;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.55;
   color: var(--text-2);
+  font-family: var(--font-serif);
 }
 
+/* === COMPARE TABLE === */
 .tpl-lesson-01 .split-note {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 20px;
   align-items: start;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .tpl-lesson-01 .compare-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 24px;
-  background: color-mix(in srgb, var(--surface) 92%, white);
+  margin-top: 22px;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .tpl-lesson-01 .compare-table th,
 .tpl-lesson-01 .compare-table td {
-  padding: 14px 16px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border);
   text-align: left;
   vertical-align: top;
+  font-family: var(--font-serif);
 }
 
 .tpl-lesson-01 .compare-table th {
   color: var(--text-1);
-  background: color-mix(in srgb, var(--surface) 86%, white);
+  background: var(--bg-soft);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(15px, 1.2vw, 18px);
 }
 
 .tpl-lesson-01 .compare-table td {
   color: var(--text-2);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.55;
 }
 
-.tpl-lesson-01 .compare-table tr:last-child td {
-  border-bottom: none;
-}
+.tpl-lesson-01 .compare-table tr:last-child td { border-bottom: none; }
 
+/* === DIAGRAM SHELL === */
 .tpl-lesson-01 .diagram-shell {
-  margin-top: 28px;
-  padding: 24px;
-  border-radius: 20px;
+  margin-top: clamp(14px, 1.8vh, 26px);
+  padding: clamp(14px, 1.6vh, 24px);
+  border-radius: 8px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, white), color-mix(in srgb, var(--surface) 82%, white));
+  background: var(--bg-soft);
 }
 
 .tpl-lesson-01 .neural-shell,
 .tpl-lesson-01 .token-shell,
-.tpl-lesson-01 .loop-shell {
-  padding: 24px 24px 18px;
-}
+.tpl-lesson-01 .loop-shell { padding: 22px 22px 16px; }
 
+/* === SVG ELEMENTS === */
 .tpl-lesson-01 .nn-svg,
 .tpl-lesson-01 .token-svg,
 .tpl-lesson-01 .loop-svg,
 .tpl-lesson-01 .stack-svg {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 100%; height: auto; display: block;
 }
 
 .tpl-lesson-01 .nn-links line {
-  stroke: color-mix(in srgb, var(--accent) 28%, #a8b8d8);
-  stroke-width: 3;
+  stroke: color-mix(in srgb, var(--accent) 25%, #c0c8d4);
+  stroke-width: 2.5;
 }
 
 .tpl-lesson-01 .nn-layer circle {
   fill: url(#nnGrad);
   stroke: white;
-  stroke-width: 6;
+  stroke-width: 5;
 }
 
 .tpl-lesson-01 .nn-layer .nn-output {
-  fill: color-mix(in srgb, var(--accent) 75%, #7dd3fc);
+  fill: var(--accent);
 }
 
 .tpl-lesson-01 .nn-labels text {
-  font-size: 24px;
-  font-weight: 700;
-  fill: var(--text-1);
+  font-size: 22px;
+  font-weight: 600;
+  fill: var(--text-2);
   text-anchor: middle;
+  font-family: var(--font-mono);
+  font-style: normal;
 }
 
 .tpl-lesson-01 .mini-legend {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 10px;
   color: var(--text-3);
-  font-size: 15px;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-family: var(--font-mono);
 }
 
 .tpl-lesson-01 .mini-legend span {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 86%, white);
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: var(--surface);
   border: 1px solid var(--border);
 }
 
 .tpl-lesson-01 .token-boxes rect,
 .tpl-lesson-01 .stack-band rect {
-  fill: color-mix(in srgb, var(--surface) 90%, white);
+  fill: var(--surface);
   stroke: color-mix(in srgb, var(--accent) 30%, var(--border));
-  stroke-width: 3;
+  stroke-width: 2;
 }
 
 .tpl-lesson-01 .token-arrows path {
-  stroke: color-mix(in srgb, var(--accent) 72%, #6b8afd);
-  stroke-width: 4;
+  stroke: var(--accent);
+  stroke-width: 3;
   fill: none;
 }
 
 .tpl-lesson-01 .token-text text,
 .tpl-lesson-01 .stack-text text {
   fill: var(--text-1);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 21px;
+  font-weight: 600;
   text-anchor: middle;
 }
 
-.tpl-lesson-01 .token-svg {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.tpl-lesson-01 .loop-svg {
-  max-width: 760px;
-  margin: 0 auto;
-}
+.tpl-lesson-01 .token-svg { max-width: 860px; margin: 0 auto; }
+.tpl-lesson-01 .loop-svg  { max-width: 760px; margin: 0 auto; }
 
 .tpl-lesson-01 .prob-bars rect {
-  fill: color-mix(in srgb, var(--accent) 78%, #89b4ff);
+  fill: color-mix(in srgb, var(--accent) 70%, #a0b4c8);
 }
 
-.tpl-lesson-01 .compact-cards {
-  margin-top: 16px;
-}
+.tpl-lesson-01 .compact-cards { margin-top: 14px; }
 
 .tpl-lesson-01 .loop-path {
-  stroke: color-mix(in srgb, var(--accent) 72%, #6b8afd);
-  stroke-width: 4;
+  stroke: var(--accent);
+  stroke-width: 3;
   fill: none;
   stroke-linecap: round;
+  opacity: 0.65;
 }
 
 .tpl-lesson-01 .loop-node circle {
-  fill: color-mix(in srgb, var(--surface) 88%, white);
-  stroke: color-mix(in srgb, var(--accent) 36%, var(--border));
-  stroke-width: 4;
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 3;
 }
 
-.tpl-lesson-01 .loop-label text {
-  fill: var(--text-1);
-  text-anchor: middle;
-}
+.tpl-lesson-01 .loop-label text { fill: var(--text-1); text-anchor: middle; }
+.tpl-lesson-01 .loop-label text:nth-child(odd)  { font-size: 19px; font-weight: 700; }
+.tpl-lesson-01 .loop-label text:nth-child(even) { font-size: 13px; fill: var(--text-2); }
 
-.tpl-lesson-01 .loop-label text:nth-child(odd) {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.tpl-lesson-01 .loop-label text:nth-child(even) {
-  font-size: 13px;
-  fill: var(--text-2);
-}
-
-.tpl-lesson-01 .stack-svg {
-  margin: 8px 0 18px;
-}
+.tpl-lesson-01 .stack-svg { margin: 8px 0 16px; }
 
 .tpl-lesson-01 .package-svg,
 .tpl-lesson-01 .harness-svg,
@@ -390,11 +450,8 @@
 .tpl-lesson-01 .examples-svg,
 .tpl-lesson-01 .hermes-svg,
 .tpl-lesson-01 .staircase-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 860px;
-  margin: 0 auto 14px;
+  width: 100%; height: auto; display: block;
+  max-width: 860px; margin: 0 auto 12px;
 }
 
 .tpl-lesson-01 .package-boxes rect,
@@ -405,9 +462,9 @@
 .tpl-lesson-01 .examples-branches rect,
 .tpl-lesson-01 .hermes-nodes rect,
 .tpl-lesson-01 .stair-step rect {
-  fill: color-mix(in srgb, var(--surface) 90%, white);
-  stroke: color-mix(in srgb, var(--accent) 28%, var(--border));
-  stroke-width: 3;
+  fill: var(--surface);
+  stroke: color-mix(in srgb, var(--accent) 25%, var(--border));
+  stroke-width: 2;
 }
 
 .tpl-lesson-01 .package-lines path,
@@ -416,8 +473,8 @@
 .tpl-lesson-01 .examples-lines path,
 .tpl-lesson-01 .hermes-lines path,
 .tpl-lesson-01 .stack-rail path {
-  stroke: color-mix(in srgb, var(--accent) 78%, #4f7cff);
-  stroke-width: 4;
+  stroke: var(--accent);
+  stroke-width: 3;
   fill: none;
   marker-end: url(#tokenArrow);
 }
@@ -429,125 +486,97 @@
 .tpl-lesson-01 .hermes-text text,
 .tpl-lesson-01 .stair-text text {
   fill: var(--text-1);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 21px;
+  font-weight: 600;
   text-anchor: middle;
 }
 
-.tpl-lesson-01 .ide-window circle {
-  fill: color-mix(in srgb, var(--accent) 65%, white);
-}
+.tpl-lesson-01 .ide-window circle:nth-child(1) { fill: #c0c0c0; }
+.tpl-lesson-01 .ide-window circle:nth-child(2) { fill: #c0c0c0; }
+.tpl-lesson-01 .ide-window circle:nth-child(3) { fill: #c0c0c0; }
 
 .tpl-lesson-01 .package-shell .compact-cards,
-.tpl-lesson-01 .harness-shell .compact-cards {
-  margin-top: 10px;
-}
+.tpl-lesson-01 .harness-shell .compact-cards { margin-top: 10px; }
 
 .tpl-lesson-01 .examples-shell,
 .tpl-lesson-01 .hermes-shell,
 .tpl-lesson-01 .stack-shell-top,
-.tpl-lesson-01 .stair-shell {
-  padding-bottom: 16px;
-}
+.tpl-lesson-01 .stair-shell { padding-bottom: 14px; }
 
 .tpl-lesson-01 .examples-text text:nth-child(even),
-.tpl-lesson-01 .hermes-text text:nth-child(even) {
-  font-size: 17px;
-  fill: var(--text-2);
-}
+.tpl-lesson-01 .hermes-text text:nth-child(even) { font-size: 16px; fill: var(--text-2); }
 
 .tpl-lesson-01 .hermes-rings circle {
   fill: none;
-  stroke: color-mix(in srgb, var(--accent) 16%, var(--border));
-  stroke-width: 3;
-  stroke-dasharray: 8 10;
+  stroke: color-mix(in srgb, var(--accent) 18%, var(--border));
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
 }
 
-.tpl-lesson-01 .staircase-svg {
-  margin: 4px 0 16px;
-}
+.tpl-lesson-01 .staircase-svg { margin: 4px 0 14px; }
 
-.tpl-lesson-01 .flow {
-  display: grid;
-  gap: 14px;
-}
-
+/* === FLOW BOXES === */
+.tpl-lesson-01 .flow { display: grid; gap: 12px; }
 .tpl-lesson-01 .flow-box {
   position: relative;
-  padding: 16px 18px;
-  border-radius: 16px;
+  padding: 14px 18px;
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
 }
-
 .tpl-lesson-01 .flow-box::after {
   content: "↓";
   position: absolute;
-  left: 50%;
-  bottom: -26px;
+  left: 50%; bottom: -22px;
   transform: translateX(-50%);
   color: var(--accent);
-  font-size: 18px;
+  font-size: 16px;
 }
+.tpl-lesson-01 .flow-box:last-child::after { display: none; }
+.tpl-lesson-01 .flow-box h4 { margin: 0 0 5px; font-size: 20px; font-family: var(--font-display); font-style: italic; }
+.tpl-lesson-01 .flow-box p  { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-2); font-family: var(--font-serif); }
 
-.tpl-lesson-01 .flow-box:last-child::after {
-  display: none;
-}
-
-.tpl-lesson-01 .flow-box h4 {
-  margin: 0 0 6px;
-  font-size: 21px;
-}
-
-.tpl-lesson-01 .flow-box p {
-  margin: 0;
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-2);
-}
-
+/* === TWO-CASE === */
 .tpl-lesson-01 .two-case {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 24px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 22px;
 }
-
 .tpl-lesson-01 .case-title {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: color-mix(in srgb, var(--accent) 12%, white);
-  color: var(--accent);
+  display: inline-block; margin-bottom: 8px;
+  padding: 4px 10px; border-radius: 3px;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--bg-soft); color: var(--accent);
+  font-family: var(--font-mono);
 }
 
+/* === PROMPT BOX === */
 .tpl-lesson-01 .prompt-box {
-  margin-top: 18px;
-  padding: 18px 20px;
-  border-radius: 16px;
-  background: #f7f9fc;
-  border: 1px dashed color-mix(in srgb, var(--accent) 40%, #cfd8e3);
-  font-family: var(--font-mono, monospace);
-  font-size: 17px;
-  line-height: 1.7;
-  color: #203047;
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 6px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(13px, 1.1vw, 16px);
+  line-height: 1.75;
+  color: var(--text-2);
   white-space: pre-wrap;
 }
 
+/* === GLOSSARY === */
 .tpl-lesson-01 .glossary {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px 18px;
-  margin-top: 24px;
+  gap: 14px 16px;
+  margin-top: 22px;
 }
 
 .tpl-lesson-01 .glossary dt {
   margin: 0 0 4px;
-  font-size: 20px;
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-family: var(--font-display);
+  font-style: italic;
   font-weight: 700;
   color: var(--text-1);
 }
@@ -555,104 +584,162 @@
 .tpl-lesson-01 .glossary dd {
   margin: 0;
   color: var(--text-2);
-  font-size: 17px;
+  font-size: clamp(13px, 1.0vw, 16px);
   line-height: 1.6;
+  font-family: var(--font-serif);
 }
 
+/* === TAKEAWAYS === */
 .tpl-lesson-01 .takeaway-list {
   display: grid;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .tpl-lesson-01 .takeaway {
-  padding: 14px 18px;
-  border-left: 4px solid var(--accent);
-  border-radius: 0 14px 14px 0;
-  background: color-mix(in srgb, var(--surface) 90%, white);
+  padding: clamp(10px, 1.1vh, 15px) 18px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--surface);
   color: var(--text-2);
   line-height: 1.6;
-  font-size: 19px;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-family: var(--font-serif);
+  box-shadow: var(--shadow);
 }
 
-.tpl-lesson-01 .mini {
-  color: var(--text-3);
-  font-size: 15px;
-  line-height: 1.5;
-}
+/* === FOOTER / MISC === */
+.tpl-lesson-01 .mini { color: var(--text-3); font-size: 14px; line-height: 1.5; }
 
 .tpl-lesson-01 .deck-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 18px;
-  color: var(--text-3);
-  font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 16px;
+  color: var(--text-3); font-size: 13px; font-family: var(--font-mono);
 }
 
+/* === TAB SHELL === */
 .tpl-lesson-01 .tab-shell {
-  margin-top: 24px;
+  margin-top: 20px;
   border: 1px solid var(--border);
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--surface) 92%, white);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
   overflow: hidden;
 }
 
 .tpl-lesson-01 .tab-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 18px 18px 0;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding: 16px 16px 0;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
 }
 
 .tpl-lesson-01 .tab-btn {
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 10px 14px;
-  background: white;
+  border-radius: 3px;
+  padding: 8px 14px;
+  background: var(--surface);
   color: var(--text-2);
-  font-size: 16px;
+  font-size: clamp(12px, 0.95vw, 15px);
+  font-family: var(--font-mono);
   cursor: pointer;
-  transition: transform 120ms ease, background 120ms ease, color 120ms ease, border-color 120ms ease;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .tpl-lesson-01 .tab-btn:hover,
 .tpl-lesson-01 .tab-btn.is-active {
-  background: color-mix(in srgb, var(--accent) 12%, white);
-  border-color: color-mix(in srgb, var(--accent) 44%, var(--border));
-  color: var(--accent);
-  transform: translateY(-1px);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
-.tpl-lesson-01 .tab-panels {
-  padding: 18px;
-}
+.tpl-lesson-01 .tab-panels { padding: 16px; }
 
 .tpl-lesson-01 .tab-panel {
   display: none;
-  min-height: 160px;
-  padding: 18px 18px 16px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, white, color-mix(in srgb, var(--surface) 88%, white));
+  min-height: 140px;
+  padding: 16px;
+  border-radius: 6px;
+  background: var(--bg-soft);
   border: 1px solid var(--border);
 }
 
-.tpl-lesson-01 .tab-panel.is-active {
-  display: block;
-}
+.tpl-lesson-01 .tab-panel.is-active { display: block; }
 
 .tpl-lesson-01 .tab-panel h3 {
-  margin: 0 0 10px;
-  font-size: 24px;
+  margin: 0 0 8px;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-family: var(--font-display);
+  font-style: italic;
   color: var(--text-1);
 }
 
 .tpl-lesson-01 .tab-panel p {
   margin: 0;
   color: var(--text-2);
-  font-size: 19px;
-  line-height: 1.6;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.65;
   max-width: 48rem;
+  font-family: var(--font-serif);
 }
+
+/* === WHY CONFUSION — overlapping circles === */
+.tpl-lesson-01 .confusion-svg { width: 100%; height: auto; display: block; max-width: 860px; margin: 0 auto; }
+.tpl-lesson-01 .conf-circles ellipse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  opacity: 0.55;
+}
+.tpl-lesson-01 .conf-circles ellipse:nth-child(1) { transform: none; }
+.tpl-lesson-01 .conf-circles ellipse:nth-child(2) { opacity: 0.45; }
+.tpl-lesson-01 .conf-circles ellipse:nth-child(3) { opacity: 0.55; }
+.tpl-lesson-01 .conf-labels text { font-size: 18px; font-weight: 600; fill: var(--text-2); text-anchor: middle; font-family: var(--font-mono); letter-spacing: 0.04em; }
+.tpl-lesson-01 .conf-question { font-size: 52px; font-weight: 700; fill: var(--accent); text-anchor: middle; font-style: italic; opacity: 0.35; }
+.tpl-lesson-01 .conf-overlap { font-size: 13px; fill: var(--text-3); text-anchor: middle; font-family: var(--font-mono); }
+
+/* === MODEL / PRODUCT — nested wrapper === */
+.tpl-lesson-01 .mp-svg { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
+.tpl-lesson-01 .mp-product rect { fill: color-mix(in srgb, var(--accent) 5%, var(--bg-soft)); stroke: color-mix(in srgb, var(--accent) 45%, var(--border)); stroke-width: 2; }
+.tpl-lesson-01 .mp-model rect { fill: color-mix(in srgb, var(--accent) 11%, white); stroke: var(--accent); stroke-width: 2.5; }
+.tpl-lesson-01 .mp-side rect { fill: var(--surface); stroke: color-mix(in srgb, var(--accent) 35%, var(--border)); stroke-width: 2; }
+.tpl-lesson-01 .mp-arrow { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round; }
+.tpl-lesson-01 .mp-title { font-size: 21px; font-weight: 700; fill: var(--text-1); text-anchor: middle; font-style: italic; }
+.tpl-lesson-01 .mp-sub { font-size: 13px; fill: var(--text-3); text-anchor: middle; font-family: var(--font-mono); }
+.tpl-lesson-01 .mp-node { font-size: 20px; font-weight: 600; fill: var(--text-1); text-anchor: middle; font-style: italic; }
+
+/* === CHAT vs AGENT — two-panel comparison === */
+.tpl-lesson-01 .ca-svg { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
+.tpl-lesson-01 .ca-box rect { fill: var(--surface); stroke: color-mix(in srgb, var(--accent) 35%, var(--border)); stroke-width: 2; }
+.tpl-lesson-01 .ca-agent rect { fill: color-mix(in srgb, var(--accent) 7%, var(--bg-soft)); stroke: var(--accent); stroke-width: 2; }
+.tpl-lesson-01 .ca-divider { stroke: var(--border-strong); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.tpl-lesson-01 .ca-arrow { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round; }
+.tpl-lesson-01 .ca-loop-arc { stroke: color-mix(in srgb, var(--accent) 50%, var(--border)); stroke-width: 2.5; fill: none; stroke-linecap: round; }
+.tpl-lesson-01 .ca-panel-header { font-size: 20px; font-weight: 700; fill: var(--text-1); text-anchor: middle; font-style: italic; }
+.tpl-lesson-01 .ca-text text { font-size: 19px; font-weight: 600; fill: var(--text-1); text-anchor: middle; }
+.tpl-lesson-01 .ca-caption { font-size: 13px !important; fill: var(--text-3) !important; font-family: var(--font-mono); font-weight: 400 !important; font-style: normal !important; }
+.tpl-lesson-01 .ca-loop-label { font-size: 13px !important; fill: var(--text-3) !important; font-family: var(--font-mono); font-weight: 400 !important; font-style: normal !important; }
+
+/* === LLM TRANSITION — before/after loop === */
+.tpl-lesson-01 .trans-svg { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
+.tpl-lesson-01 .trans-plain rect { fill: var(--surface); stroke: color-mix(in srgb, var(--accent) 35%, var(--border)); stroke-width: 2; }
+.tpl-lesson-01 .trans-loop-outer rect { fill: color-mix(in srgb, var(--accent) 7%, var(--bg-soft)); stroke: var(--accent); stroke-width: 2; }
+.tpl-lesson-01 .trans-arrow { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round; }
+.tpl-lesson-01 .trans-big-arrow { stroke: var(--text-3); stroke-width: 2.5; fill: none; }
+.tpl-lesson-01 .trans-loop-arc { stroke: color-mix(in srgb, var(--accent) 50%, var(--border)); stroke-width: 2.5; fill: none; stroke-linecap: round; }
+.tpl-lesson-01 .trans-panel { font-size: 17px; font-weight: 700; fill: var(--text-3); text-anchor: middle; font-style: italic; }
+.tpl-lesson-01 .trans-text text { font-size: 19px; font-weight: 600; fill: var(--text-1); text-anchor: middle; }
+.tpl-lesson-01 .trans-change { font-size: 14px; fill: var(--text-3); text-anchor: middle; font-family: var(--font-mono); }
+.tpl-lesson-01 .trans-loop-label { font-size: 14px; fill: var(--accent); text-anchor: middle; font-family: var(--font-mono); letter-spacing: 0.08em; }
+.tpl-lesson-01 .trans-caption { font-size: 13px; fill: var(--text-3); text-anchor: middle; font-family: var(--font-mono); }
+
+/* === MEMORY — working vs persistent === */
+.tpl-lesson-01 .mem-svg { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
+.tpl-lesson-01 .mem-outer rect { fill: color-mix(in srgb, var(--accent) 5%, var(--bg-soft)); stroke: color-mix(in srgb, var(--accent) 30%, var(--border)); stroke-width: 2; }
+.tpl-lesson-01 .mem-rows rect { fill: color-mix(in srgb, var(--accent) 10%, white); stroke: none; }
+.tpl-lesson-01 .mem-faded { opacity: 0.35; }
+.tpl-lesson-01 .mem-records rect { fill: var(--surface); stroke: color-mix(in srgb, var(--accent) 25%, var(--border)); stroke-width: 1.5; }
+.tpl-lesson-01 .mem-label { font-size: 20px; font-weight: 700; fill: var(--text-1); text-anchor: middle; font-style: italic; }
+.tpl-lesson-01 .mem-sublabel { font-size: 13px; fill: var(--text-3); text-anchor: middle; font-family: var(--font-mono); }
+.tpl-lesson-01 .mem-record-text text { font-size: 15px; fill: var(--text-2); text-anchor: middle; font-family: var(--font-mono); }

@@ -39,6 +39,27 @@
     <p class="kicker">part 01</p>
     <h2 class="h2">Why does this topic become confusing so fast?</h2>
     <div class="hero-note">Because several layers are usually introduced at the same time.</div>
+    <div class="diagram-shell confusion-shell">
+      <svg class="confusion-svg" viewBox="0 0 920 180" role="img" aria-label="Three overlapping concepts — mechanism, model, and behavior — create confusion when discussed without clear separation">
+        <!-- Three overlapping ellipses representing blurred layers -->
+        <g class="conf-circles">
+          <ellipse cx="240" cy="96" rx="170" ry="72"></ellipse>
+          <ellipse cx="460" cy="96" rx="170" ry="72"></ellipse>
+          <ellipse cx="680" cy="96" rx="170" ry="72"></ellipse>
+        </g>
+        <!-- Labels above each circle -->
+        <g class="conf-labels">
+          <text x="160" y="46">mechanism</text>
+          <text x="460" y="46">model</text>
+          <text x="756" y="46">behavior</text>
+        </g>
+        <!-- "?" in center overlap -->
+        <text class="conf-question" x="460" y="108">?</text>
+        <!-- Sub-labels at overlap regions -->
+        <text class="conf-overlap" x="350" y="160">blurs here</text>
+        <text class="conf-overlap" x="570" y="160">blurs here</text>
+      </svg>
+    </div>
     <div class="pill-row">
       <span class="pill">mechanism</span>
       <span class="pill">model</span>
@@ -52,9 +73,39 @@
   <section class="slide" data-title="Model vs Product">
     <p class="kicker">confusion 1</p>
     <h2 class="h2">Model is not the same as product</h2>
-    <div class="grid g2">
-      <div class="card"><h3>Model</h3><p>The learned system that produces outputs from inputs.</p></div>
-      <div class="card"><h3>Product</h3><p>The interface and experience through which a person uses that system.</p></div>
+    <div class="diagram-shell mp-shell">
+      <svg class="mp-svg" viewBox="0 0 920 200" role="img" aria-label="Product is the outer wrapper; model is the inner learned system. User interacts with the product, not directly with the model.">
+        <defs>
+          <marker id="mpArr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,1 L9,5 L0,9 z" fill="#1a3a5c"></path>
+          </marker>
+        </defs>
+        <!-- Product outer box -->
+        <g class="mp-product">
+          <rect x="200" y="14" width="520" height="172" rx="14"></rect>
+          <text class="mp-title" x="460" y="40">Product</text>
+          <text class="mp-sub" x="460" y="58">interface · safety filters · system prompts · config</text>
+        </g>
+        <!-- Model inner box -->
+        <g class="mp-model">
+          <rect x="298" y="76" width="324" height="82" rx="8"></rect>
+          <text class="mp-title" x="460" y="113">Model</text>
+          <text class="mp-sub" x="460" y="133">learned weights · inference engine</text>
+        </g>
+        <!-- User (left) -->
+        <g class="mp-side">
+          <rect x="14" y="77" width="120" height="50" rx="8"></rect>
+          <text class="mp-node" x="74" y="106">User</text>
+        </g>
+        <!-- Reply (right) -->
+        <g class="mp-side">
+          <rect x="786" y="77" width="120" height="50" rx="8"></rect>
+          <text class="mp-node" x="846" y="106">Reply</text>
+        </g>
+        <!-- Arrows -->
+        <path class="mp-arrow" d="M134 102 H200" marker-end="url(#mpArr)"></path>
+        <path class="mp-arrow" d="M720 102 H786" marker-end="url(#mpArr)"></path>
+      </svg>
     </div>
     <aside class="notes"><p>This first confusion is basic but fundamental. Students often point to a chat app and call the whole thing the model. But the visible product may include safety rules, memory systems, tools, prompt wrappers, UI choices, and multiple back-end components. The model is part of the stack, not the whole stack.</p></aside>
   </section>
@@ -62,9 +113,54 @@
   <section class="slide" data-title="Chat vs Agent">
     <p class="kicker">confusion 2</p>
     <h2 class="h2">Chat is not the same as agent</h2>
-    <div class="grid g2">
-      <div class="card"><h3>Chat</h3><p>You ask for an answer. The system replies.</p></div>
-      <div class="card"><h3>Agent</h3><p>The system may plan, use tools, inspect context, and take multiple steps.</p></div>
+    <div class="diagram-shell ca-shell">
+      <svg class="ca-svg" viewBox="0 0 920 218" role="img" aria-label="Plain chat is a single step: user asks, model replies. Agent loop repeats: think, act, observe until the task is done.">
+        <defs>
+          <marker id="caArr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,1 L9,5 L0,9 z" fill="#1a3a5c"></path>
+          </marker>
+        </defs>
+        <!-- Panel divider -->
+        <line class="ca-divider" x1="460" y1="6" x2="460" y2="210"></line>
+        <!-- LEFT: Plain Chat -->
+        <text class="ca-panel-header" x="228" y="26">Plain Chat</text>
+        <g class="ca-box">
+          <rect x="16" y="88" width="88" height="46" rx="8"></rect>
+          <rect x="178" y="88" width="88" height="46" rx="8"></rect>
+          <rect x="340" y="88" width="88" height="46" rx="8"></rect>
+        </g>
+        <path class="ca-arrow" d="M104 111 H178" marker-end="url(#caArr)"></path>
+        <path class="ca-arrow" d="M266 111 H340" marker-end="url(#caArr)"></path>
+        <g class="ca-text">
+          <text x="60" y="115">User</text>
+          <text x="222" y="115">LLM</text>
+          <text x="384" y="115">Reply</text>
+          <text class="ca-caption" x="228" y="166">single step · done</text>
+        </g>
+        <!-- RIGHT: Agent Loop -->
+        <text class="ca-panel-header" x="692" y="26">Agent Loop</text>
+        <g class="ca-box">
+          <rect x="468" y="88" width="76" height="46" rx="8"></rect>
+          <rect x="836" y="88" width="76" height="46" rx="8"></rect>
+        </g>
+        <!-- Agent system box -->
+        <g class="ca-agent">
+          <rect x="580" y="44" width="218" height="138" rx="12"></rect>
+        </g>
+        <path class="ca-arrow" d="M544 111 H580" marker-end="url(#caArr)"></path>
+        <path class="ca-arrow" d="M798 111 H836" marker-end="url(#caArr)"></path>
+        <!-- Loop-back arc on right side -->
+        <path class="ca-loop-arc" d="M798 60 C848 60 848 166 798 166" marker-end="url(#caArr)"></path>
+        <g class="ca-text">
+          <text x="506" y="115">User</text>
+          <text x="689" y="82">Think</text>
+          <text x="689" y="110">Act</text>
+          <text x="689" y="138">Observe</text>
+          <text class="ca-loop-label" x="689" y="160">↺ repeats until done</text>
+          <text x="874" y="115">Done</text>
+          <text class="ca-caption" x="692" y="205">multi-step · tools · feedback</text>
+        </g>
+      </svg>
     </div>
     <aside class="notes"><p>This distinction is where casual AI talk usually gets sloppy. Any assistant that responds in text is called an agent. That is too broad. A chat model can be extremely useful without being agentic. Agentic behavior begins when the system is part of a structured loop rather than a one-shot reply pattern.</p></aside>
   </section>
@@ -311,6 +407,55 @@
     <p class="kicker">transition</p>
     <h2 class="h2">So what changes next?</h2>
     <div class="hero-note">The model stops being only a responder and starts participating in a task loop.</div>
+    <div class="diagram-shell trans-shell">
+      <svg class="trans-svg" viewBox="0 0 920 190" role="img" aria-label="Before: user, model, reply — a straight one-shot exchange. After: model is now embedded inside a task loop structure.">
+        <defs>
+          <marker id="transArr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,1 L9,5 L0,9 z" fill="#1a3a5c"></path>
+          </marker>
+        </defs>
+        <!-- LEFT: Before — plain one-shot -->
+        <text class="trans-panel" x="186" y="22">Before</text>
+        <g class="trans-plain">
+          <rect x="14" y="66" width="80" height="44" rx="8"></rect>
+          <rect x="154" y="66" width="104" height="44" rx="8"></rect>
+          <rect x="318" y="66" width="80" height="44" rx="8"></rect>
+        </g>
+        <path class="trans-arrow" d="M94 88 H154" marker-end="url(#transArr)"></path>
+        <path class="trans-arrow" d="M258 88 H318" marker-end="url(#transArr)"></path>
+        <g class="trans-text">
+          <text x="54" y="92">User</text>
+          <text x="206" y="92">Model</text>
+          <text x="358" y="92">Reply</text>
+        </g>
+        <text class="trans-caption" x="186" y="140">one-shot · done</text>
+        <!-- CENTER: what changes? -->
+        <text class="trans-change" x="460" y="84">what</text>
+        <text class="trans-change" x="460" y="104">changes?</text>
+        <path class="trans-big-arrow" d="M432 118 H488" marker-end="url(#transArr)"></path>
+        <!-- RIGHT: After — model inside loop -->
+        <text class="trans-panel" x="726" y="22">After</text>
+        <g class="trans-loop-outer">
+          <rect x="514" y="30" width="392" height="134" rx="14"></rect>
+          <text class="trans-loop-label" x="710" y="50">Task Loop</text>
+        </g>
+        <g class="trans-plain">
+          <rect x="530" y="66" width="68" height="44" rx="8"></rect>
+          <rect x="662" y="56" width="104" height="62" rx="8"></rect>
+          <rect x="832" y="66" width="60" height="44" rx="8"></rect>
+        </g>
+        <path class="trans-arrow" d="M598 88 H662" marker-end="url(#transArr)"></path>
+        <path class="trans-arrow" d="M766 88 H832" marker-end="url(#transArr)"></path>
+        <!-- Loop-back arc -->
+        <path class="trans-loop-arc" d="M714 156 C714 172 564 172 564 112" marker-end="url(#transArr)"></path>
+        <g class="trans-text">
+          <text x="564" y="92">User</text>
+          <text x="714" y="92">Model</text>
+          <text x="862" y="92">Act</text>
+        </g>
+        <text class="trans-caption" x="726" y="178">loop repeats · tools · observation</text>
+      </svg>
+    </div>
     <aside class="notes"><p>This is the hinge between the model layer and the behavior layer. I often pause here and ask the class to predict the next concept. If the model is no longer just generating one answer, what must be added? Their answers usually include memory, tools, planning, or multiple steps, which means they are ready for the next section.</p></aside>
   </section>
 
@@ -325,31 +470,34 @@
     <p class="kicker">agentic llm</p>
     <h2 class="h2">The basic loop</h2>
     <div class="diagram-shell loop-shell">
-      <svg class="loop-svg" viewBox="0 0 920 350" role="img" aria-label="Agent loop diagram with think, act, observe, and revise steps connected in a cycle">
+      <svg class="loop-svg" viewBox="0 0 920 320" role="img" aria-label="Agent loop: Think plans the next step, Act executes it, Observe reads the result, Revise updates the plan — then the cycle repeats">
         <defs>
-          <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-            <path d="M0,0 L12,6 L0,12 z" fill="#4f7cff"></path>
+          <marker id="arrowHead" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+            <path d="M0,1 L10,5.5 L0,10 z" fill="#1a3a5c"></path>
           </marker>
         </defs>
-        <path class="loop-path" d="M290 112 C430 46, 592 54, 690 116" marker-end="url(#arrowHead)"></path>
-        <path class="loop-path" d="M732 160 C760 222, 730 280, 650 302" marker-end="url(#arrowHead)"></path>
-        <path class="loop-path" d="M530 312 C418 334, 302 330, 216 286" marker-end="url(#arrowHead)"></path>
-        <path class="loop-path" d="M168 238 C140 184, 152 132, 218 112" marker-end="url(#arrowHead)"></path>
+        <!-- Symmetric diamond: Think top, Act right, Observe bottom, Revise left -->
+        <!-- Think(460,64) Act(700,168) Observe(460,272) Revise(220,168) r=48 -->
+        <!-- Arcs use large-radius to curve gently outward -->
+        <path class="loop-path" d="M494 100 A 210 210 0 0 1 666 134" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M700 216 A 210 210 0 0 1 494 238" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M426 238 A 210 210 0 0 1 254 216" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M220 120 A 210 210 0 0 1 426 100" marker-end="url(#arrowHead)"></path>
         <g class="loop-node">
-          <circle cx="240" cy="120" r="48"></circle>
-          <circle cx="700" cy="128" r="48"></circle>
-          <circle cx="592" cy="286" r="48"></circle>
-          <circle cx="218" cy="270" r="48"></circle>
+          <circle cx="460" cy="64"  r="48"></circle>
+          <circle cx="700" cy="168" r="48"></circle>
+          <circle cx="460" cy="272" r="48"></circle>
+          <circle cx="220" cy="168" r="48"></circle>
         </g>
         <g class="loop-label">
-          <text x="240" y="115">Think</text>
-          <text x="240" y="137">plan next step</text>
-          <text x="700" y="123">Act</text>
-          <text x="700" y="145">use tool / move</text>
-          <text x="592" y="281">Observe</text>
-          <text x="592" y="303">read result</text>
-          <text x="218" y="265">Revise</text>
-          <text x="218" y="287">update plan</text>
+          <text x="460" y="58">Think</text>
+          <text x="460" y="78">plan next step</text>
+          <text x="700" y="162">Act</text>
+          <text x="700" y="182">use tool / move</text>
+          <text x="460" y="266">Observe</text>
+          <text x="460" y="286">read result</text>
+          <text x="220" y="162">Revise</text>
+          <text x="220" y="182">update plan</text>
         </g>
       </svg>
     </div>
@@ -381,9 +529,39 @@
   <section class="slide" data-title="Memory">
     <p class="kicker">agentic llm</p>
     <h2 class="h2">Memory helps the loop stay coherent</h2>
-    <div class="grid g2">
-      <div class="card"><h3>Short-term</h3><p>track the current task state</p></div>
-      <div class="card"><h3>Longer-term</h3><p>retain decisions, context, or history when needed</p></div>
+    <div class="diagram-shell mem-shell">
+      <svg class="mem-svg" viewBox="0 0 920 184" role="img" aria-label="Two memory types: working memory holds the current turn context; persistent state stores decisions and facts across multiple steps">
+        <!-- LEFT: Working Memory -->
+        <g class="mem-outer">
+          <rect x="12" y="12" width="424" height="160" rx="12"></rect>
+        </g>
+        <text class="mem-label" x="224" y="38">Working Memory</text>
+        <text class="mem-sublabel" x="224" y="56">current turn context</text>
+        <!-- Simulated message/context rows -->
+        <g class="mem-rows">
+          <rect x="32" y="68" width="384" height="18" rx="3"></rect>
+          <rect x="32" y="94" width="296" height="18" rx="3"></rect>
+          <rect x="32" y="120" width="340" height="18" rx="3"></rect>
+          <rect x="32" y="146" width="210" height="14" rx="3" class="mem-faded"></rect>
+        </g>
+        <!-- RIGHT: Persistent State -->
+        <g class="mem-outer">
+          <rect x="484" y="12" width="424" height="160" rx="12"></rect>
+        </g>
+        <text class="mem-label" x="696" y="38">Persistent State</text>
+        <text class="mem-sublabel" x="696" y="56">stored across steps</text>
+        <!-- Record rows with inline labels -->
+        <g class="mem-records">
+          <rect x="504" y="68" width="384" height="26" rx="4"></rect>
+          <rect x="504" y="102" width="384" height="26" rx="4"></rect>
+          <rect x="504" y="136" width="384" height="26" rx="4"></rect>
+        </g>
+        <g class="mem-record-text">
+          <text x="696" y="85">chosen plan</text>
+          <text x="696" y="119">discovered facts</text>
+          <text x="696" y="153">prior decisions…</text>
+        </g>
+      </svg>
     </div>
     <aside class="notes"><p>Memory is another visible shift. In plain chat, context often means only the current message window. In agentic systems, memory may include prior steps, discovered facts, chosen plans, or task state. This makes multi-step work more coherent, though it also introduces design challenges and risks.</p></aside>
   </section>
