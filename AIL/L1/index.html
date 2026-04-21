@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" data-themes="corporate-clean,academic-paper,minimal-white">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 01 · From LLM to Agent Workflow</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" id="theme-link" href="assets/themes/corporate-clean.css">
+<link rel="stylesheet" href="assets/animations/animations.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="tpl-lesson-01">
+<div class="deck">
+
+  <section class="slide" data-title="Cover">
+    <p class="kicker">Lesson 01 · AI Teaching Course</p>
+    <h1 class="h1">From <span class="accent">LLM</span><br>to agent workflow</h1>
+    <div class="hero-note">By the end of this lesson, students should be able to separate <strong>mechanism</strong>, <strong>model</strong>, <strong>agent loop</strong>, <strong>implementation</strong>, <strong>orchestration</strong>, and <strong>workflow</strong>.</div>
+    <div class="deck-footer"><span class="mono">1 / 50</span><span class="mono">S presenter · T theme</span></div>
+    <aside class="notes"><p>This expanded deck solves the density problem from the first version. Instead of asking students to read too much on each slide, we now spread the logic across 50 smaller steps. That means more breathing room, cleaner emphasis, and more opportunities to pause, ask, and check understanding. The lesson remains the same in content, but the teaching experience becomes slower and clearer.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Agenda">
+    <p class="kicker">agenda</p>
+    <h2 class="h2">Today’s teaching path</h2>
+    <div class="agenda">
+      <div class="agenda-row"><span class="num">01</span><span class="t">Why AI terms get blurred</span><span class="d">8 slides</span></div>
+      <div class="agenda-row"><span class="num">02</span><span class="t">Neural network foundation</span><span class="d">5 slides</span></div>
+      <div class="agenda-row"><span class="num">03</span><span class="t">LLM layer</span><span class="d">7 slides</span></div>
+      <div class="agenda-row"><span class="num">04</span><span class="t">Agentic layer</span><span class="d">10 slides</span></div>
+      <div class="agenda-row"><span class="num">05</span><span class="t">Implementation and orchestration</span><span class="d">9 slides</span></div>
+      <div class="agenda-row"><span class="num">06</span><span class="t">IDE workflow, glossary, recap</span><span class="d">11 slides</span></div>
+    </div>
+    <aside class="notes"><p>This agenda makes the deck feel intentionally long rather than padded. I want students to know we are climbing a ladder, not hopping randomly between product names. The most important pacing decision is that the agentic layer gets the most space, because that is where many misunderstandings happen. The later sections then anchor those ideas in concrete tools and workflows.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Why Confusion">
+    <p class="kicker">part 01</p>
+    <h2 class="h2">Why does this topic become confusing so fast?</h2>
+    <div class="hero-note">Because several layers are usually introduced at the same time.</div>
+    <div class="pill-row">
+      <span class="pill">mechanism</span>
+      <span class="pill">model</span>
+      <span class="pill">behavior</span>
+      <span class="pill">tool</span>
+      <span class="pill">workflow</span>
+    </div>
+    <aside class="notes"><p>I want to name the source of confusion explicitly. Students are not confused because they are weak. They are confused because people often explain AI stacks in a collapsed way. One sentence may refer to the model, the product interface, the workflow, and the tool layer all at once. Our solution is to separate those layers one by one.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Model vs Product">
+    <p class="kicker">confusion 1</p>
+    <h2 class="h2">Model is not the same as product</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Model</h3><p>The learned system that produces outputs from inputs.</p></div>
+      <div class="card"><h3>Product</h3><p>The interface and experience through which a person uses that system.</p></div>
+    </div>
+    <aside class="notes"><p>This first confusion is basic but fundamental. Students often point to a chat app and call the whole thing the model. But the visible product may include safety rules, memory systems, tools, prompt wrappers, UI choices, and multiple back-end components. The model is part of the stack, not the whole stack.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Chat vs Agent">
+    <p class="kicker">confusion 2</p>
+    <h2 class="h2">Chat is not the same as agent</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Chat</h3><p>You ask for an answer. The system replies.</p></div>
+      <div class="card"><h3>Agent</h3><p>The system may plan, use tools, inspect context, and take multiple steps.</p></div>
+    </div>
+    <aside class="notes"><p>This distinction is where casual AI talk usually gets sloppy. Any assistant that responds in text is called an agent. That is too broad. A chat model can be extremely useful without being agentic. Agentic behavior begins when the system is part of a structured loop rather than a one-shot reply pattern.</p></aside>
+  </section>
+
+  <section class="slide" data-title="System vs Workflow">
+    <p class="kicker">confusion 3</p>
+    <h2 class="h2">System name is not the same as workflow layer</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Named tool</h3><p>A concrete implementation or package.</p></div>
+      <div class="card"><h3>Workflow</h3><p>The sequence of steps that gets work done.</p></div>
+      <div class="card"><h3>Layering</h3><p>We need both, but we should not confuse them.</p></div>
+    </div>
+    <aside class="notes"><p>The lesson later uses names like Open Claw, Hermes, Harness, CodeX, and Cline. Students need to understand from the start that a named tool is not automatically a theory category. Some names refer to implementations. Some refer to workflow shells. Some refer to the user-facing environment. The name alone does not tell us the layer.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Teaching Rule">
+    <p class="kicker">discipline</p>
+    <h2 class="h2">The classroom rule for every term</h2>
+    <div class="hero-note">Ask: <strong>What layer does this belong to?</strong></div>
+    <div class="grid g3">
+      <div class="card"><h3>Mechanism?</h3><p>How learning happens.</p></div>
+      <div class="card"><h3>Model?</h3><p>What kind of system is trained.</p></div>
+      <div class="card"><h3>Workflow?</h3><p>How work is actually carried out.</p></div>
+    </div>
+    <aside class="notes"><p>This teaching rule is the anchor for the whole deck. Any time a new term appears, we ask what layer it belongs to. That question alone often dissolves confusion. It is a simple classroom habit, but it changes the quality of discussion because students stop memorizing names and start organizing them.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Staircase Preview">
+    <p class="kicker">preview</p>
+    <h2 class="h2">The staircase we will keep using</h2>
+    <div class="ladder">
+      <div class="ladder-step"><span class="num">1</span><div><strong>Neural network</strong><p>mechanism</p></div><div><p>general learning base</p></div></div>
+      <div class="ladder-step"><span class="num">2</span><div><strong>LLM</strong><p>model</p></div><div><p>language-focused neural network</p></div></div>
+      <div class="ladder-step"><span class="num">3</span><div><strong>Agentic LLM</strong><p>behavior</p></div><div><p>loop with tools and action</p></div></div>
+      <div class="ladder-step"><span class="num">4</span><div><strong>Open Claw / Hermes</strong><p>implementation</p></div><div><p>concrete agent packages</p></div></div>
+      <div class="ladder-step"><span class="num">5</span><div><strong>Harness</strong><p>orchestration</p></div><div><p>workflow coordination layer</p></div></div>
+      <div class="ladder-step"><span class="num">6</span><div><strong>CodeX → Cline</strong><p>use case</p></div><div><p>IDE experience of the stack</p></div></div>
+    </div>
+    <aside class="notes"><p>This is the staircase in compact form. I want to show it early, even before every term is fully explained, so students know there is a map. Then we spend the next thirty-plus slides unpacking each step. The point of repetition is not redundancy. It is stabilization.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Neural Net Definition">
+    <p class="kicker">neural network</p>
+    <h2 class="h2">Definition</h2>
+    <div class="card"><p>A neural network is a parameterized layered system that learns patterns from data by adjusting many internal weights.</p></div>
+    <aside class="notes"><p>This is the clean definition I want students to retain. The emphasis is on learned parameters and layered pattern transformation. I would keep the explanation grounded: inputs go in, the network transforms them through learned numbers, and an output comes out. No need to overload the room with formal notation yet.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Neural Net Anatomy">
+    <p class="kicker">neural network</p>
+    <h2 class="h2">A simple anatomy</h2>
+    <div class="diagram-shell neural-shell">
+      <svg class="nn-svg" viewBox="0 0 920 360" role="img" aria-label="Neural network diagram with input, hidden, and output layers">
+        <defs>
+          <linearGradient id="nnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#76a9fa"></stop>
+            <stop offset="100%" stop-color="#9b8cff"></stop>
+          </linearGradient>
+        </defs>
+        <g class="nn-links">
+          <line x1="130" y1="90" x2="360" y2="70"></line>
+          <line x1="130" y1="90" x2="360" y2="150"></line>
+          <line x1="130" y1="90" x2="360" y2="230"></line>
+          <line x1="130" y1="180" x2="360" y2="70"></line>
+          <line x1="130" y1="180" x2="360" y2="150"></line>
+          <line x1="130" y1="180" x2="360" y2="230"></line>
+          <line x1="130" y1="270" x2="360" y2="70"></line>
+          <line x1="130" y1="270" x2="360" y2="150"></line>
+          <line x1="130" y1="270" x2="360" y2="230"></line>
+          <line x1="420" y1="70" x2="650" y2="95"></line>
+          <line x1="420" y1="70" x2="650" y2="180"></line>
+          <line x1="420" y1="70" x2="650" y2="265"></line>
+          <line x1="420" y1="150" x2="650" y2="95"></line>
+          <line x1="420" y1="150" x2="650" y2="180"></line>
+          <line x1="420" y1="150" x2="650" y2="265"></line>
+          <line x1="420" y1="230" x2="650" y2="95"></line>
+          <line x1="420" y1="230" x2="650" y2="180"></line>
+          <line x1="420" y1="230" x2="650" y2="265"></line>
+          <line x1="710" y1="95" x2="820" y2="180"></line>
+          <line x1="710" y1="180" x2="820" y2="180"></line>
+          <line x1="710" y1="265" x2="820" y2="180"></line>
+        </g>
+        <g class="nn-layer">
+          <circle cx="130" cy="90" r="28"></circle>
+          <circle cx="130" cy="180" r="28"></circle>
+          <circle cx="130" cy="270" r="28"></circle>
+          <circle cx="390" cy="70" r="28"></circle>
+          <circle cx="390" cy="150" r="28"></circle>
+          <circle cx="390" cy="230" r="28"></circle>
+          <circle cx="680" cy="95" r="28"></circle>
+          <circle cx="680" cy="180" r="28"></circle>
+          <circle cx="680" cy="265" r="28"></circle>
+          <circle cx="850" cy="180" r="34" class="nn-output"></circle>
+        </g>
+        <g class="nn-labels">
+          <text x="70" y="38">Input</text>
+          <text x="316" y="38">Hidden layer 1</text>
+          <text x="605" y="38">Hidden layer 2</text>
+          <text x="798" y="38">Output</text>
+        </g>
+      </svg>
+      <div class="mini-legend">
+        <span>input features</span>
+        <span>weighted transformation</span>
+        <span>prediction</span>
+      </div>
+    </div>
+    <aside class="notes"><p>This anatomy slide gives the class a visual shorthand. Inputs, internal transformations, outputs. The details can become very sophisticated, but the basic picture is enough for Lesson 1. Students should walk away knowing that a neural network is a general learning machine, not a synonym for “language AI.”</p></aside>
+  </section>
+
+  <section class="slide" data-title="Neural Net Examples">
+    <p class="kicker">neural network</p>
+    <h2 class="h2">Neural networks do more than language</h2>
+    <div class="diagram-shell examples-shell">
+      <svg class="examples-svg" viewBox="0 0 920 250" role="img" aria-label="Three application branches for neural networks: vision, audio, and control">
+        <g class="examples-core">
+          <rect x="348" y="82" width="224" height="86" rx="26"></rect>
+        </g>
+        <g class="examples-branches">
+          <rect x="48" y="86" width="196" height="78" rx="24"></rect>
+          <rect x="676" y="22" width="196" height="78" rx="24"></rect>
+          <rect x="676" y="150" width="196" height="78" rx="24"></rect>
+        </g>
+        <g class="examples-lines">
+          <path d="M244 125 H348"></path>
+          <path d="M572 105 C620 105 622 60 676 60"></path>
+          <path d="M572 145 C620 145 622 190 676 190"></path>
+        </g>
+        <g class="examples-text">
+          <text x="460" y="118">Neural network</text>
+          <text x="460" y="146">general learner</text>
+          <text x="146" y="118">Vision</text>
+          <text x="146" y="146">image tasks</text>
+          <text x="774" y="54">Audio</text>
+          <text x="774" y="82">speech, sound</text>
+          <text x="774" y="182">Control</text>
+          <text x="774" y="210">ranking, action</text>
+        </g>
+      </svg>
+      <div class="grid g3 compact-cards">
+        <div class="card"><h3>Vision</h3><p>image recognition</p></div>
+        <div class="card"><h3>Audio</h3><p>speech and sound tasks</p></div>
+        <div class="card"><h3>Control</h3><p>ranking, robotics, recommendations</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>This slide prevents the biggest misconception at the mechanism level. Neural networks are broad. LLMs are one important subclass of systems built on neural-network methods, but they are not the only thing neural networks can do. I like to use this slide to widen the mental frame before narrowing it again.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Neural Net Not">
+    <p class="kicker">neural network</p>
+    <h2 class="h2">What it is not</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Not automatically an LLM</h3><p>language is only one application</p></div>
+      <div class="card"><h3>Not automatically a chatbot</h3><p>chat is an interface pattern, not the mechanism itself</p></div>
+    </div>
+    <aside class="notes"><p>Negative definitions are important here. Students need permission to stop equating all neural-network talk with chatbots. That negative clarification makes the later move to LLM much cleaner, because now LLM can be introduced as a specific language-oriented layer built on the broader mechanism.</p></aside>
+  </section>
+
+  <section class="slide" data-title="LLM Definition">
+    <p class="kicker">llm</p>
+    <h2 class="h2">Definition</h2>
+    <div class="card"><p>An LLM is a neural network trained on large amounts of text and optimized to predict the next token in a sequence.</p></div>
+    <aside class="notes"><p>This is the core definition. The important phrase is “language-focused neural network.” That connects the LLM back to the mechanism layer without collapsing the two. We want students to see continuity and distinction at the same time.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Token Prediction">
+    <p class="kicker">llm</p>
+    <h2 class="h2">The small idea behind the big effect</h2>
+    <div class="diagram-shell token-shell">
+      <svg class="token-svg" viewBox="0 0 920 260" role="img" aria-label="Token prediction process from prompt context to next token selection">
+        <defs>
+          <marker id="tokenArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 z" fill="#335487"></path>
+          </marker>
+        </defs>
+        <g class="token-boxes">
+          <rect x="36" y="76" width="128" height="60" rx="18"></rect>
+          <rect x="204" y="76" width="128" height="60" rx="18"></rect>
+          <rect x="372" y="76" width="128" height="60" rx="18"></rect>
+          <rect x="540" y="76" width="156" height="60" rx="18"></rect>
+          <rect x="734" y="76" width="126" height="60" rx="18"></rect>
+        </g>
+        <g class="token-arrows">
+          <path d="M164 106 H204" marker-end="url(#tokenArrow)"></path>
+          <path d="M332 106 H372" marker-end="url(#tokenArrow)"></path>
+          <path d="M500 106 H540" marker-end="url(#tokenArrow)"></path>
+          <path d="M696 106 H734" marker-end="url(#tokenArrow)"></path>
+        </g>
+        <g class="token-text">
+          <text x="100" y="113">Prompt</text>
+          <text x="268" y="113">Context</text>
+          <text x="436" y="113">Model</text>
+          <text x="618" y="113">Probabilities</text>
+          <text x="797" y="100">Next token</text>
+          <text x="797" y="127">"agent"</text>
+        </g>
+        <g class="prob-bars">
+          <rect x="566" y="162" width="18" height="34" rx="8"></rect>
+          <rect x="594" y="146" width="18" height="50" rx="8"></rect>
+          <rect x="622" y="118" width="18" height="78" rx="8"></rect>
+          <rect x="650" y="154" width="18" height="42" rx="8"></rect>
+        </g>
+      </svg>
+      <div class="grid g3 compact-cards">
+        <div class="card"><h3>Read context</h3><p>take prior text as input</p></div>
+        <div class="card"><h3>Predict token</h3><p>estimate likely continuation</p></div>
+        <div class="card"><h3>Repeat</h3><p>build output step by step</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>I like to call this the small idea behind the big effect. The operational core sounds modest: predict the next token. But scaled up through large training, strong architectures, and large context, that small step generates powerful behaviors. Students often find this surprising, so it is worth slowing down here.</p></aside>
+  </section>
+
+  <section class="slide" data-title="LLM Capabilities">
+    <p class="kicker">llm</p>
+    <h2 class="h2">What plain LLM use often looks like</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Explain</h3><p>answer questions</p></div>
+      <div class="card"><h3>Rewrite</h3><p>summarize or transform text</p></div>
+      <div class="card"><h3>Draft</h3><p>produce candidate content</p></div>
+    </div>
+    <aside class="notes"><p>This slide anchors the LLM in familiar experiences. Asking questions, rewriting text, drafting content, classifying language, and generating code suggestions are all things students may already know. I want them to see those as plain model use before we complicate the picture with agent loops.</p></aside>
+  </section>
+
+  <section class="slide" data-title="LLM Not">
+    <p class="kicker">llm</p>
+    <h2 class="h2">What an LLM is not</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Not just the chat window</h3><p>the model can appear in many shells</p></div>
+      <div class="card"><h3>Not automatically an agent</h3><p>a strong answer is still just an answer if no action loop exists</p></div>
+    </div>
+    <aside class="notes"><p>This slide adds the critical negative definitions. Students often think the interface is the LLM, or that any capable response means the system is agentic. We need to interrupt both of those habits. The model can be embedded in many products, and plain chat can be very capable without becoming an agent loop.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Plain Chat Example">
+    <p class="kicker">llm</p>
+    <h2 class="h2">A plain chat example</h2>
+    <div class="prompt-box">Prompt:
+"Explain the difference between an LLM and a neural network."</div>
+    <div class="hero-note">Output: a text answer. Useful, but still a one-step interaction.</div>
+    <aside class="notes"><p>This example is intentionally simple. The system gets a question and returns an explanation. There is no browsing, no file inspection, no tool call, and no plan that unfolds across steps. That is useful to emphasize because students need a stable baseline before we introduce agentic behavior.</p></aside>
+  </section>
+
+  <section class="slide" data-title="LLM Transition">
+    <p class="kicker">transition</p>
+    <h2 class="h2">So what changes next?</h2>
+    <div class="hero-note">The model stops being only a responder and starts participating in a task loop.</div>
+    <aside class="notes"><p>This is the hinge between the model layer and the behavior layer. I often pause here and ask the class to predict the next concept. If the model is no longer just generating one answer, what must be added? Their answers usually include memory, tools, planning, or multiple steps, which means they are ready for the next section.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Agentic Section">
+    <p class="kicker">part 04 · behavior</p>
+    <h2 class="h2">Step 3: agentic LLM</h2>
+    <div class="hero-note">An LLM inside a broader loop of planning, action, observation, and revision.</div>
+    <aside class="notes"><p>Now we reach the central conceptual pivot of the lesson. Agentic LLM should be taught as a system behavior pattern, not as a mysterious new species of model. The model may be the same or similar, but the surrounding loop changes what the system can do.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Agent Loop">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">The basic loop</h2>
+    <div class="diagram-shell loop-shell">
+      <svg class="loop-svg" viewBox="0 0 920 350" role="img" aria-label="Agent loop diagram with think, act, observe, and revise steps connected in a cycle">
+        <defs>
+          <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 z" fill="#4f7cff"></path>
+          </marker>
+        </defs>
+        <path class="loop-path" d="M290 112 C430 46, 592 54, 690 116" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M732 160 C760 222, 730 280, 650 302" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M530 312 C418 334, 302 330, 216 286" marker-end="url(#arrowHead)"></path>
+        <path class="loop-path" d="M168 238 C140 184, 152 132, 218 112" marker-end="url(#arrowHead)"></path>
+        <g class="loop-node">
+          <circle cx="240" cy="120" r="48"></circle>
+          <circle cx="700" cy="128" r="48"></circle>
+          <circle cx="592" cy="286" r="48"></circle>
+          <circle cx="218" cy="270" r="48"></circle>
+        </g>
+        <g class="loop-label">
+          <text x="240" y="115">Think</text>
+          <text x="240" y="137">plan next step</text>
+          <text x="700" y="123">Act</text>
+          <text x="700" y="145">use tool / move</text>
+          <text x="592" y="281">Observe</text>
+          <text x="592" y="303">read result</text>
+          <text x="218" y="265">Revise</text>
+          <text x="218" y="287">update plan</text>
+        </g>
+      </svg>
+    </div>
+    <aside class="notes"><p>This loop is the heart of the agentic idea. Think, act, observe, revise. Students do not need to memorize the exact verbs, but they do need to understand the cyclical structure. The system is not just speaking. It is moving through a task, learning from intermediate results, and changing its next move.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Planning">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Planning gives shape to the task</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Break down</h3><p>split a larger goal into steps</p></div>
+      <div class="card"><h3>Prioritize</h3><p>choose a sensible order</p></div>
+      <div class="card"><h3>Track progress</h3><p>know what has been done</p></div>
+    </div>
+    <aside class="notes"><p>Planning is one of the simplest ways to explain the shift from plain chat to agentic behavior. A plain model answers the current prompt. An agentic system often carries a notion of task structure. That does not guarantee success, but it changes the kind of system we are dealing with.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Tool Use">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Tool use extends what the model can do</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Read</h3><p>inspect files or documents</p></div>
+      <div class="card"><h3>Search</h3><p>retrieve new information</p></div>
+      <div class="card"><h3>Execute</h3><p>run commands or operations</p></div>
+    </div>
+    <aside class="notes"><p>Tool use is where many students first feel the difference. A plain model can explain how to do something. An agentic system with tools may actually inspect the environment, search for context, run a command, or modify a file. That does not make the model magical. It means the system has a wider action surface.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Memory">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Memory helps the loop stay coherent</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Short-term</h3><p>track the current task state</p></div>
+      <div class="card"><h3>Longer-term</h3><p>retain decisions, context, or history when needed</p></div>
+    </div>
+    <aside class="notes"><p>Memory is another visible shift. In plain chat, context often means only the current message window. In agentic systems, memory may include prior steps, discovered facts, chosen plans, or task state. This makes multi-step work more coherent, though it also introduces design challenges and risks.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Observation">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Observation closes the loop</h2>
+    <div class="card"><p>After action, the system must inspect what happened. Without observation, there is no meaningful adjustment.</p></div>
+    <aside class="notes"><p>This slide looks simple, but it carries an important idea. Agentic systems are not just active; they are responsive to feedback. After taking a step, they need to inspect the result. That result might be success, failure, new data, or a partial state. Observation is what allows the loop to become adaptive rather than blindly repetitive.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Revision">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Revision is the point of the loop</h2>
+    <div class="hero-note">A multi-step system should learn from each step instead of repeating the first idea forever.</div>
+    <aside class="notes"><p>Revision is the natural partner of observation. Once the system sees what happened, it can revise the plan or the next action. This is why agentic systems feel more task-oriented than plain chat. They are not just producing language. They are updating their behavior in response to the environment.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Plain vs Agentic">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">Plain LLM vs agentic LLM</h2>
+    <table class="compare-table">
+      <thead><tr><th>Dimension</th><th>Plain</th><th>Agentic</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag">Mode</span></td><td>answer prompt</td><td>run a loop</td></tr>
+        <tr><td><span class="tag">Tools</span></td><td>usually none</td><td>often used</td></tr>
+        <tr><td><span class="tag">Memory</span></td><td>mostly current turn</td><td>task state may persist</td></tr>
+        <tr><td><span class="tag">Goal</span></td><td>produce reply</td><td>move task forward</td></tr>
+      </tbody>
+    </table>
+    <aside class="notes"><p>This comparison slide condenses the behavior shift. I would read it slowly and emphasize the difference between “reply” and “task progress.” That distinction is one of the most teachable summaries of the whole concept. A plain LLM gives an answer. An agentic system tries to move work forward.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Risk Shift">
+    <p class="kicker">agentic llm</p>
+    <h2 class="h2">The risk also changes</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Plain mode risk</h3><p>bad or misleading answer</p></div>
+      <div class="card"><h3>Agent mode risk</h3><p>bad answer plus bad action</p></div>
+      <div class="card"><h3>Teaching point</h3><p>more capability means more need for review</p></div>
+    </div>
+    <aside class="notes"><p>I want students to see that the transition to agency is not pure gain. The risk profile changes too. A wrong answer in chat can be frustrating. A wrong action in an agent loop can be costly. This prepares the class for why orchestration, constraints, and human review matter later in the stack.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Interactive Lab 1">
+    <p class="kicker">interactive</p>
+    <h2 class="h2">Mini lab: compare model mode and agent mode</h2>
+    <div class="tab-shell" data-tab-group="mode-lab">
+      <div class="tab-buttons">
+        <button class="tab-btn is-active" data-target="mode-panel-1">Plain model</button>
+        <button class="tab-btn" data-target="mode-panel-2">Agent loop</button>
+        <button class="tab-btn" data-target="mode-panel-3">What changes?</button>
+      </div>
+      <div class="tab-panels">
+        <div class="tab-panel is-active" id="mode-panel-1"><h3>Plain model</h3><p>User asks for an explanation. The system returns text. Useful, but single-step.</p></div>
+        <div class="tab-panel" id="mode-panel-2"><h3>Agent loop</h3><p>User gives a task. The system reads context, chooses actions, checks results, and continues.</p></div>
+        <div class="tab-panel" id="mode-panel-3"><h3>What changes?</h3><p>The model is no longer only speaking. It is participating in a task process with tools, memory, and feedback.</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>This is our first interactive slide. I would click through the three buttons while speaking. The point is not fancy UI for its own sake. The point is to make the conceptual shift visible in a lightweight way. It also slows the room down and keeps students engaged after several explanatory slides.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Implementation Section">
+    <p class="kicker">part 05 · implementation</p>
+    <h2 class="h2">Step 4: concrete agent implementations</h2>
+    <div class="hero-note">Now we move from the behavior pattern to named systems that realize it.</div>
+    <aside class="notes"><p>This transition is important because students are often excited by named systems. I want to allow that excitement, but I also want to keep the conceptual discipline from collapsing. So I say clearly: we are now moving from theory structure to concrete implementation examples.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Open Claw">
+    <p class="kicker">implementation</p>
+    <h2 class="h2">Open Claw in this lesson</h2>
+    <div class="diagram-shell package-shell">
+      <svg class="package-svg" viewBox="0 0 920 250" role="img" aria-label="Agent package diagram showing user goal, planner, tools, state, and output">
+        <g class="package-boxes">
+          <rect x="24" y="80" width="142" height="92" rx="22"></rect>
+          <rect x="212" y="48" width="184" height="78" rx="22"></rect>
+          <rect x="212" y="138" width="184" height="78" rx="22"></rect>
+          <rect x="448" y="48" width="184" height="78" rx="22"></rect>
+          <rect x="448" y="138" width="184" height="78" rx="22"></rect>
+          <rect x="690" y="80" width="196" height="92" rx="22"></rect>
+        </g>
+        <g class="package-lines">
+          <path d="M166 126 H212"></path>
+          <path d="M396 88 H448"></path>
+          <path d="M396 176 H448"></path>
+          <path d="M632 126 H690"></path>
+          <path d="M304 126 V138"></path>
+          <path d="M540 126 V138"></path>
+        </g>
+        <g class="package-text">
+          <text x="95" y="116">User goal</text>
+          <text x="95" y="144">task request</text>
+          <text x="304" y="86">Planner</text>
+          <text x="304" y="175">State</text>
+          <text x="540" y="86">Tool layer</text>
+          <text x="540" y="175">Prompt logic</text>
+          <text x="788" y="116">Agent result</text>
+          <text x="788" y="144">action + report</text>
+        </g>
+      </svg>
+      <div class="grid g2 compact-cards">
+        <div class="card"><h3>Why this matters</h3><p>It makes the agent package visible as a system, not just a name.</p></div>
+        <div class="card"><h3>Teaching role</h3><p>Use it as one concrete implementation example, not as the theory itself.</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>For Lesson 1, I do not need students to master the specific internals of Open Claw. What I need is for them to place it correctly. It is a concrete implementation example. It shows how planning, prompts, tools, and execution can be packaged in a real system.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Hermes">
+    <p class="kicker">implementation</p>
+    <h2 class="h2">Hermes agent in this lesson</h2>
+    <div class="diagram-shell hermes-shell">
+      <svg class="hermes-svg" viewBox="0 0 920 270" role="img" aria-label="Hermes implementation figure with model core, planner, tools, memory, and execution">
+        <g class="hermes-rings">
+          <circle cx="460" cy="132" r="60"></circle>
+          <circle cx="460" cy="132" r="118"></circle>
+        </g>
+        <g class="hermes-nodes">
+          <rect x="384" y="96" width="152" height="72" rx="24"></rect>
+          <rect x="394" y="12" width="132" height="58" rx="22"></rect>
+          <rect x="666" y="102" width="144" height="58" rx="22"></rect>
+          <rect x="392" y="194" width="136" height="58" rx="22"></rect>
+          <rect x="110" y="102" width="150" height="58" rx="22"></rect>
+        </g>
+        <g class="hermes-lines">
+          <path d="M460 70 V96"></path>
+          <path d="M536 132 H666"></path>
+          <path d="M460 168 V194"></path>
+          <path d="M384 132 H260"></path>
+        </g>
+        <g class="hermes-text">
+          <text x="460" y="127">Model core</text>
+          <text x="460" y="152">agent runtime</text>
+          <text x="460" y="48">Planner</text>
+          <text x="738" y="126">Tools</text>
+          <text x="738" y="152">bridge</text>
+          <text x="460" y="228">Memory</text>
+          <text x="185" y="126">Execution</text>
+          <text x="185" y="152">context</text>
+        </g>
+      </svg>
+      <div class="card"><p>Treat Hermes the same way: as an implementation-layer example, not as the whole theory of agents.</p></div>
+    </div>
+    <aside class="notes"><p>The same teaching rule applies to Hermes. Students should not hear the name and assume a new theoretical category. In this lesson, Hermes is an implementation example that helps us see how an agentic system can be structured in practice.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Implementation Not Theory">
+    <p class="kicker">implementation</p>
+    <h2 class="h2">Important boundary</h2>
+    <div class="hero-note">Open Claw and Hermes are examples of <strong>implementation</strong>, not theory labels like “neural network” or “LLM.”</div>
+    <aside class="notes"><p>I repeat this because it is easy to lose. Students may start saying “Hermes is the next level after LLM” in a theoretical sense. That is not the right framing. The right framing is that Hermes and Open Claw live at the implementation layer, where a broader agentic pattern gets packaged concretely.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Implementation Example Task">
+    <p class="kicker">implementation</p>
+    <h2 class="h2">Example task inside an implementation</h2>
+    <div class="prompt-box">Goal:
+"Read the lesson folder, revise the handout, and verify the structure."</div>
+    <aside class="notes"><p>This task example lets students feel the implementation layer in action. A plain LLM might explain how to revise the folder. An implementation-level agent system may inspect the actual files, perform edits, and check the result. That difference between advice and execution is why implementation matters.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Harness Section">
+    <p class="kicker">part 06 · orchestration</p>
+    <h2 class="h2">Step 5: Harness</h2>
+    <div class="hero-note">Harness belongs to the orchestration or workflow coordination layer.</div>
+    <aside class="notes"><p>Now we separate implementation from orchestration. Students often compress these together, but it is useful to distinguish them. Harness is not the model, and it is not exactly the same thing as the agent package. It helps coordinate how the system runs around the model and tools.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Harness Role">
+    <p class="kicker">harness</p>
+    <h2 class="h2">What Harness does</h2>
+    <div class="diagram-shell harness-shell">
+      <svg class="harness-svg" viewBox="0 0 920 270" role="img" aria-label="Harness orchestration figure showing intake, routing, tools, retry, and output">
+        <g class="harness-lanes">
+          <rect x="30" y="90" width="132" height="72" rx="20"></rect>
+          <rect x="202" y="90" width="156" height="72" rx="20"></rect>
+          <rect x="398" y="44" width="158" height="62" rx="20"></rect>
+          <rect x="398" y="156" width="158" height="62" rx="20"></rect>
+          <rect x="606" y="90" width="136" height="72" rx="20"></rect>
+          <rect x="782" y="90" width="108" height="72" rx="20"></rect>
+        </g>
+        <g class="harness-arrows">
+          <path d="M162 126 H202"></path>
+          <path d="M358 126 H398"></path>
+          <path d="M556 126 H606"></path>
+          <path d="M742 126 H782"></path>
+          <path d="M477 106 V90"></path>
+          <path d="M477 162 V156"></path>
+        </g>
+        <g class="harness-text">
+          <text x="96" y="131">Intake</text>
+          <text x="280" y="131">Routing</text>
+          <text x="477" y="80">Tools</text>
+          <text x="477" y="193">Retry / branch</text>
+          <text x="674" y="131">Sequence</text>
+          <text x="836" y="131">Result</text>
+        </g>
+      </svg>
+      <div class="grid g2 compact-cards">
+        <div class="card"><h3>Coordinates steps</h3><p>routing, retries, sequence</p></div>
+        <div class="card"><h3>Supports stability</h3><p>keeps the workflow more usable and structured</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>I want to keep the explanation of Harness concrete. It coordinates steps, handles execution order, may manage retries or routing, and helps make the surrounding process more stable. Students do not need every technical detail. They need a correct placement in the stack.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Harness Boundaries">
+    <p class="kicker">harness</p>
+    <h2 class="h2">What Harness is not</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Not the model</h3><p>the model still does the language reasoning</p></div>
+      <div class="card"><h3>Not the whole user workflow</h3><p>it supports the workflow, but is not identical to the end-user experience</p></div>
+    </div>
+    <aside class="notes"><p>This is another negative-definition slide. Harness is not the model, and it is not the same as the full user workflow. Instead, it sits in between, helping coordinate prompts, tools, execution paths, and system behavior around the model.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Stack Explorer">
+    <p class="kicker">interactive</p>
+    <h2 class="h2">Interactive stack explorer</h2>
+    <div class="diagram-shell stack-shell-top">
+      <svg class="stack-svg" viewBox="0 0 920 150" role="img" aria-label="Six-layer stack from neural network to IDE workflow">
+        <g class="stack-band">
+          <rect x="18" y="28" width="138" height="76" rx="22"></rect>
+          <rect x="166" y="28" width="138" height="76" rx="22"></rect>
+          <rect x="314" y="28" width="138" height="76" rx="22"></rect>
+          <rect x="462" y="28" width="138" height="76" rx="22"></rect>
+          <rect x="610" y="28" width="138" height="76" rx="22"></rect>
+          <rect x="758" y="28" width="138" height="76" rx="22"></rect>
+        </g>
+        <g class="stack-rail">
+          <path d="M156 66 H166"></path>
+          <path d="M304 66 H314"></path>
+          <path d="M452 66 H462"></path>
+          <path d="M600 66 H610"></path>
+          <path d="M748 66 H758"></path>
+        </g>
+        <g class="stack-text">
+          <text x="87" y="62">Neural</text>
+          <text x="87" y="86">network</text>
+          <text x="235" y="74">LLM</text>
+          <text x="383" y="62">Agentic</text>
+          <text x="383" y="86">LLM</text>
+          <text x="531" y="62">Open Claw</text>
+          <text x="531" y="86">Hermes</text>
+          <text x="679" y="74">Harness</text>
+          <text x="827" y="62">CodeX</text>
+          <text x="827" y="86">Cline</text>
+        </g>
+      </svg>
+    </div>
+    <div class="tab-shell stack-shell" data-tab-group="stack-lab">
+      <div class="tab-buttons">
+        <button class="tab-btn is-active" data-target="stack-1">Mechanism</button>
+        <button class="tab-btn" data-target="stack-2">Model</button>
+        <button class="tab-btn" data-target="stack-3">Behavior</button>
+        <button class="tab-btn" data-target="stack-4">Implementation</button>
+        <button class="tab-btn" data-target="stack-5">Orchestration</button>
+        <button class="tab-btn" data-target="stack-6">Workflow</button>
+      </div>
+      <div class="tab-panels">
+        <div class="tab-panel is-active" id="stack-1"><h3>Mechanism</h3><p>Neural network: the broad learning engine underneath many systems.</p></div>
+        <div class="tab-panel" id="stack-2"><h3>Model</h3><p>LLM: a language-focused neural network trained on text.</p></div>
+        <div class="tab-panel" id="stack-3"><h3>Behavior</h3><p>Agentic LLM: the model working inside a loop of action and feedback.</p></div>
+        <div class="tab-panel" id="stack-4"><h3>Implementation</h3><p>Open Claw / Hermes: concrete packages that realize the agent pattern.</p></div>
+        <div class="tab-panel" id="stack-5"><h3>Orchestration</h3><p>Harness: the coordination layer that helps the system run reliably.</p></div>
+        <div class="tab-panel" id="stack-6"><h3>Workflow</h3><p>CodeX → Cline: the user-facing experience inside the IDE.</p></div>
+      </div>
+    </div>
+    <aside class="notes"><p>This is the second interactive slide. I use it to revisit the whole ladder in a more inspectable format. Clicking the buttons lets me pause on each layer and ask students to explain it back in one sentence. That makes the class more active and reduces the feeling of linear slide overload.</p></aside>
+  </section>
+
+  <section class="slide" data-title="IDE Section">
+    <p class="kicker">part 07 · use case</p>
+    <h2 class="h2">Step 6: IDE workflow</h2>
+    <div class="hero-note">Now the full stack becomes visible to a human doing real work.</div>
+    <aside class="notes"><p>This final content step shows why the earlier layers matter. The IDE workflow is where a user can actually feel the stack in action. If we had started here, the lesson would be exciting but conceptually messy. By arriving here after the ladder, students can now locate what they are seeing.</p></aside>
+  </section>
+
+  <section class="slide" data-title="IDE Flow">
+    <p class="kicker">ide workflow</p>
+    <h2 class="h2">A simple IDE workflow path</h2>
+    <div class="diagram-shell ide-shell">
+      <svg class="ide-svg" viewBox="0 0 920 320" role="img" aria-label="IDE workflow figure showing request, file read, edit proposal, and human review">
+        <g class="ide-window">
+          <rect x="40" y="40" width="840" height="210" rx="22"></rect>
+          <circle cx="82" cy="72" r="9"></circle>
+          <circle cx="112" cy="72" r="9"></circle>
+          <circle cx="142" cy="72" r="9"></circle>
+        </g>
+        <g class="ide-boxes">
+          <rect x="92" y="112" width="150" height="82" rx="18"></rect>
+          <rect x="286" y="112" width="150" height="82" rx="18"></rect>
+          <rect x="480" y="112" width="150" height="82" rx="18"></rect>
+          <rect x="674" y="112" width="150" height="82" rx="18"></rect>
+        </g>
+        <g class="ide-arrows">
+          <path d="M242 153 H286"></path>
+          <path d="M436 153 H480"></path>
+          <path d="M630 153 H674"></path>
+        </g>
+        <g class="ide-text">
+          <text x="167" y="146">User asks</text>
+          <text x="167" y="171">task</text>
+          <text x="361" y="146">Read files</text>
+          <text x="361" y="171">context</text>
+          <text x="555" y="146">Propose</text>
+          <text x="555" y="171">edits</text>
+          <text x="749" y="146">Human</text>
+          <text x="749" y="171">review</text>
+        </g>
+      </svg>
+      <div class="hero-note">The IDE is where the stack becomes a visible human-agent workflow instead of just a model demo.</div>
+    </div>
+    <aside class="notes"><p>This flow slide is intentionally simple. I want students to see the IDE workflow as a sequence of interaction between human and system, not as magic. The user asks, the system reads, the system acts, and the user reviews. This is where model, tools, orchestration, and interface all come together.</p></aside>
+  </section>
+
+  <section class="slide" data-title="CodeX">
+    <p class="kicker">ide workflow</p>
+    <h2 class="h2">Where CodeX fits</h2>
+    <div class="card"><p>Treat CodeX here as part of the user-facing coding workflow layer around the model and tools.</p></div>
+    <aside class="notes"><p>I keep the explanation modest here. The point is not to teach a full product history. The point is to place CodeX in the workflow story. It is part of how the user reaches the broader stack inside coding work.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Cline">
+    <p class="kicker">ide workflow</p>
+    <h2 class="h2">Where Cline fits</h2>
+    <div class="card"><p>Treat Cline as another concrete workflow example inside the IDE environment where an agent-like experience becomes visible.</p></div>
+    <aside class="notes"><p>The same teaching logic applies to Cline. Students do not need every product detail right now. They need to place it correctly. Cline is a visible IDE-layer workflow example, not the fundamental mechanism or theory layer.</p></aside>
+  </section>
+
+  <section class="slide" data-title="User Review">
+    <p class="kicker">ide workflow</p>
+    <h2 class="h2">The human still matters</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Request</h3><p>the user sets the goal</p></div>
+      <div class="card"><h3>Review</h3><p>the user checks the output</p></div>
+      <div class="card"><h3>Responsibility</h3><p>the user decides what to accept</p></div>
+    </div>
+    <aside class="notes"><p>This slide protects against automation hype. Even in an IDE workflow with strong assistance, the human remains important. The human sets the task, reviews the result, and carries responsibility for what is accepted. This is especially important when the system has tool access or can modify artifacts directly.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Beginner Example">
+    <p class="kicker">example</p>
+    <h2 class="h2">Beginner example</h2>
+    <div class="prompt-box">“Explain the difference between an LLM and a neural network.”</div>
+    <div class="hero-note">Good for plain model use.</div>
+    <aside class="notes"><p>I bring this example back to remind the room of the baseline. The task is explanatory. The system returns text. That keeps us in plain model territory. Repetition helps students feel the distinction between explanatory use and task-executing use.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Advanced Example">
+    <p class="kicker">example</p>
+    <h2 class="h2">Slightly advanced example</h2>
+    <div class="prompt-box">“Open the lesson folder, revise the handout, and verify the structure still matches the staircase.”</div>
+    <div class="hero-note">Good for agent workflow discussion.</div>
+    <aside class="notes"><p>This is the slightly advanced example because it points toward a multi-step, environment-aware task. The system needs context, may inspect files, may change content, and may verify the result. That is much closer to the agent workflow layer than the earlier plain chat example.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Glossary A">
+    <p class="kicker">glossary</p>
+    <h2 class="h2">Glossary, set 1</h2>
+    <div class="glossary">
+      <div class="card"><dt>Token</dt><dd>small chunk of text used by the model</dd></div>
+      <div class="card"><dt>Prompt</dt><dd>input or instruction given to the model</dd></div>
+      <div class="card"><dt>Tool</dt><dd>external function or service the system can call</dd></div>
+      <div class="card"><dt>Loop</dt><dd>repeated cycle of action and response</dd></div>
+    </div>
+    <aside class="notes"><p>We split the glossary across two slides so it stays readable. The point is not to create a dictionary. The point is to stabilize the minimum working vocabulary students need to discuss the stack without collapsing the layers.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Glossary B">
+    <p class="kicker">glossary</p>
+    <h2 class="h2">Glossary, set 2</h2>
+    <div class="glossary">
+      <div class="card"><dt>Memory</dt><dd>stored state used across steps</dd></div>
+      <div class="card"><dt>Orchestration</dt><dd>logic that coordinates workflow execution</dd></div>
+      <div class="card"><dt>Workflow</dt><dd>practical sequence that produces an outcome</dd></div>
+      <div class="card"><dt>Implementation</dt><dd>concrete system package realizing a design</dd></div>
+    </div>
+    <aside class="notes"><p>This second glossary slide covers the terms that matter most for the upper part of the stack. Students often use words like memory, orchestration, and workflow loosely. I want them to hear the clean classroom versions now so the next lessons have a stable vocabulary base.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Staircase Return">
+    <p class="kicker">recap</p>
+    <h2 class="h2">Return to the staircase</h2>
+    <div class="diagram-shell stair-shell">
+      <svg class="staircase-svg" viewBox="0 0 920 210" role="img" aria-label="Rising staircase from neural network to IDE workflow">
+        <g class="stair-step">
+          <rect x="28" y="144" width="136" height="44" rx="14"></rect>
+          <rect x="178" y="118" width="136" height="70" rx="14"></rect>
+          <rect x="328" y="92" width="136" height="96" rx="14"></rect>
+          <rect x="478" y="66" width="136" height="122" rx="14"></rect>
+          <rect x="628" y="40" width="136" height="148" rx="14"></rect>
+          <rect x="778" y="14" width="116" height="174" rx="14"></rect>
+        </g>
+        <g class="stair-text">
+          <text x="96" y="172">NN</text>
+          <text x="246" y="163">LLM</text>
+          <text x="396" y="152">Agent</text>
+          <text x="546" y="140">Impl.</text>
+          <text x="696" y="126">Harness</text>
+          <text x="836" y="110">IDE</text>
+        </g>
+      </svg>
+    </div>
+    <div class="ladder">
+      <div class="ladder-step"><span class="num">1</span><div><strong>Neural network</strong><p>mechanism</p></div><div><p>general learning base</p></div></div>
+      <div class="ladder-step"><span class="num">2</span><div><strong>LLM</strong><p>model</p></div><div><p>language-focused system</p></div></div>
+      <div class="ladder-step"><span class="num">3</span><div><strong>Agentic LLM</strong><p>behavior</p></div><div><p>loop with planning and action</p></div></div>
+      <div class="ladder-step"><span class="num">4</span><div><strong>Open Claw / Hermes</strong><p>implementation</p></div><div><p>concrete packages</p></div></div>
+      <div class="ladder-step"><span class="num">5</span><div><strong>Harness</strong><p>orchestration</p></div><div><p>workflow coordination</p></div></div>
+      <div class="ladder-step"><span class="num">6</span><div><strong>CodeX → Cline</strong><p>workflow use case</p></div><div><p>visible IDE experience</p></div></div>
+    </div>
+    <aside class="notes"><p>We come back to the staircase because repetition is the teaching strategy here. After the full explanation, I want students to see the same map again and feel that it is now more meaningful. Each label should carry more weight than it did earlier in the class.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Five Takeaways">
+    <p class="kicker">recap</p>
+    <h2 class="h2">Five takeaways to remember</h2>
+    <div class="takeaway-list">
+      <div class="takeaway">Neural network is the broad mechanism.</div>
+      <div class="takeaway">LLM is a language-focused model on that mechanism.</div>
+      <div class="takeaway">Agentic LLM means the model is inside a task loop.</div>
+      <div class="takeaway">Open Claw, Hermes, and Harness belong higher in the system stack.</div>
+      <div class="takeaway">IDE workflows are where the whole stack becomes visible.</div>
+    </div>
+    <aside class="notes"><p>These five takeaways are the minimum successful memory trace for Lesson 1. If students can repeat these in their own words, we have succeeded. If not, that is a sign that we need more examples or slower pacing before moving into more advanced lessons.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Exit Ticket">
+    <p class="kicker">class check</p>
+    <h2 class="h2">Exit ticket</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Question</h3><p>“An agentic LLM is an LLM plus ______.”</p></div>
+      <div class="card"><h3>Good answers</h3><p>loop, tools, memory, stepwise action, observation, revision</p></div>
+    </div>
+    <aside class="notes"><p>This exit ticket is a compact way to test the central distinction. Good answers mention loops, tools, memory, or action. Weak answers say “more powerful” or “smarter.” That gives us a fast diagnostic of whether the conceptual shift actually landed.</p></aside>
+  </section>
+
+  <section class="slide" data-title="Close">
+    <p class="kicker">close</p>
+    <h2 class="h2">Lesson 01 complete</h2>
+    <p class="lede">The goal was not to memorize names. The goal was to learn a clean way to sort the names.</p>
+    <div class="pill-row">
+      <span class="pill">mechanism</span>
+      <span class="pill">model</span>
+      <span class="pill">behavior</span>
+      <span class="pill">implementation</span>
+      <span class="pill">orchestration</span>
+      <span class="pill">workflow</span>
+    </div>
+    <div class="deck-footer"><span class="mono">50 / 50</span><span class="mono">Q&A</span></div>
+    <aside class="notes"><p>This closing line is the real message of the lesson. We are not trying to stuff students with vocabulary. We are trying to give them a disciplined sorting method. If they can sort the names into the right layers, the rest of the course can move forward on much stronger ground.</p></aside>
+  </section>
+
+</div>
+
+<div style="position:fixed;bottom:12px;left:12px;font-size:11px;color:#667085;z-index:100;pointer-events:none">
+  S presenter mode · T switch theme · ← → navigate · F fullscreen · O overview
+</div>
+
+<script src="assets/runtime.js"></script>
+<script>
+  document.querySelectorAll('.tab-shell').forEach((shell) => {
+    const buttons = shell.querySelectorAll('.tab-btn');
+    const panels = shell.querySelectorAll('.tab-panel');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-target');
+        buttons.forEach((b) => b.classList.remove('is-active'));
+        panels.forEach((p) => p.classList.remove('is-active'));
+        button.classList.add('is-active');
+        const panel = shell.querySelector('#' + target);
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+  });
+</script>
+</body>
+</html>
