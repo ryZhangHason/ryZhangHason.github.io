@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI in Government-Citizen Communication</title>
+  <link rel="stylesheet" href="assets/deck.css">
+</head>
+<body>
+<div class="deck">
+
+  <section class="slide" data-title="Two Papers">
+    <p class="kicker">0427 Method Course Presentation</p>
+    <h1>AI in government-citizen communication</h1>
+    <p class="lede">From interaction quality to deployment infrastructure</p>
+    <div class="rule"></div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Paper 1</h3>
+        <p>AI language modification and communication quality in government-citizen interaction.</p>
+      </div>
+      <div class="card light">
+        <h3>Paper 2</h3>
+        <p>PEARL and label-efficient representation learning for retrieval-based systems.</p>
+      </div>
+    </div>
+    <div class="footer"><span>8 minutes</span><span class="slide-number" data-current="1" data-total="11"></span></div>
+    <div class="notes">Today I will introduce two connected papers. The first is a public administration paper about whether AI language modification improves communication quality between government and citizens. The second is a method paper that moves one layer deeper. If we want to deploy AI in these communication systems, we also need reliable retrieval and classification infrastructure when labels are scarce.</div>
+  </section>
+
+  <section class="slide" data-title="Why Communication Quality Matters">
+    <p class="kicker">Paper 1</p>
+    <h2>Communication quality is not only information transfer</h2>
+    <div class="flow">
+      <div class="box">Citizen message</div>
+      <div class="arrow">-></div>
+      <div class="box">AI modification</div>
+      <div class="arrow">-></div>
+      <div class="box">Government response</div>
+    </div>
+    <div class="grid g2" style="margin-top:28px">
+      <div class="card">
+        <h3>Potential benefit</h3>
+        <ul class="small-list">
+          <li>clearer information</li>
+          <li>more polite tone</li>
+          <li>lower response burden</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Core concern</h3>
+        <ul class="small-list">
+          <li>standardized language</li>
+          <li>muted emotion</li>
+          <li>weaker urgency signals</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer"><span>Research question: perceived quality from both sides</span><span class="slide-number" data-current="2" data-total="11"></span></div>
+    <div class="notes">The first paper starts from a practical observation. Government-citizen interaction is increasingly text-based. Citizens write online messages, and officials reply through platforms. AI can make this communication clearer and more polite. But communication quality is not only clarity. It also includes respect, empathy, feeling heard, trust, urgency, and emotional signals. So the key question is whether AI improves communication in a deeper way, or whether it only makes the message look polished.</div>
+  </section>
+
+  <section class="slide" data-title="Conceptual Framework">
+    <p class="kicker">Framework</p>
+    <h2>Two sides, two layers of communication quality</h2>
+    <div class="split-wide">
+      <div>
+        <div class="card">
+          <h3>Informational-cognitive</h3>
+          <p>clarity, satisfaction, ease of reply</p>
+        </div>
+        <div class="card light" style="margin-top:18px">
+          <h3>Expressive-constitutive</h3>
+          <p>politeness, respect, feeling heard, empathy, trust, urgency</p>
+        </div>
+      </div>
+      <div class="figure-frame">
+        <img src="assets/figures/ip_framework.png" alt="Information Polity analytical framework">
+      </div>
+    </div>
+    <div class="footer"><span>Figure 1: analytical framework</span><span class="slide-number" data-current="3" data-total="11"></span></div>
+    <div class="notes">The framework separates two kinds of communication quality. The first is informational-cognitive: does the message become easier to understand and easier to respond to? Here the expected effect of AI is quite direct. The second is expressive-constitutive: does the message express respect, emotion, responsiveness, and legitimacy? This is more contested. AI may improve surface politeness, but it may also reduce emotional signals that tell officials a case is urgent or needs empathy.</div>
+  </section>
+
+  <section class="slide" data-title="Research Design">
+    <p class="kicker">Research design</p>
+    <h2>Vignette-based survey in China</h2>
+    <div class="grid g3">
+      <div class="card">
+        <h3>Participants</h3>
+        <p><strong>220</strong> citizens<br><strong>214</strong> civil servants</p>
+      </div>
+      <div class="card">
+        <h3>Contexts</h3>
+        <p>requests, inquiries, complaints, suggestions, emergencies</p>
+      </div>
+      <div class="card light">
+        <h3>Comparison</h3>
+        <p>original messages vs AI-modified messages</p>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <p class="lede">Analysis: paired t-tests and mixed-effects regressions.</p>
+    <div class="footer"><span>Within-subject evaluation</span><span class="slide-number" data-current="4" data-total="11"></span></div>
+    <div class="notes">The design uses real-world government-citizen communication scenarios from China. The survey includes citizens and civil servants. Citizens evaluated government responses, while civil servants evaluated citizen messages. Each participant saw both original and AI-modified versions across different topics. This within-subject structure is useful because each participant partly serves as their own control. The analysis combines paired t-tests with mixed-effects regressions.</div>
+  </section>
+
+  <section class="slide" data-title="Citizen Findings">
+    <p class="kicker">Citizen-side findings</p>
+    <h2>AI improves citizen perceptions across all six dimensions</h2>
+    <div class="split-wide">
+      <div>
+        <ul>
+          <li>information clarity</li>
+          <li>response satisfaction</li>
+          <li>expressed politeness</li>
+          <li>feeling heard</li>
+          <li>empathic satisfaction</li>
+          <li>trust toward government</li>
+        </ul>
+      </div>
+      <div class="figure-frame">
+        <img src="assets/figures/ip_citizen_regression_figure.png" alt="Citizen regression results">
+      </div>
+    </div>
+    <div class="footer"><span>Figure 3: mixed-effect regression coefficients</span><span class="slide-number" data-current="5" data-total="11"></span></div>
+    <div class="notes">The findings are clear on the citizen side. AI-modified government responses were rated higher across all six dimensions, including not only clarity and satisfaction but also feeling heard, empathy, and trust. The important point is that the improvement is not only instrumental. It also appears in relational perceptions. This supports the idea that AI language modification can improve both the informational and relational sides of public communication.</div>
+  </section>
+
+  <section class="slide" data-title="Civil Servant Findings">
+    <p class="kicker">Civil servant-side findings</p>
+    <h2>AI reduces friction without clearly erasing urgency</h2>
+    <div class="split-wide">
+      <div>
+        <ul>
+          <li>clarity increased</li>
+          <li>easiness of reply increased</li>
+          <li>politeness increased</li>
+          <li>respectfulness increased</li>
+          <li>urgency and needed empathy were not significantly reduced</li>
+        </ul>
+      </div>
+      <div class="figure-frame">
+        <img src="assets/figures/ip_civil_regression_figure.png" alt="Civil servant regression results">
+      </div>
+    </div>
+    <div class="footer"><span>Figure 5: mixed-effect regression coefficients</span><span class="slide-number" data-current="6" data-total="11"></span></div>
+    <div class="notes">On the civil servant side, AI-modified citizen messages were clearer, easier to reply to, more polite, and more respectful. Importantly, the paper does not find consistent evidence that AI significantly reduces urgency or needed empathy. This means the strongest version of the emotional-flattening concern is not supported here, although the paper still treats it as a context-dependent risk.</div>
+  </section>
+
+  <section class="slide" data-title="Bridge">
+    <p class="kicker">Bridge to Paper 2</p>
+    <h2>Better wording is only the front-end layer</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Interaction level</h3>
+        <p>clarity, politeness, empathy, trust, burden</p>
+      </div>
+      <div class="card light">
+        <h3>System level</h3>
+        <p>routing, retrieval, category matching, similar cases</p>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <p class="lede">If nearest neighbors in embedding space are wrong, the system retrieves the wrong cases.</p>
+    <div class="footer"><span>Transition question: how to improve retrieval with few labels?</span><span class="slide-number" data-current="7" data-total="11"></span></div>
+    <div class="notes">This is where the second paper enters. Once we imagine AI-assisted communication in real systems, the task is not only rewriting a message. The system also needs to retrieve similar cases, route messages, and suggest relevant categories or policies. These tasks often depend on embeddings. If the nearest neighbors in embedding space are wrong, the system retrieves the wrong examples. So the method question becomes: can we improve embedding geometry with only limited labels?</div>
+  </section>
+
+  <section class="slide" data-title="SE-VAE Foundation">
+    <p class="kicker">Previous work: SE-VAE</p>
+    <h2 class="sevae-title">Technical foundation: structured embedding representation</h2>
+    <div class="sevae-layout">
+      <div class="figure-frame sevae-figure">
+        <img src="assets/figures/SEVAE-structure.png" alt="SE-VAE structure">
+      </div>
+      <div class="foundation-strip">
+        <div><strong>Latent structure</strong><span>learn compact representations</span></div>
+        <div><strong>Semantic alignment</strong><span>connect text space and task labels</span></div>
+        <div><strong>PEARL extension</strong><span>reshape fixed embeddings for retrieval</span></div>
+      </div>
+    </div>
+    <div class="footer"><span>SE-VAE as technical foundation for PEARL</span><span class="slide-number" data-current="8" data-total="11"></span></div>
+    <div class="notes">Before PEARL, my earlier SE-VAE work already focused on representation structure. The key connection is that PEARL inherits this concern with embedding geometry, but turns it into a lighter post-processing approach for fixed embeddings and retrieval systems.</div>
+  </section>
+
+  <section class="slide" data-title="PEARL Method">
+    <p class="kicker">Paper 2: PEARL</p>
+    <h2>Label-efficient geometry shaping for fixed embeddings</h2>
+    <div class="method-grid">
+      <div class="equation-panel">
+        <div class="eq-line"><span><i>z</i><sub>i</sub></span><b>=</b><i>f</i>(<i>x</i><sub>i</sub>),&nbsp;&nbsp;<i>y</i><sub>i</sub> &isin; {1, ..., <i>C</i>}</div>
+        <div class="eq-line"><span><i>p</i><sub>c</sub></span><b>=</b><span class="frac"><sup>1</sup><em>|L<sub>c</sub>|</em></span> &sum;<sub>i &isin; L<sub>c</sub></sub> <i>z</i><sub>i</sub></div>
+        <div class="eq-line"><span><i>s</i><sub>ic</sub></span><b>=</b><span class="frac"><sup>cos(<i>z</i><sub>i</sub>, <i>p</i><sub>c</sub>)</sup><em>&tau;</em></span></div>
+        <div class="eq-line"><span><i>P</i>(<i>c</i>|<i>i</i>)</span><b>=</b><span class="frac"><sup>exp(<i>s</i><sub>ic</sub>)</sup><em>&sum;<sub>k=1</sub><sup>C</sup> exp(<i>s</i><sub>ik</sub>)</em></span></div>
+        <div class="eq-line strong"><span><i>L</i></span><b>=</b>CE(<i>y</i><sub>i</sub>, <i>P</i>) + &lambda; ||<i>z</i>'<sub>i</sub> - <i>z</i><sub>i</sub>||<sub>2</sub><sup>2</sup></div>
+        <div class="eq-line"><span><i>z</i>'<sub>i</sub></span><b>=</b>norm(<i>z</i><sub>i</sub> + &alpha;<i>Wz</i><sub>i</sub>)</div>
+        <div class="term-legend">
+          <div><strong><i>z</i><sub>i</sub></strong><span>embedding vector for one text</span></div>
+          <div><strong><i>p</i><sub>c</sub></strong><span>average vector for class <i>c</i></span></div>
+          <div><strong><i>s</i><sub>ic</sub></strong><span>similarity score to prototype</span></div>
+          <div><strong><i>P</i>(<i>c</i>|<i>i</i>)</strong><span>probability text belongs to class</span></div>
+          <div><strong><i>L</i></strong><span>training loss: fit label, avoid distortion</span></div>
+          <div><strong><i>z</i>'<sub>i</sub></strong><span>refined vector used for retrieval</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="figure-frame pearl-top pearl-large">
+          <img src="assets/figures/pearl_figure.png" alt="PEARL method pipeline">
+        </div>
+        <div class="tech-steps">
+          <div><strong>Input</strong><span>frozen embeddings</span></div>
+          <div><strong>Anchor</strong><span>class prototypes</span></div>
+          <div><strong>Output</strong><span>retrieval geometry</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Figure: top pipeline</span><span class="slide-number" data-current="9" data-total="11"></span></div>
+    <div class="notes">PEARL targets a practical problem. Many systems already use fixed embeddings from large pretrained models. But these embeddings are not always organized in the way a deployment needs. PEARL uses limited labels to form class prototypes, then gently reshapes the embedding space so local neighborhoods become more label-consistent. The point is not to train a new foundation model. It is a lightweight post-processing step for systems where retraining is expensive or impossible.</div>
+  </section>
+
+  <section class="slide" data-title="PEARL Results">
+    <p class="kicker">Results and deployment meaning</p>
+    <h2>PEARL improves early retrieval when labels are scarce</h2>
+    <table class="result-table">
+      <thead>
+        <tr>
+          <th>Evidence point</th>
+          <th>Raw / baseline</th>
+          <th>PEARL</th>
+          <th>Gain</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Overall low-label neighborhood quality</td>
+          <td>Raw embeddings</td>
+          <td>Prototype-aligned embeddings</td>
+          <td><strong>+25.7%</strong> over raw</td>
+        </tr>
+        <tr>
+          <td>Against unsupervised post-processing</td>
+          <td>Centering / L2 / whitening-style fixes</td>
+          <td>Uses limited labels as anchors</td>
+          <td><strong>+21.1%+</strong> over strong unsupervised baselines</td>
+        </tr>
+        <tr>
+          <td>Purity@1, 300 labels</td>
+          <td>0.3824</td>
+          <td><strong>0.5370</strong></td>
+          <td>+0.1546 points; about <strong>+40.4%</strong></td>
+        </tr>
+        <tr>
+          <td>Hit@1, 600 labels</td>
+          <td>0.4386</td>
+          <td><strong>0.6054</strong></td>
+          <td>+0.1668 points; about <strong>+38.0%</strong></td>
+        </tr>
+        <tr>
+          <td>MRR@20, 1200 labels</td>
+          <td>0.6202</td>
+          <td><strong>0.7186</strong></td>
+          <td>+0.0984 points; about <strong>+15.9%</strong></td>
+        </tr>
+        <tr>
+          <td>Purity@5, 2500 labels</td>
+          <td>0.4540</td>
+          <td><strong>0.6359</strong></td>
+          <td>+0.1819 points; about <strong>+40.1%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>PEARL: results summary</span><span class="slide-number" data-current="10" data-total="11"></span></div>
+    <div class="notes">The main result is that PEARL is strongest in the regime many public-sector deployments actually face: limited labels, fixed embeddings, and reliance on retrieval. It improves local neighborhood quality and early retrieval, especially Hit@1 and MRR. This matters because civil servants often inspect only the first few retrieved cases. When more labels become available, fully supervised methods can become stronger, so PEARL is not claiming to dominate every setting. Its value is as a practical, label-efficient geometry correction.</div>
+  </section>
+
+  <section class="slide" data-title="Closing">
+    <p class="kicker">Closing</p>
+    <h2>One research agenda: evaluate AI at two levels</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Interaction level</h3>
+        <ul class="small-list">
+          <li>clarity</li>
+          <li>politeness</li>
+          <li>empathy and trust</li>
+          <li>frontline burden</li>
+        </ul>
+      </div>
+      <div class="card light">
+        <h3>System level</h3>
+        <ul class="small-list">
+          <li>retrieval quality</li>
+          <li>label efficiency</li>
+          <li>drift monitoring</li>
+          <li>auditability</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <p class="lede">Good AI governance communication is not only better wording. It also requires systems that retrieve the right cases and adapt with limited supervision.</p>
+    <div class="footer"><span>End</span><span class="slide-number" data-current="11" data-total="11"></span></div>
+    <div class="notes">Together, the two papers form one research agenda. The first paper evaluates what AI changes in the communication experience. The second paper asks how to support that communication system technically when labels are scarce and the environment changes. My final takeaway is that AI in public communication should be judged at both levels: the interaction level and the system level.</div>
+  </section>
+
+</div>
+<script src="assets/js/runtime.js"></script>
+</body>
+</html>
