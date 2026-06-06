@@ -100,6 +100,7 @@ redirect_from:
 {% assign ai_communication_paper = site.publications | where: "permalink", "/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens" | first %}
 {% assign pearl_paper = site.publications | where: "permalink", "/publication/2026-01-01-pearl-prototype-enhanced-alignment" | first %}
 {% assign separate_spheres_paper = site.publications | where: "permalink", "/publication/2026-01-01-increasingly-separate-spheres" | first %}
+{% assign critband_paper = site.publications | where: "permalink", "/publication/2026-05-18-critband" | first %}
 {% assign heas_paper = site.publications | where: "permalink", "/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework" | first %}
 {% assign se_vae_paper = site.publications | where: "permalink", "/publication/2025-01-01-structural-equation-vae" | first %}
 {% assign sme_sustainability_paper = site.publications | where: "permalink", "/publication/2025-01-01-sustainability-of-smes-in-hong-kong" | first %}
@@ -125,6 +126,14 @@ This study examines how state gender discourse in China has evolved over the pas
     <em>Figure.</em> The associations (cosine similarities) between gender and the public versus private spheres, 1990–2023.
   </figcaption>
 </figure>
+
+---
+
+<a name="critband"></a>
+
+ - **critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distributions** (with Qihao Wang). *arXiv preprint arXiv:2605.18686*. 2026. [https://arxiv.org/abs/2605.18686](https://arxiv.org/abs/2605.18686) {% include publication_cite_inline.html publication=critband_paper %}
+
+We present critband, a Python package for Silverman-style critical bandwidth detection and multimodality assessment based on Gaussian kernel density estimation. The package provides a hybrid binary-Brent critical bandwidth solver, FFT-accelerated KDE, bootstrap confidence intervals, component decomposition, bimodality strength scoring, and excess-mass estimation. Validated against twelve benchmark mixtures and cross-checked with the R multimode package, critband reproduces critical bandwidth behavior closely with substantially faster runtime. Available on [PyPI](https://pypi.org/project/critband/).
 
 ---
 
@@ -293,6 +302,7 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
     <h3>Publications</h3>
     <ul>
       <li><a href="/publication/2026-01-01-increasingly-separate-spheres">Increasingly Separate Spheres? The Changing State Gender Discourse in China</a> (2026). <em>Frontiers in Sociology</em></li>
+      <li><a href="/publication/2026-05-18-critband">critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distributions</a> (2026)</li>
       <li><a href="/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
       <li><a href="/publication/2026-01-01-pearl-prototype-enhanced-alignment">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
       <li><a href="/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
