@@ -99,6 +99,7 @@ redirect_from:
   <div class="main-text-content" markdown="1">
 {% assign ai_communication_paper = site.publications | where: "permalink", "/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens" | first %}
 {% assign pearl_paper = site.publications | where: "permalink", "/publication/2026-01-01-pearl-prototype-enhanced-alignment" | first %}
+{% assign separate_spheres_paper = site.publications | where: "permalink", "/publication/2026-01-01-increasingly-separate-spheres" | first %}
 {% assign heas_paper = site.publications | where: "permalink", "/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework" | first %}
 {% assign se_vae_paper = site.publications | where: "permalink", "/publication/2025-01-01-structural-equation-vae" | first %}
 {% assign sme_sustainability_paper = site.publications | where: "permalink", "/publication/2025-01-01-sustainability-of-smes-in-hong-kong" | first %}
@@ -110,6 +111,14 @@ I am a graduate student in the Department of Politics and Public Administration,
 
 Works
 ------
+<a name="separate-spheres"></a>
+
+ - **Increasingly Separate Spheres? The Changing State Gender Discourse in China from 1990–2023** (with Jia Wang). *Frontiers in Sociology*. 2026. [https://doi.org/10.3389/fsoc.2026.1777050](https://doi.org/10.3389/fsoc.2026.1777050) {% include publication_cite_inline.html publication=separate_spheres_paper %}
+
+This study examines how state gender discourse in China has evolved over the past three decades, with a focus on how official narratives construct women's roles in the public and private spheres. Although research has documented a resurgence of traditional gender ideology and worsening gender inequality in post-reform China, less is known about how state-controlled media have framed womanhood over time. Using computational text analysis on 125,532 People's Daily news articles published between 1990 and 2023, we trace shifts in the semantic associations between women and public- versus domestic-role vocabularies. Our analysis shows that, beginning in the late 1990s and intensifying through the 2010s, official discourse increasingly distanced women from public identities while maintaining a strong and relatively stable emphasis on their domestic roles. This growing asymmetry reflects a discursive move toward "increasingly separate spheres," in which women's identities are more tightly anchored in the family than in public life. These findings clarify how central state rhetoric has adapted to market reforms and welfare restructuring, and highlight the role of official discourse in articulating gender boundaries and reproducing gendered expectations in contemporary China.
+
+---
+
 <a name="ai-communication"></a>
 
  - **Enhancing Communication Quality between Government and Citizens: The Role of AI Modification** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986) {% include publication_cite_inline.html publication=ai_communication_paper %}
@@ -276,6 +285,7 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
     <ul>
       <li><a href="/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
       <li><a href="/publication/2026-01-01-pearl-prototype-enhanced-alignment">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
+      <li><a href="/publication/2026-01-01-increasingly-separate-spheres">Increasingly Separate Spheres? The Changing State Gender Discourse in China</a> (2026). <em>Frontiers in Sociology</em></li>
       <li><a href="/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
       <li><a href="/publication/2025-01-01-structural-equation-vae">Structural Equation-VAE</a> (2025)</li>
       <li><a href="/publication/2025-01-01-sustainability-of-smes-in-hong-kong">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
