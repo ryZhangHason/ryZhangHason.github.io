@@ -35,7 +35,8 @@ redirect_from:
   position: sticky;
   top: 70px;
   align-self: flex-start;
-  height: fit-content;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
 }
 
 .publications-sidebar h3 {
