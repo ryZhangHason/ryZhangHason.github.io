@@ -135,6 +135,12 @@ This study examines how state gender discourse in China has evolved over the pas
 
 We present critband, a Python package for Silverman-style critical bandwidth detection and multimodality assessment based on Gaussian kernel density estimation. The package provides a hybrid binary-Brent critical bandwidth solver, FFT-accelerated KDE, bootstrap confidence intervals, component decomposition, bimodality strength scoring, and excess-mass estimation. Validated against twelve benchmark mixtures and cross-checked with the R multimode package, critband reproduces critical bandwidth behavior closely with substantially faster runtime. Available on [PyPI](https://pypi.org/project/critband/).
 
+You can apply critband directly from PyPI:
+```bash
+pip install critband
+```
+For full documentation and tutorials, visit the [critband project page](https://pypi.org/project/critband/).
+
 ---
 
 <a name="ai-communication"></a>
