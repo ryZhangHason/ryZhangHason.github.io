@@ -120,6 +120,46 @@ Representation determines what patterns are easy to learn. A powerful optimizer 
 | Engineer a feature matrix once | Reuse a pretrained representation, add domain data, retrieve relevant context, and test representation behavior on slices and edge cases. |
 | Feature importance explains the model | Embeddings require probing, nearest-neighbor inspection, counterfactual tests, and task-level evaluation. |
 
+### Concrete model toolkit: AE and VAE
+
+To make “representation” concrete, introduce two model families before moving on to the broader systems discussion.
+
+An **autoencoder (AE)** learns an encoder and decoder:
+
+```text
+x  ──encoder──>  z  ──decoder──>  x̂
+                 latent code
+```
+
+The training signal is reconstruction. The model tries to make `x̂` resemble `x`, usually with mean squared error for continuous values or binary cross-entropy for binary inputs. The bottleneck forces the encoder to preserve information that helps the decoder reconstruct the input.
+
+A **variational autoencoder (VAE)** adds a probabilistic constraint. Instead of mapping each input to one fixed latent point, the encoder predicts a distribution with mean `μ` and variance `σ²`. The model samples a latent vector and learns a smooth latent space:
+
+```text
+x → encoder → (μ, σ) → sample z → decoder → x̂
+                         ↘ KL regularization ↗
+```
+
+The VAE objective combines reconstruction quality with a KL-divergence term that keeps the learned latent distribution close to a prior. This makes the latent space useful for interpolation and generation, but introduces a trade-off: stronger regularization can produce smoother structure while weakening reconstruction detail.
+
+### Do not confuse activation functions with loss functions
+
+This distinction is essential:
+
+| Component | Role | Examples |
+| --- | --- | --- |
+| Activation function | Adds a nonlinear transformation inside the network | ReLU, tanh, sigmoid, GELU |
+| Loss function | Scores the model’s output against a target or preference | MSE, cross-entropy, KL divergence, contrastive loss |
+| Regularizer | Adds a preference or constraint to the objective | weight decay, sparsity penalty, VAE KL term |
+
+**ReLU** computes `max(0, x)`. It is simple and keeps positive gradients alive, but it can create inactive units when inputs stay negative. **tanh** maps values into `[-1, 1]`, which can be useful for bounded hidden states but may saturate and produce small gradients. **GELU** and related smooth activations are common in transformer-style architectures.
+
+The engineering question is not “Which function is newest?” It is “Where does this function sit, what signal does it transform, and what behavior does it make easier or harder to learn?”
+
+### Bridge
+
+These concrete models show how architecture, representation, activation, objective, and regularization fit together. Now we can discuss inductive bias without leaving the mechanism abstract.
+
 ### Bridge
 
 Representations do not determine one answer by themselves. They make some hypotheses easier to express than others. That is the role of inductive bias.
