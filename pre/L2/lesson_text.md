@@ -491,3 +491,15 @@ The deck should use figures that explain a mechanism, not decorative AI imagery.
 ### Visual production rule
 
 Use external figures as teaching references, but prefer redrawing the core idea in the deck’s own visual system. This keeps the lesson coherent and avoids casually embedding assets with unclear reuse rights. First-party screenshots can be used sparingly with source attribution; interactive sites should be linked or demonstrated live rather than copied wholesale.
+
+### Added concrete-model visual sequence
+
+The deck now includes a native visual sequence before Part 04:
+
+1. **AE compression:** input grid → bottleneck `z` → reconstruction `x̂`.
+2. **AE in practice:** denoising and anomaly detection as two different uses of reconstruction error.
+3. **VAE latent map:** learned distributions, sampled points, and interpolation between regions.
+4. **VAE generation:** sample from a prior, then decode a family of related outputs.
+5. **Model family map:** AE, VAE, CNN, Transformer, and diffusion as different structural preferences.
+
+These are intentionally schematic rather than claims about one benchmark or dataset. Their job is to make the mechanism visible before students encounter the broader engineering comparison.
