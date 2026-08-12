@@ -1,546 +1,254 @@
-# Lesson 04 · From Human–Agent Collaboration to the Organization of Science
+# Lesson 04 · Prompt Design for Research
 
 ## Course position
 
-Part 1 begins from a concrete collaboration: how a social scientist and an AI agent jointly move from a substantive puzzle to theory, design, analysis, critique, and revision.
+This lesson teaches prompt design through a concrete research workflow. At each of eight stages — clarify, operationalize, analyze, interpret, refuse, evidence, critique, and claim ceiling — students see an ineffective prompt and an effective prompt, and learn why the effective one produces better research.
 
-Part 2 zooms out. It asks what kind of organizational arrangement this collaboration reveals, and whether AI is merely accelerating established research or changing the organization of scientific inquiry itself. This move follows the organizational-learning tradition that treats knowing as situated in work practices and communities rather than exhausted by formal job descriptions or individual cognition (Brown and Duguid, 1991; Hutchins, 1995).
-
-This lesson is designed as a two-part Pre/L4. The first half is deliberately practical: students watch a concrete research collaboration move from puzzle to analysis, evidence packet, adversarial critique, and claim ceiling. The second half abstracts that workflow into Organization Science language. Theory should emerge from the workflow rather than arrive as a detached vocabulary list.
-
-## Part 1 · Practical collaboration
-
-The practical half uses one empirical case and one dataset. The agent is asked to clarify the question, propose mechanisms, declare an analysis contract, run OLS / Decision Tree / Random Forest, produce an evidence packet, attack the explanation, and help set the claim ceiling.
-
-The key practical rule is:
-
-> At each step, the agent proposes; the researcher accepts, rejects, or reframes.
-
-The minimum research contract contains four items:
-
-- target and unit of analysis;
-- mechanism and observable implication;
-- admissible variables and data split;
-- failure checks: leakage, missingness, subgroup error, and overclaiming.
-
-The practical output is not “the best model.” It is a review packet containing data checks, model specification, out-of-sample results, subgroup errors, candidate interpretations, and prohibited claims.
+The lesson does not teach theory. It teaches practice.
 
 ## Central thesis
 
-> AI-enabled science is not defined by the substitution of human labor with machine labor. It is defined by the reorganization of epistemic labor: how questions are formed, explanations compete, anomalies are retained, memory accumulates, and responsibility is allocated.
-
-## Special Issue question
-
-The Special Issue asks whether AI should produce faster, cheaper versions of existing science or enable fundamentally new science.
-
-Our answer is not that AI makes research more efficient. The stronger claim is:
-
-> The distinctive possibility of human–agent collaboration is the creation of a recursively organized inquiry loop in which theoretical conjecture, empirical analysis, adversarial critique, and research memory remain continuously available to one another.
-
-The relevant unit of production may therefore shift from the completed paper to the recursively organized inquiry loop. This is an extension of organizational learning arguments in which individual intuitions are interpreted, integrated, and institutionalized through organizational processes (Crossan, Lane, and White, 1999).
-
----
+> The quality of AI-assisted research is determined by the quality of the prompts. A good prompt declares the question, constrains the agent's role, and asks for structured judgment rather than open-ended output.
 
 ## Slide 01 · Cover
 
 ### Audience-facing copy
 
-**From human–agent collaboration**  
-**to the organization of science**
+**Prompt design for research collaboration.**
 
-`Pre/L4 · Part 2`
+`Pre/L4`
 
-Small subtitle:
-
-`AI-enabled research as epistemic organization`
+At each stage of the research workflow: what works, what doesn't, and why.
 
 ### Speaker direction
 
-Part 1 showed what the collaboration looks like from inside: problem formation, mechanism building, analysis, criticism, and revision. Part 2 asks a different question. We are no longer asking what the agent helped us do. We are asking what kind of research organization made that collaboration possible, and what this organization changes about knowledge production.
+This lesson has one objective: at every stage of a research collaboration, students can identify what makes a prompt effective and what makes it wasteful. By the end, they have eight concrete prompts they can copy and use.
 
 ---
 
-## Slide 02 · The zoom-out move
+## Slide 02 · Overview
 
 ### Audience-facing copy
 
-**Do not ask first:**
+**Eight stages. Eight prompt principles.**
 
-`What can the agent do?`
+The research workflow:
 
-**Ask instead:**
-
-`What does the research arrangement make persistent, distributed, contestable, and accountable?`
-
-### Key terms
-
-- persistent: what survives the current interaction;
-- distributed: whose cognitive or epistemic labor is involved;
-- contestable: where disagreement and alternative explanations enter;
-- accountable: who has authority to authorize a claim.
-
-### Speaker direction
-
-This is the move from an instrumental account to an organizational account. A tool perspective asks whether the agent can search, code, summarize, or model. An Organization Science perspective asks how the arrangement distributes work, authority, memory, and control.
-
----
-
-## Slide 03 · The unit of scientific production
-
-### Audience-facing copy
-
-**What is the unit of AI-enabled science?**
-
-`task  →  paper  →  inquiry loop`
-
-Main statement:
-
-> The paper is a temporary cross-section of a longer inquiry loop.
-
-### Visual structure for the slide
-
-Three horizontal cards:
-
-1. **Task** — search, code, estimate, write
-2. **Paper** — a compressed and stabilized knowledge product
-3. **Inquiry loop** — conjecture → evidence → anomaly → critique → revision
-
-Highlight the third card.
-
-### Speaker direction
-
-Traditional academic production treats the paper as the main unit. The messy sequence that produced it—failed analyses, abandoned mechanisms, rival explanations, and changes in measurement—is compressed or removed. Agent collaboration makes it possible to treat the inquiry loop itself as a durable research object. The claim is not that papers disappear. The claim is that the paper becomes one temporary stabilization of an ongoing process. This echoes the distinction between formal accounts of work and the situated practices through which learning and innovation actually occur (Brown and Duguid, 1991).
-
----
-
-## Slide 04 · From division of labor to division of epistemic labor
-
-### Audience-facing copy
-
-**Human–agent collaboration distributes epistemic work without symmetrically distributing epistemic authority.**
-
-### Two-column structure
-
-**Agent can contribute**
-
-- search and recombination;
-- alternative mechanisms;
-- operationalizations and model comparisons;
-- anomaly detection and subgroup diagnostics;
-- adversarial critique;
-- retrieval of prior decisions.
-
-**Human must still authorize**
-
-- why the puzzle matters;
-- which mechanism deserves commitment;
-- whether evidence identifies the claim;
-- what conclusion can be responsibly published;
-- who bears responsibility for interpretation.
-
-### Speaker direction
-
-This is not a claim that the human is always smarter. It is a claim about asymmetric authority. The agent may perform substantial epistemic work, but it does not automatically possess the authority to decide the value of a question, the meaning of evidence, or the responsibility attached to a public claim. The distinction matters because distributed cognition does not imply equal agency or equal accountability: cognitive activity can be distributed across people, artifacts, and representations while responsibility remains institutionally differentiated (Hutchins, 1995).
-
----
-
-## Slide 05 · From assistance to constitution
-
-### Audience-facing copy
-
-**The agent does not merely assist inquiry.**
-
-Under sustained interaction, it becomes partly **constitutive of the problem space**.
-
-### Mechanism chain
-
-`vague intuition`
-
-→ `conceptual distinction`
-
-→ `mechanism candidate`
-
-→ `observable implication`
-
-→ `empirical comparison`
-
-→ `revised puzzle`
-
-### Speaker direction
-
-An assistance view assumes the problem already exists and the agent merely executes. Our collaboration shows something stronger. The agent helps transform an intuition into a puzzle, a puzzle into a mechanism, and a result into a revised question. It does not determine the final problem, but it changes what becomes visible, articulable, and worth pursuing.
-
-### Theoretical phrase
-
-> AI is not merely instrumental to inquiry; under sustained interaction, it becomes constitutive of the inquiry’s problem space.
-
----
-
-## Slide 06 · Recursive coupling
-
-### Audience-facing copy
-
-**Research is not a linear pipeline.**
-
-`theory ↔ operationalization ↔ analysis ↔ anomaly ↔ critique ↔ theory revision`
-
-Callout:
-
-> Theory and evidence are recursively coupled when each can reorganize the next round of the other.
-
-### Speaker direction
-
-The familiar methods diagram implies a one-way sequence: theory, hypothesis, data, analysis, conclusion. In practice, and especially in sustained human–agent collaboration, the relationship is recursive. An anomaly changes the mechanism; a mechanism changes the measurement; a measurement changes the model; a model changes what counts as an anomaly. This resembles the feed-forward and feedback dynamics in organizational learning, where intuiting and interpreting can become institutionalized, then feed back into subsequent individual and collective action (Crossan, Lane, and White, 1999).
-
-### Terms to introduce
-
-- recursive coupling;
-- temporal interdependence;
-- path-dependent inquiry.
-
----
-
-## Slide 07 · Research memory and epistemic path dependence
-
-### Audience-facing copy
-
-**Persistent memory changes the temporal structure of inquiry.**
-
-`past decision → current design → future constraint`
-
-### Memory can preserve
-
-- rejected explanations;
-- failed operationalizations;
-- leakage warnings;
-- negative results;
-- claim ceilings;
-- reasons for prior decisions.
-
-### But memory can also produce
-
-- stale assumptions;
-- path dependence;
-- epistemic lock-in;
-- institutionalized early mistakes.
-
-### Speaker direction
-
-Memory is not automatically learning. It becomes learning only when the research organization can distinguish reusable judgment from historical accident. Persistent memory gives the inquiry loop continuity, but continuity has a dark side: the system may repeatedly reproduce a bad early decision. Therefore memory requires curation, provenance, revision, and the ability to reopen locked assumptions. This is consistent with the broader knowledge-creation argument that organizational knowledge is not simply stored information; it is produced through processes that articulate, amplify, connect, and reinterpret knowledge (Nonaka, 1994; Orlikowski, 2002).
-
----
-
-## Slide 08 · Exploration versus exploitation
-
-### Audience-facing copy
-
-**AI has no intrinsic exploratory effect.**
-
-It can either:
-
-`expand exploration`
-
-or
-
-`accelerate exploitation`.
-
-### Exploration-enhancing mechanism
-
-- cheaply generate competing mechanisms;
-- test multiple operationalizations;
-- preserve divergent interpretations;
-- run alternative specifications;
-- surface boundary conditions.
-
-### Exploitation-accelerating mechanism
-
-- translate unfamiliar problems into familiar language;
-- privilege dominant concepts;
-- produce plausible but conservative novelty;
-- close ambiguity too early;
-- turn every result into a coherent story.
-
-### Core question
-
-> Under what interaction architectures does AI produce exploration rather than accelerated exploitation?
-
-### Speaker direction
-
-This is where March becomes useful. Exploration involves experimentation with uncertain returns; exploitation refines and extends existing competencies. The question is not whether AI is creative in the abstract. The question is whether the organization around the agent rewards divergence or premature closure. An agent can enlarge the search space, but it can also make conventional science cheaper and faster. The outcome depends on the rules of interaction, memory, critique, and authorization (March, 1991).
-
----
-
-## Slide 09 · Epistemic friction as infrastructure
-
-### Audience-facing copy
-
-**Good collaboration does not eliminate all friction.**
-
-It eliminates operational friction and institutionalizes epistemic friction.
-
-### Contrast
-
-**Operational friction**
-
-`missing file · broken code · repetitive formatting`
-
-**Epistemic friction**
-
-`alternative explanation · measurement challenge · claim ceiling · negative case`
-
-### Main statement
-
-> The value of an AI collaborator may lie less in reducing epistemic friction than in making epistemic friction persistent, timely, and difficult to evade.
-
-### Speaker direction
-
-We usually describe AI as friction reduction. But removing all friction is not a scientific ideal. Some friction is the mechanism by which claims become more reliable. The important design question is which friction should disappear and which friction should become part of the infrastructure of inquiry. In organizational-learning terms, the issue is not simply how quickly a system adapts, but whether adaptation over-refines exploitation at the expense of exploration (March, 1991).
-
----
-
-## Slide 10 · OLS, Tree, and RF as epistemic regimes
-
-### Audience-facing copy
-
-**Different models make different structures visible.**
-
-| Model | Epistemic operation | What becomes visible | What may be obscured |
-|---|---|---|---|
-| OLS | regularization | average, stable, additive relation | thresholds, heterogeneity |
-| Tree | boundary search | conditional rules and cut-points | sampling instability |
-| RF | functional agnosticism | complex structure that generalizes | mechanism and interpretability |
-
-Bottom line:
-
-> Model comparison is not only performance comparison. It is comparison between alternative representations of social structure.
-
-### Speaker direction
-
-This is how the concrete Part 1 connects to Part 2. OLS is not an obsolete model; it commits us to a particular representation of the world. A tree searches for conditional boundaries. A random forest suspends premature commitment to one functional form. The agent helps compare these representations, but the social scientist must decide which differences are theoretically meaningful rather than merely predictive.
-
----
-
-## Slide 11 · The shifted locus of expertise
-
-### Audience-facing copy
-
-**AI changes where scholarly expertise matters.**
-
-From:
-
-`executing established methods`
-
-Toward:
-
-`architecting inquiry · curating disagreement · authorizing claims`
-
-### Three roles
-
-**Architect of inquiry**  
-Designs the research loop and its standards of evidence.
-
-**Curator of disagreement**  
-Keeps competing explanations and negative results alive long enough to matter.
-
-**Guarantor of epistemic responsibility**  
-Decides which claims can be publicly owned and defended.
-
-### Speaker direction
-
-This is more precise than saying that AI will not replace humans. The human role shifts. Expertise becomes less about manually executing every operation and more about constructing the conditions under which operations can produce meaningful knowledge. The researcher becomes responsible for the architecture of inquiry, not merely the completion of tasks.
-
----
-
-## Slide 12 · The research loop as organizational form
-
-### Audience-facing copy
-
-```text
-substantive puzzle
-      ↓
-mechanism and observable implications
-      ↓
-empirical design
-      ↓
-agent-assisted analysis
-      ↓
-adversarial critique
-      ↓
-interpretation and boundary-setting
-      ↓
-revised theory / next empirical question
+```
+Clarify → Operationalize → Analyze → Interpret → Refuse → Evidence → Critique → Ceiling
 ```
 
-Callout:
-
-> The contribution is not automation of a pipeline. It is the organization of recursive inquiry.
+Rule: At each stage, the agent proposes; the researcher accepts, rejects, or reframes. The prompt determines the quality of the proposal.
 
 ### Speaker direction
 
-This loop is the prototype behind the Special Issue argument. It preserves the difference between empirical inference and theoretical inference, but lets them interact repeatedly. The agent expands the possible moves; the human decides which moves change the theory and which merely produce noise.
+Research collaboration is not one big prompt. It is a sequence of small, inspectable moves. Each move has its own prompt principle. Show the full map first, then unfold each stage one by one.
 
 ---
 
-## Slide 13 · Proposed theoretical contribution
+## Slide 03 · Clarify the question
 
-### Audience-facing copy
+### Stage 01 · Prompt Design
 
-**Human–agent collaboration reorganizes the production of science through three mechanisms.**
+**Clarify the question**
 
-### 1. Recursive availability
+❌ Ineffective:
+"帮我分析一下公共服务的数据"
 
-Past conjectures, failures, and boundaries remain available to the next analytical move.
+✅ Effective:
+"我有一份2020–2023年北京市街道级面板数据。outcome 是居民满意度评分（1–5），unit 是街道–年度。我想理解为什么相似行政级别的街道，居民满意度差异很大。请先帮我 clarify：(1) 这个 outcome 有没有其他合理的 measurement，(2) 列出3个可能的 mechanism 和对应的 observable implications，(3) 指出哪个 mechanism 最容易被反驳。"
 
-### 2. Distributed but asymmetric judgment
-
-Epistemic work is distributed, but authority and accountability are not symmetrically distributed.
-
-### 3. Institutionalized epistemic friction
-
-Critique, divergence, and claim limitation become part of the workflow rather than an external review stage.
+**Why it works:** 好的 prompt 声明了 outcome、unit、和你想要 agent 做什么。坏的 prompt 只给了一个主题，agent 不知道你在问什么。
 
 ### Speaker direction
 
-These are the three mechanisms that can organize the eventual article. They are more specific than “AI helps science” and more general than the details of one product. Together they explain how a collaboration can become an organizational form. The argument also extends practice-based accounts of knowing: capabilities are enacted in arrangements of people, artifacts, representations, and routines rather than possessed by an isolated actor (Hutchins, 1995; Orlikowski, 2002).
+这一步的目标不是让 agent 做分析，而是让 agent 帮你想清楚问题。坏的 prompt 只给了一个主题，agent 不知道你的 outcome、unit 和关心的 mechanism 是什么。好的 prompt 声明了这些，然后让 agent 做三件事：检查 measurement、列 mechanism、指出最容易被反驳的。
 
 ---
 
-## Slide 14 · Boundary conditions
+## Slide 04 · Operationalize variables
 
-### Audience-facing copy
+### Stage 02 · Prompt Design
 
-**The loop is not automatically scientific.**
+**Operationalize variables**
 
-It fails when:
+❌ Ineffective:
+"帮我处理一下数据，看看哪些变量重要"
 
-- generation is mistaken for explanation;
-- prediction is mistaken for causality;
-- persistent memory becomes unreviewed authority;
-- model plurality becomes interpretive relativism;
-- critique is performed but not allowed to change the claim;
-- the agent expands output without expanding inquiry.
+✅ Effective:
+"我有以下变量：X1 eco-efficiency, X2 budget per capita, X3 staff count, X4 digitalization index。请帮我检查：(1) 每个变量是否真的 operationalize 了我的 mechanism（eco-efficiency → citizen co-production），(2) X3 和 X4 是不是只是 proxy 而不是 mechanism 本身，(3) 建议一个 train/test split 策略，注意面板数据的时间结构。"
+
+**Why it works:** 好的 prompt 带着具体变量名和 mechanism，让 agent 帮你做 measurement 检查，而不是自己跑分析。
 
 ### Speaker direction
 
-The point is not to celebrate the loop. A recursive system can recursively reproduce its own errors. The contribution therefore requires boundary-setting. The question is not whether the agent participated, but whether the arrangement changed the quality, scope, or type of inquiry in a defensible way.
+这一步是把 mechanism 变成可以测量的变量。坏的 prompt 说"帮我处理数据"，agent 会自己选变量、自己决定分割策略。好的 prompt 带着具体变量名和 mechanism 过来，让 agent 做 measurement validity 检查：这些变量真的在测我说的东西吗？还是只是 proxy？
 
 ---
 
-## Slide 15 · Classroom / research lab
+## Slide 05 · Run analysis
 
-### Audience-facing copy
+### Stage 03 · Prompt Design
 
-**Reverse-engineer your own research loop.**
+**Run analysis**
 
-Draw four layers:
+❌ Ineffective:
+"跑个 random forest 看看"
 
-1. **Puzzle** — what substantive question starts the loop?
-2. **Mechanism** — what observable difference should the theory produce?
-3. **Analysis** — what can the agent execute, compare, or challenge?
-4. **Judgment** — what remains the researcher’s responsibility?
+✅ Effective:
+"请用三种方法分析：(1) OLS 作为 baseline，(2) Decision Tree 看有没有 threshold effect，(3) Random Forest 看复杂结构能否泛化。对于每种方法，请回答：它在问什么问题？它能看到什么？它看不到什么？不要给我模型排名，给我一个对比表格。"
 
-Then answer:
-
-> Which part of your current workflow is merely automated, and which part could become a new form of inquiry?
+**Why it works:** 好的 prompt 告诉 agent 用多个模型问不同的问题，而不是只追求最高准确率。
 
 ### Speaker direction
 
-Ask students to avoid drawing a generic AI pipeline. They must identify a point where theory, evidence, and critique can feed back into one another. The strongest answer will also name a failure mode: where the agent might produce faster exploitation, false confidence, or memory-based lock-in.
+这一步的关键是"多个模型问不同的问题"。OLS 问平均关系，Tree 问 threshold，RF 问复杂结构能否泛化。坏的 prompt 只说"跑 RF"，agent 会给你一个模型排名。好的 prompt 要求 agent 对每个模型回答三个问题，而不是给你一个"最佳模型"。
 
 ---
 
-## Slide 16 · Takeaway
+## Slide 06 · Interpret results
+
+### Stage 04 · Prompt Design
+
+**Interpret results**
+
+❌ Ineffective:
+"RF 准确率最高，说明模型很好"
+
+✅ Effective:
+"三种模型的结果如下。请帮我分析：(1) 哪些变量在三种模型中都显著（robust），(2) 哪些只在某个模型中出现（unstable），(3) 哪些结果支持我的 mechanism，哪些不支持。最后，我们现在的证据最多能支持哪一层 claim？prediction？association？causality？"
+
+**Why it works:** 好的 prompt 要求 agent 区分 robust 和 unstable 的结果，而不是只看最好的那个模型。
+
+### Speaker direction
+
+这一步是把"模型输出"变成"研究判断"。坏的 prompt 只看最好的模型，好的 prompt 要求区分 robust（三种模型都出现）和 unstable（只有某个模型出现）的结果，然后判断证据支持哪一层 claim。
+
+---
+
+## Slide 07 · Refuse bad claims
+
+### Stage 05 · Prompt Design
+
+**Refuse bad claims**
+
+❌ Ineffective:
+"写一段总结，强调我们的发现很重要"
+
+✅ Effective:
+"请不要写总结。请先帮我攻击自己的解释：(1) X1 的 eco-efficiency 是不是只是 GDP 的 proxy，(2) 有没有 leakage（outcome 和某个变量因果倒置），(3) 如果我换个 model specification 去掉 X4，结果还成立吗？"
+
+**Why it works:** 好的 prompt 让 agent 先攻击自己的解释，而不是先写结论。拒绝是研究的关键环节。
+
+### Speaker direction
+
+这是全课最重要的一页。研究合作变得有价值，当研究者拒绝了 agent 的"容易故事"。坏的 prompt 让 agent 先写总结，好的 prompt 让 agent 先攻击自己的解释：变量是不是 proxy？有没有 leakage？换个 specification 还成立吗？写作应该是最后一步，不是第一步。
+
+---
+
+## Slide 08 · Build evidence packet
+
+### Stage 06 · Prompt Design
+
+**Build evidence packet**
+
+❌ Ineffective:
+"把结果整理成报告"
+
+✅ Effective:
+"请构建一个 evidence packet：(1) 数据质量——missingness、outliers、leakage 检查，(2) 模型——每种方法的 test error 和 subgroup error，(3) 解释——分成 supported / uncertain / prohibited 三类。对于 prohibited 的，请说明为什么不能这么说。"
+
+**Why it works:** 好的 prompt 要求 agent 把证据分层，而不是笼统地说"结果很好"。
+
+### Speaker direction
+
+agent 不应该只返回"RF 表现最好"。好的 prompt 要求生成 evidence packet：数据质量检查、模型对比、解释分层（supported / uncertain / prohibited）。这个 packet 让你把 prediction、association 和 causal interpretation 分开。
+
+---
+
+## Slide 09 · Adversarial critique
+
+### Stage 07 · Prompt Design
+
+**Adversarial critique**
+
+❌ Ineffective:
+"帮我写一个 limitations 部分"
+
+✅ Effective:
+"请站在 reviewer 的角度，用最严格的标准攻击这个研究：(1) measurement validity——我的变量真的在测我说的东西吗？(2) endogeneity——有没有因果倒置或遗漏变量？(3) external validity——这个结论能推广到其他城市吗？(4) 最强的替代解释是什么？"
+
+**Why it works:** 好的 prompt 给 agent 一个具体的攻击角色和四个攻击维度，而不是泛泛地说"写 limitations"。
+
+### Speaker direction
+
+agent 不应该只帮你把结果写得更像论文，而应该攻击解释。好的 prompt 给 agent 一个具体角色（reviewer）和四个攻击维度（measurement validity、endogeneity、external validity、替代解释）。这比泛泛地说"写 limitations"有效得多。
+
+---
+
+## Slide 10 · Set claim ceiling
+
+### Stage 08 · Prompt Design
+
+**Set claim ceiling**
+
+❌ Ineffective:
+"结论：eco-efficiency 显著影响公民参与"
+
+✅ Effective:
+"根据我们的证据，请帮我判断：我们的 claim ceiling 在哪？(A) 这个模型能预测新数据（prediction），(B) 变量之间有稳定的共变关系（association），(C) 存在一个 plausible 的 mechanism，(D) 我们识别了一个 causal effect。请对每个层级打勾或打叉，并说明需要什么额外证据才能升级。"
+
+**Why it works:** 好的 prompt 让 agent 帮你做 claim 分层，而不是直接下结论。大多数 AI-assisted analysis 在这里失控。
+
+### Speaker direction
+
+很多 AI-assisted analysis 在这里失控：把 model importance 写成 mechanism，把 prediction 写成 causality。好的 prompt 让 agent 帮你做 claim 分层——prediction、association、mechanism、causality——然后对每个层级打勾或打叉，并说明需要什么额外证据才能升级。
+
+---
+
+## Slide 11 · Takeaway
 
 ### Audience-facing copy
 
-**The question is not whether an agent can do research tasks.**
+**Three rules for research prompts.**
 
-**The question is whether a human–agent arrangement can sustain forms of inquiry that conventional research organizations suppress.**
+1. **Declare before you run** — state outcome, unit, mechanism, and what you want the agent to do
+2. **Critique before you conclude** — ask the agent to attack your explanation before writing the summary
+3. **Bound before you claim** — separate prediction, association, mechanism, and causality
 
-Small closing lines:
+> The agent proposes. You judge. The prompt determines the quality of the proposal.
 
-`prolonged exploration · recursive theory revision · internalized criticism · preserved failure`
+### Speaker direction
 
-### Final three sentences
-
-> AI-enabled science is not simply faster science.
-
-> It is science reorganized around a different unit of inquiry.
-
-> The social scientist’s task is to design the loop, govern its disagreement, and remain accountable for what the loop comes to claim.
+三条规则总结全课。第一，先声明再运行——不要让 agent 猜你在问什么。第二，先批评再结论——让 agent 攻击你的解释，而不是先写总结。第三，先分层再下 claim——区分 prediction、association、mechanism 和 causality。这三条规则适用于所有和 agent 的研究合作。
 
 ---
 
-## PPT preparation notes · imitate Pre/L3
+## PPT preparation notes
 
 ### Deck structure
 
-Follow the L3 pattern:
+- `index.html` as a single static deck;
+- one `<section class="slide">` per logical page;
+- `data-title` for every slide;
+- short audience-facing text on the slide;
+- full spoken development inside `<aside class="notes">`;
+- `assets/base.css`, `assets/fonts.css`, `assets/runtime.js`, theme CSS, and `style.css` copied from L3;
+- keyboard navigation, overview, fullscreen, and presenter mode inherited from L3.
 
-1. `index.html` as a single static deck;
-2. one `<section class="slide">` per logical page;
-3. `data-title` for every slide;
-4. short audience-facing text on the slide;
-5. full spoken development inside `<aside class="notes">`;
-6. `assets/base.css`, `assets/fonts.css`, `assets/runtime.js`, theme CSS, and `style.css` copied from L3;
-7. keyboard navigation, overview, fullscreen, and presenter mode inherited from L3.
+### Prompt slide layout
 
-### Recommended visual language
+Each prompt stage slide uses one of two layouts:
 
-Use the same `academic-paper` theme and restrained editorial layout as L3. This topic should feel like a theory seminar, not a startup pitch.
+1. **Sidebar + main** (stages 1, 2, 4, 6, 8): sidebar shows stage number and title, main shows the bad/good prompt pair.
+2. **Full-width** (stages 3, 5, 7): prompt pair displayed as a two-column split.
 
-Use recurring visual devices:
+Both layouts end with a callout explaining why the effective prompt works.
 
-- **sidebar + main** for conceptual distinctions;
-- **horizontal arrows** for recursive loops and research transitions;
-- **two-column contrasts** for human/agent and exploration/exploitation;
-- **large italic keywords** for terms such as `epistemic labor`, `recursive coupling`, and `epistemic friction`;
-- **one callout per slide** containing the claim the audience should remember.
+### Visual language
 
-### Copying L3 layouts
-
-Use L3’s existing slide classes and visual grammar rather than inventing a new layout system. The likely sequence is:
-
-- Cover: `slide full`;
-- conceptual thesis: `sidebar` + `main`;
-- process diagrams: `slide full` with a horizontal flow;
-- distinctions: `sidebar` + `main` with two or three cards;
-- comparison: `slide full` with a matrix;
-- lab: `slide full` with four numbered steps;
-- takeaway: `slide full` with a compact recap.
-
-### Speaker notes standard
-
-Each slide should include a Chinese `aside.notes` block of approximately 150–300 Chinese characters, following L3. The visible slide should contain the theoretical proposition; the notes should contain the concrete collaboration example, transition, qualification, and boundary condition.
-
-Do not put “这一页要讲……” or presenter instructions in visible slide content. Keep those in `aside.notes`.
-
-### Suggested file handoff
-
-This Markdown file is the content and theory source for the deck. The later PPT implementation should create:
-
-```text
-Pre/L4/index.html
-Pre/L4/style.css
-Pre/L4/README.md
-Pre/L4/speaker_script_zh.md
-```
-
-The first implementation pass should build the 26-slide skeleton, copy the L3 runtime and theme assets, and then render every slide for visual QA before adding decorative detail.
-
----
-
-## References for the conceptual framing
-
-The citations below are the minimum theory spine for Part 2. They are not meant to turn the lesson into a literature review; each source is used to anchor one specific conceptual move.
-
-- Brown, J. S., and P. Duguid. 1991. “Organizational Learning and Communities-of-Practice: Toward a Unified View of Working, Learning, and Innovation.” *Organization Science* 2(1): 40–57. https://doi.org/10.1287/orsc.2.1.40
-- Crossan, M. M., H. W. Lane, and R. E. White. 1999. “An Organizational Learning Framework: From Intuition to Institution.” *Academy of Management Review* 24(3): 522–537. https://doi.org/10.5465/amr.1999.2202135
-- Hutchins, E. 1995. *Cognition in the Wild*. Cambridge, MA: MIT Press.
-- March, J. G. 1991. “Exploration and Exploitation in Organizational Learning.” *Organization Science* 2(1): 71–87. https://doi.org/10.1287/orsc.2.1.71
-- Nonaka, I. 1994. “A Dynamic Theory of Organizational Knowledge Creation.” *Organization Science* 5(1): 14–37. https://doi.org/10.1287/orsc.5.1.14
-- Orlikowski, W. J. 2002. “Knowing in Practice: Enacting a Collective Capability in Distributed Organizing.” *Organization Science* 13(3): 249–273. https://doi.org/10.1287/orsc.13.3.249
-
-### Source-validation note
-
-The requested HKU Primo route was attempted for source validation, but the current execution environment could not resolve the Primo host and did not expose the browser runtime required by the validation skill. The references above were therefore checked against publisher, DOI, and institutional bibliographic records available during this pass; before formal submission, reopen each record through HKU Primo and record exact holdings or `View Online` status.
+- **Red accent** for ineffective prompts (`.prompt-bad`)
+- **Teal accent** for effective prompts (`.prompt-good`)
+- **Mono font** for stage labels and "INEFFECTIVE"/"EFFECTIVE" tags
+- **Serif font** for prompt text (matching the academic-paper theme)
+- **One callout per slide** with the "why it works" explanation
