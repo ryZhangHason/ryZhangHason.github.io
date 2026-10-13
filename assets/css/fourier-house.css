@@ -1,6 +1,8 @@
 .fourier-house {
-  width: min(100%, 190px);
-  margin: 12px auto 8px;
+  position: relative;
+  z-index: 121;
+  width: min(100%, 228px);
+  margin: 8px auto 10px;
   color: #45657c;
 }
 
@@ -11,12 +13,62 @@
   background: radial-gradient(ellipse at center 58%, rgba(226, 240, 248, .72), transparent 72%);
 }
 
-.fourier-house figcaption {
-  margin-top: 0;
+.fourier-house__caption {
+  margin-top: 4px;
   color: #56758a;
-  font: 600 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: .015em;
   text-align: center;
+}
+
+.fourier-house__formula-line {
+  margin: 0;
+  padding: 6px 0 7px;
+  border-top: 1px solid rgba(86, 117, 138, .24);
+  border-bottom: 1px solid rgba(86, 117, 138, .24);
+  color: #3d596d;
+  text-align: center;
+}
+
+.fourier-house__formula-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #7b94a4;
+  font: 600 6px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .11em;
+}
+
+.fourier-house__equation {
+  display: block;
+  color: #405b70;
+  font: 500 9px/1.35 Georgia, 'Times New Roman', serif;
+  white-space: nowrap;
+  transform: scaleX(.9);
+}
+
+.fourier-house__equation mjx-container {
+  margin: 0 !important;
+  font-size: 100% !important;
+}
+
+.fourier-house__quote {
+  margin: 7px 2px 0;
+  padding: 0;
+  border: 0;
+  color: #405b70;
+  font: italic 500 10px/1.5 Georgia, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.fourier-house__quote cite {
+  display: block;
+  margin-top: 4px;
+  color: #6c879a;
+  font: 600 8px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-style: normal;
+  letter-spacing: .04em;
+}
+
+.fourier-house__quote cite::before {
+  content: '— ';
 }
 
 @media (max-width: 1023px), (prefers-reduced-motion: reduce) {

@@ -151,9 +151,15 @@
       <li><a href="{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
       {% endif %}      
     </ul>
-    <figure class="fourier-house" role="img" aria-label="Two rotating Fourier epicycle chains simultaneously trace Tiananmen Gate and the five stars above it over thirty seconds, then remain visible.">
+    <figure class="fourier-house">
       <canvas class="fourier-house__canvas" aria-hidden="true"></canvas>
-      <figcaption>z₁(t), z₂(t) = Σ cₖeⁱᵏᵗ</figcaption>
+      <figcaption class="fourier-house__caption">
+        <p class="fourier-house__formula-line" aria-label="Truncated Fourier series approximation of a two-dimensional path: z of t equals x of t plus i y of t, approximately the sum from k equals minus N to N of A sub k times e to the i times k t plus phi sub k."><span class="fourier-house__formula-label">TRUNCATED FOURIER SERIES</span><span class="fourier-house__equation">\(z(t)=x(t)+iy(t)\approx\sum_{k=-N}^{N}A_ke^{i(kt+\phi_k)}\)</span></p>
+        <blockquote class="fourier-house__quote">
+          <q>What appears as a coherent whole may be the trace of countless simpler motions.</q>
+          <cite>Ruiyu Zhang</cite>
+        </blockquote>
+      </figcaption>
     </figure>
   </div>
 </div>
