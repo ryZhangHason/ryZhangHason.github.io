@@ -14,18 +14,18 @@
   const colors = {
     trace: '#a64c42',
     traceGlow: 'rgba(166, 76, 66, .13)',
-    wheel: 'rgba(112, 116, 122, .5)',
-    arm: 'rgba(100, 104, 110, .62)',
-    hub: 'rgba(88, 92, 98, .72)',
-    tip: '#92969b',
+    wheel: 'rgba(138, 143, 150, .30)',
+    arm: 'rgba(132, 137, 144, .38)',
+    hub: 'rgba(120, 126, 134, .48)',
+    tip: 'rgba(135, 141, 148, .58)',
   };
   const starColors = {
     trace: '#b8893f',
     traceGlow: 'rgba(184, 137, 63, .15)',
-    wheel: 'rgba(112, 116, 122, .5)',
-    arm: 'rgba(100, 104, 110, .62)',
-    hub: 'rgba(88, 92, 98, .72)',
-    tip: '#92969b',
+    wheel: 'rgba(138, 143, 150, .30)',
+    arm: 'rgba(132, 137, 144, .38)',
+    hub: 'rgba(120, 126, 134, .48)',
+    tip: 'rgba(135, 141, 148, .58)',
   };
 
   let width = 0;
