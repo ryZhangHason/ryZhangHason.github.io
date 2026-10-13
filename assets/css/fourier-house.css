@@ -1,0 +1,24 @@
+.fourier-house {
+  width: min(100%, 190px);
+  margin: 12px auto 8px;
+  color: #45657c;
+}
+
+.fourier-house__canvas {
+  display: block;
+  width: 100%;
+  height: 150px;
+  background: radial-gradient(ellipse at center 58%, rgba(226, 240, 248, .72), transparent 72%);
+}
+
+.fourier-house figcaption {
+  margin-top: 0;
+  color: #56758a;
+  font: 600 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .015em;
+  text-align: center;
+}
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  .fourier-house { display: none; }
+}
