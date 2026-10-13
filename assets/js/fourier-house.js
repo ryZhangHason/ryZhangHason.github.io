@@ -372,12 +372,12 @@
     const center = -0.16 + progress * 1.32;
     const gradient = ctx.createLinearGradient(0, height, width, 0);
     const stops = [
-      [center - 0.16, 'rgba(255, 250, 236, 0)'],
-      [center - 0.075, 'rgba(255, 250, 236, .07)'],
-      [center - 0.018, 'rgba(255, 252, 243, .22)'],
-      [center + 0.018, 'rgba(255, 252, 243, .20)'],
-      [center + 0.09, 'rgba(255, 250, 236, .06)'],
-      [center + 0.16, 'rgba(255, 250, 236, 0)'],
+      [center - 0.22, 'rgba(255, 250, 236, 0)'],
+      [center - 0.12, 'rgba(255, 250, 236, .10)'],
+      [center - 0.03, 'rgba(255, 252, 243, .36)'],
+      [center + 0.03, 'rgba(255, 252, 243, .33)'],
+      [center + 0.13, 'rgba(255, 250, 236, .10)'],
+      [center + 0.22, 'rgba(255, 250, 236, 0)'],
     ];
     for (const [position, color] of stops) {
       gradient.addColorStop(Math.max(0, Math.min(1, position)), color);
