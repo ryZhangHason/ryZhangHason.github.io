@@ -9,6 +9,8 @@
   const SAMPLE_COUNT = 8192;
   const HARMONIC_COUNT = 3072;
   const DRAW_SECONDS = 30;
+  const WHEEL_FADE_SECONDS = 1.2;
+  const LIGHT_SWEEP_SECONDS = 1.8;
   const colors = {
     trace: '#a64c42',
     traceGlow: 'rgba(166, 76, 66, .13)',
@@ -366,17 +368,59 @@
     ctx.globalAlpha = 1;
   }
 
+  function drawLightSweep(progress) {
+    const center = -0.16 + progress * 1.32;
+    const gradient = ctx.createLinearGradient(0, height, width, 0);
+    const stops = [
+      [center - 0.16, 'rgba(255, 250, 236, 0)'],
+      [center - 0.075, 'rgba(255, 250, 236, .07)'],
+      [center - 0.018, 'rgba(255, 252, 243, .22)'],
+      [center + 0.018, 'rgba(255, 252, 243, .20)'],
+      [center + 0.09, 'rgba(255, 250, 236, .06)'],
+      [center + 0.16, 'rgba(255, 250, 236, 0)'],
+    ];
+    for (const [position, color] of stops) {
+      gradient.addColorStop(Math.max(0, Math.min(1, position)), color);
+    }
+    ctx.save();
+    ctx.globalCompositeOperation = 'source-atop';
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+    ctx.restore();
+  }
+
   function draw(now) {
     if (document.visibilityState !== 'visible') { frame = 0; return; }
     if (!chains || !transform) { frame = requestAnimationFrame(draw); return; }
-    const elapsed = Math.min((now - startedAt) / 1000, DRAW_SECONDS);
+    const elapsed = (now - startedAt) / 1000;
     const progress = Math.min(elapsed / DRAW_SECONDS, 1);
     ctx.clearRect(0, 0, width, height);
     drawOutline(chains.building, progress, 0.9, colors);
     drawOutline(chains.stars, progress, 0.9, starColors);
-    if (progress >= 1) { animationComplete = true; frame = 0; return; }
-    drawWheels(chains.building, progress, 1, colors);
-    drawWheels(chains.stars, progress, 1, starColors);
+    if (progress < 1) {
+      drawWheels(chains.building, progress, 1, colors);
+      drawWheels(chains.stars, progress, 1, starColors);
+    } else {
+      const afterDraw = elapsed - DRAW_SECONDS;
+      const fadeProgress = Math.min(afterDraw / WHEEL_FADE_SECONDS, 1);
+      if (fadeProgress < 1) {
+        const wheelAlpha = 1 - fadeProgress * fadeProgress * (3 - 2 * fadeProgress);
+        drawWheels(chains.building, 1, wheelAlpha, colors);
+        drawWheels(chains.stars, 1, wheelAlpha, starColors);
+      } else {
+        const sweepProgress = (afterDraw - WHEEL_FADE_SECONDS) / LIGHT_SWEEP_SECONDS;
+        if (sweepProgress < 1) {
+          drawLightSweep(Math.max(0, sweepProgress));
+        } else {
+          ctx.clearRect(0, 0, width, height);
+          drawOutline(chains.building, 1, 0.9, colors);
+          drawOutline(chains.stars, 1, 0.9, starColors);
+          animationComplete = true;
+          frame = 0;
+          return;
+        }
+      }
+    }
     frame = requestAnimationFrame(draw);
   }
 
