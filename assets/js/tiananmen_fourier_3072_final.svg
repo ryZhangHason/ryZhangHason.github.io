@@ -5,7 +5,7 @@
     <style type="text/css">.str0 {stroke:black;stroke-width:0.00762} .str1 {stroke:black;stroke-width:0.1} .fil0 {fill:none} .fil1 {fill:#fefefe}</style>
   </defs>
   <g id="original-coordinate-system" transform="translate(363.41408,362.21369)">
-    <g id="tiananmen-building"><path xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" transform="matrix(3.400264,0,0,3.400264,11.02254,-67.836336)" style="fill:#ffde00;fill-opacity:1;stroke:#000000;stroke-width:0.27399999;stroke-miterlimit:3.99566603" d="m -59.687798,75.8516 110.27815,0 c 3.390049,-2.793305 5.68434,-5.702422 7.926119,-8.883106 L 57.3623,63.348 l -124.0061,0 -1.133043,3.554309 c 3.21467,4.191926 5.505801,6.735703 8.089045,8.949291 z" id="polygon776" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc"/>
+    <g id="tiananmen-building"><path xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" transform="matrix(3.400264,0,0,3.400264,11.02254,-67.836336)" style="fill:#ffde00;fill-opacity:1;stroke:#000000;stroke-width:0.27399999;stroke-miterlimit:3.99566603" d="M -66.6438,63.348 H 57.3623 V 75.8516 H -66.6438 Z" id="polygon776" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc"/>
   
   
   

@@ -426,7 +426,7 @@
 
   async function initialize() {
     try {
-      const response = await fetch('/assets/js/tiananmen_fourier_3072_final.svg');
+      const response = await fetch('/assets/js/tiananmen_fourier_3072_final.svg?v=vertical-base-1');
       if (!response.ok) throw new Error('Could not load supplied Tiananmen outline');
       const source = new DOMParser().parseFromString(await response.text(), 'image/svg+xml').documentElement;
       const holder = document.createElement('div');
