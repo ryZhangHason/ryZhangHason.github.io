@@ -148,10 +148,10 @@ Our study delved into the transformative ambitions of the double-hundred action 
 
 Paired tests and mixed-effects models find improvements in citizens’ ratings of clarity, politeness, response satisfaction, feeling heard, empathic satisfaction, and trust. Civil servants find AI-modified messages clearer, more polite, respectful, and easier to answer; their ratings of urgency and needed empathy vary by context and show no consistent overall effect.
 
-<figure style="text-align: center; display: inline-block;">
+<figure style="text-align: center; display: block; width: 100%; margin: 1.4rem auto 0.5rem;">
   <img src="/images/Enhance_Figure1.png" 
        alt="Analytical framework for AI-modified government–citizen communication" 
-       style="display: block; margin: 0 auto; width: 70%; height: auto;">
+       style="display: block; margin: 0 auto; width: 85%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Analytical framework
   </figcaption>
@@ -283,10 +283,10 @@ For full documentation and tutorials, visit the [SE-VAE project page](https://py
 
 In our study, we explored the relationship between eco-efficiency and the local governments' engagement in collaborative environmental governance with citizens. By analyzing provincial-level data from China and employing advanced textual analysis methods, our findings reveal that localities with higher eco-efficiency are significantly more likely to adopt co-productive responses to environmental complaints.
 
-<figure style="text-align: center; display: inline-block;">
+<figure style="text-align: center; display: block; width: 100%; margin: 1.4rem auto 0.5rem;">
   <img src="/images/Catalyst for Citizen Co-production_F2.jpg" 
        alt="SHAP analysis of citizen co-production prediction" 
-       style="display: block; margin: 0 auto; width: 50%; height: auto;">
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> SHAP Analysis of Co-Production Prediction
   </figcaption>
