@@ -131,10 +131,10 @@ Works
 
 Our study delved into the transformative ambitions of the double-hundred action programme, a reform designed to modernize China’s state-owned enterprises by expanding the pool of top executive talent beyond traditional cadres. Through extensive fieldwork and detailed ethnography at a selected enterprise, we explored how this policy is reshaping recruitment, performance evaluation, and remuneration practices. While our findings highlight strong support for the initiative and notable shifts in organizational dynamics, they also reveal that traditional influences endure, particularly in key board appointments. This work deepens our understanding of the delicate balance between progressive reform and longstanding institutional practices.
 
-<figure style="text-align: center; display: inline-block;">
+<figure style="text-align: center; display: block; width: 100%; margin: 1.4rem auto 0.5rem;">
   <img src="/images/The Bifurcated Corporate Leadership under the DHA.jpg" 
        alt="Bifurcated corporate leadership under the Double-hundred Action Programme" 
-       style="display: block; margin: 0 auto; width: 50%; height: auto;">
+       style="display: block; margin: 0 auto; width: 70%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> The Bifurcated Corporate Leadership under the Double-hundred Action
   </figcaption>
