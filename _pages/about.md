@@ -49,9 +49,20 @@ redirect_from:
   letter-spacing: 0.2px;
 }
 
-.publications-sidebar ul {
+.publications-sidebar h4 {
+  margin: 14px 0 7px;
+  color: #526b83;
+  font-size: 0.9em;
+  letter-spacing: 0.15px;
+}
+
+.publications-sidebar ul,
+.publications-sidebar ol {
   margin: 0;
-  padding-left: 16px;
+  padding-left: 18px;
+}
+
+.publications-sidebar ul {
   list-style-type: disc;
 }
 
@@ -92,6 +103,7 @@ redirect_from:
   margin-left: -30rem !important;
   padding-left: 0;
   }
+}
 </style>
 
 <div class="main-content-wrapper">
@@ -113,6 +125,57 @@ I am a graduate student in the Department of Politics and Public Administration,
 
 Works
 ------
+<a name="cadres-managers"></a>
+
+ - **From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform** (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599)). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481) {% include publication_cite_inline.html publication=cadres_managers_paper %}
+
+Our study delved into the transformative ambitions of the double-hundred action programme, a reform designed to modernize China’s state-owned enterprises by expanding the pool of top executive talent beyond traditional cadres. Through extensive fieldwork and detailed ethnography at a selected enterprise, we explored how this policy is reshaping recruitment, performance evaluation, and remuneration practices. While our findings highlight strong support for the initiative and notable shifts in organizational dynamics, they also reveal that traditional influences endure, particularly in key board appointments. This work deepens our understanding of the delicate balance between progressive reform and longstanding institutional practices.
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/The Bifurcated Corporate Leadership under the DHA.jpg" 
+       alt="Bifurcated corporate leadership under the Double-hundred Action Programme" 
+       style="display: block; margin: 0 auto; width: 50%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> The Bifurcated Corporate Leadership under the Double-hundred Action
+  </figcaption>
+</figure>
+
+---
+
+<a name="ai-communication"></a>
+
+ - **Enhancing Communication Quality between Government and Citizens: The Role of AI Modification** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986) {% include publication_cite_inline.html publication=ai_communication_paper %}
+
+Paired tests and mixed-effects models find improvements in citizens’ ratings of clarity, politeness, response satisfaction, feeling heard, empathic satisfaction, and trust. Civil servants find AI-modified messages clearer, more polite, respectful, and easier to answer; their ratings of urgency and needed empathy vary by context and show no consistent overall effect.
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Enhance_Figure1.png" 
+       alt="Analytical framework for AI-modified government–citizen communication" 
+       style="display: block; margin: 0 auto; width: 70%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> Analytical framework
+  </figcaption>
+</figure>
+
+---
+
+<a name="sme-sustainability"></a>
+
+ - **Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207) {% include publication_cite_inline.html publication=sme_sustainability_paper %}
+
+Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
+
+<figure style="text-align: center; display: inline-block;">
+  <img src="/images/Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure.png" 
+       alt="Moderating effects of social networks on SME sustainability drivers" 
+       style="display: block; margin: 0 auto; width: 80%; height: auto;">
+  <figcaption style="margin-top: 0.5em;">
+    <em>Figure.</em> Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure
+  </figcaption>
+</figure>
+
+---
+
 <a name="separate-spheres"></a>
 
  - **Increasingly Separate Spheres? The Changing State Gender Discourse in China from 1990–2023** (with [Jia Wang](https://scholar.google.com/citations?user=q_8QLXcAAAAJ&hl=zh-CN&inst=18200959981353989911)). *Frontiers in Sociology*. 2026. [https://doi.org/10.3389/fsoc.2026.1777050](https://doi.org/10.3389/fsoc.2026.1777050) {% include publication_cite_inline.html publication=separate_spheres_paper %}
@@ -144,22 +207,6 @@ For full documentation and tutorials, visit the [critband project page](https://
 
 ---
 
-<a name="ai-communication"></a>
-
- - **Enhancing Communication Quality between Government and Citizens: The Role of AI Modification** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599)). *Information Polity*. 2026. [https://doi.org/10.1177/15701255261427986](https://doi.org/10.1177/15701255261427986) {% include publication_cite_inline.html publication=ai_communication_paper %}
-
-Our study integrates critical AI scholarship with relational communication theories to explain how AI language modifications shape the quality of government–citizen communication. Distinguishing between informational-cognitive quality (clarity, ease of response) and expressive-constitutive quality (politeness, respectfulness, feeling heard, trust, urgency, empathy), we hypothesize that AI yields uncontested benefits for the former but contested effects for the latter, potentially enhancing relational markers while muting authentic emotional cues. Using a vignette-based survey with 220 citizens and 214 civil servants in China, we assess perceptions across five interaction contexts: service requests, policy inquiries, complaints, suggestions, and emergencies. Results from paired t-tests and mixed-effects regressions support the claim that AI enhances both informational-cognitive and expressive-constitutive quality from the perspectives of citizens and civil servants, with significant improvements in clarity, politeness, satisfaction, trust, and empathy, but provide no consistent evidence of urgency or empathy signals. These findings suggest that concerns over algorithmic emotional flattening may be overstated or context-specific.
-
-<figure style="text-align: center; display: inline-block;">
-  <img src="/images/Enhance_Figure1.png" 
-       alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 70%; height: auto;">
-  <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> Analytical framework
-  </figcaption>
-</figure>
-
----
 <a name="pearl"></a>
 
  - **PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning with Deployment-Driven Insights from Digital Governance Communication Systems** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599), Qihao Wang, Xin Zhao). *Preprint*. 2026. Available at [arXiv](https://arxiv.org/abs/2601.17495)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6130326) {% include publication_cite_inline.html publication=pearl_paper %}
@@ -198,7 +245,7 @@ We also developed a lightweight web app to explore HEAS with an interactive tool
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/HEAS_Plot1.png" 
-       alt="SE-VAE Architecture" 
+       alt="HEAS stream-layer architecture for hierarchical agent simulation" 
        style="display: block; margin: 0 auto; width: 80%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Abstract Stream–layer Architecture in HEAS
@@ -206,7 +253,6 @@ We also developed a lightweight web app to explore HEAS with an interactive tool
 </figure>
 
 ---
-
 
 <a name="se-vae"></a>
 
@@ -231,23 +277,6 @@ For full documentation and tutorials, visit the [SE-VAE project page](https://py
 
 ---
 
-<a name="sme-sustainability"></a>
-
- - **Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599) and [Wai-Fung Lam](https://scholar.google.com/citations?user=QtW4fMoAAAAJ&hl=en&inst=17644838422235682599)). *Corporate Social Responsibility and Environmental Management*. 2025. [https://doi.org/10.1002/csr.3207](https://doi.org/10.1002/csr.3207) {% include publication_cite_inline.html publication=sme_sustainability_paper %}
-
-Our study examines what drives small and medium-sized enterprises (SMEs) to adopt sustainability practices, and how social networks shape these dynamics. Using survey data from 1,400 SMEs in Hong Kong, we find that internal drivers—such as responsibility, commitment, and a clear sustainability mission—and external pressures like regulation and customer demand significantly influence sustainability efforts. Crucially, our study shows that SMEs with stronger social network engagement benefit more from external drivers, especially in areas like environmental management, innovation, and social contribution. These findings highlight the need for policy approaches that not only provide support but also strengthen SME networks to enhance sustainability outcomes.
-
-<figure style="text-align: center; display: inline-block;">
-  <img src="/images/Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure.png" 
-       alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 80%; height: auto;">
-  <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> Moderating Effects of SME Social Network on Government Support, Industry Benchmark, and Customer Pressure
-  </figcaption>
-</figure>
-
----
-
 <a name="eco-efficiency"></a>
 
  - **Eco-efficiency as a Catalyst for Citizen Co-production: Evidence from Chinese Cities** (with [Lin Nie](https://scholar.google.com/citations?user=u38DnlUAAAAJ&hl=en&inst=17644838422235682599), Ce Zhao, Xin Zhao). *Preprint*. 2025. Available at [arXiv](https://arxiv.org/abs/2504.13290)/[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5220860) {% include publication_cite_inline.html publication=eco_efficiency_paper %}
@@ -256,28 +285,10 @@ In our study, we explored the relationship between eco-efficiency and the local 
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Catalyst for Citizen Co-production_F2.jpg" 
-       alt="SE-VAE Architecture" 
+       alt="SHAP analysis of citizen co-production prediction" 
        style="display: block; margin: 0 auto; width: 50%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> SHAP Analysis of Co-Production Prediction
-  </figcaption>
-</figure>
-
----
-
-
-<a name="cadres-managers"></a>
-
- - **From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform** (with [Chengpang Lee](https://scholar.google.com/citations?user=3Gjd09kAAAAJ&hl=en&inst=17644838422235682599)). *The China Quarterly*. 2024. [https://doi.org/10.1017/S0305741024000481](https://doi.org/10.1017/S0305741024000481) {% include publication_cite_inline.html publication=cadres_managers_paper %}
-
-Our study delved into the transformative ambitions of the double-hundred action programme, a reform designed to modernize China’s state-owned enterprises by expanding the pool of top executive talent beyond traditional cadres. Through extensive fieldwork and detailed ethnography at a selected enterprise, we explored how this policy is reshaping recruitment, performance evaluation, and remuneration practices. While our findings highlight strong support for the initiative and notable shifts in organizational dynamics, they also reveal that traditional influences endure, particularly in key board appointments. This work deepens our understanding of the delicate balance between progressive reform and longstanding institutional practices.
-
-<figure style="text-align: center; display: inline-block;">
-  <img src="/images/The Bifurcated Corporate Leadership under the DHA.jpg" 
-       alt="SE-VAE Architecture" 
-       style="display: block; margin: 0 auto; width: 50%; height: auto;">
-  <figcaption style="margin-top: 0.5em;">
-    <em>Figure.</em> The Bifurcated Corporate Leadership under the Double-hundred Action
   </figcaption>
 </figure>
 
@@ -291,7 +302,7 @@ In our exploration of political text analysis, we set out to address the challen
 
 <figure style="text-align: center; display: inline-block;">
   <img src="/images/Comparison of Key Metrics Between BERT and Word2Vec Over Different Time Spans.png" 
-       alt="SE-VAE Architecture" 
+       alt="Comparison of BERT and Word2Vec metrics across time spans" 
        style="display: block; margin: 0 auto; width: 90%; height: auto;">
   <figcaption style="margin-top: 0.5em;">
     <em>Figure.</em> Comparison of Key Metrics Between BERT and Word2Vec Over Different Time Spans
@@ -300,6 +311,7 @@ In our exploration of political text analysis, we set out to address the challen
 
 ---
 
+
 Contact
 ------
 Feel free to reach out via email: ruiyuzh@connect.hku.hk
@@ -307,16 +319,20 @@ Feel free to reach out via email: ruiyuzh@connect.hku.hk
   
   <div class="publications-sidebar">
     <h3>Publications</h3>
-    <ul>
-      <li><a href="/publication/2026-01-01-increasingly-separate-spheres">Increasingly Separate Spheres? The Changing State Gender Discourse in China</a> (2026). <em>Frontiers in Sociology</em></li>
-      <li><a href="/publication/2026-05-18-critband">critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distributions</a> (2026)</li>
+    <h4>Selective Works</h4>
+    <ol>
+      <li><a href="/publication/2024-01-01-from-cadres-to-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
       <li><a href="/publication/2026-01-01-enhancing-communication-quality-between-government-and-citizens">Enhancing Communication Quality between Government and Citizens</a> (2026). <em>Information Polity</em></li>
+      <li><a href="/publication/2025-01-01-sustainability-of-smes-in-hong-kong">Sustainability of Small and Medium-Sized Enterprises in Hong Kong</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
+      <li><a href="/publication/2026-01-01-increasingly-separate-spheres">Increasingly Separate Spheres? The Changing State Gender Discourse in China</a> (2026). <em>Frontiers in Sociology</em></li>
+    </ol>
+    <h4>Further Publications</h4>
+    <ul>
+      <li><a href="/publication/2026-05-18-critband">critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distributions</a> (2026)</li>
       <li><a href="/publication/2026-01-01-pearl-prototype-enhanced-alignment">PEARL: Prototype-Enhanced Alignment for Label-Efficient Representation Learning</a> (2026)</li>
       <li><a href="/publication/2025-01-01-heas-hierarchical-evolutionary-agent-simulation-framework">HEAS: Hierarchical Evolutionary Agent Simulation Framework</a> (2025)</li>
       <li><a href="/publication/2025-01-01-structural-equation-vae">Structural Equation-VAE</a> (2025)</li>
-      <li><a href="/publication/2025-01-01-sustainability-of-smes-in-hong-kong">Sustainability of Small and Medium-Sized Enterprises in Hong Kong: Drivers and the Moderating Role of Social Network</a> (2025). <em>Corporate Social Responsibility and Environmental Management</em></li>
       <li><a href="/publication/2025-01-01-eco-efficiency-as-a-catalyst-for-citizen-co-production">Eco-efficiency as a Catalyst for Citizen Co-production</a> (2025)</li>
-      <li><a href="/publication/2024-01-01-from-cadres-to-managers">From Cadres to Managers: The Double-hundred Action Programme and China's State-owned Enterprise Reform</a> (2024). <em>The China Quarterly</em></li>
       <li><a href="/publication/2024-01-01-achieving-semantic-consistency">Contextualized Word Representations for Political Text Analysis</a> (2024)</li>
     </ul>
   </div> <!-- end of publications-sidebar -->
