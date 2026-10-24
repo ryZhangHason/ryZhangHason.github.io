@@ -123,6 +123,8 @@ redirect_from:
 
 I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
 
+<p class="works-text-link">Prefer a text-first view? <a href="/works/">Read all selected works and descriptions</a>.</p>
+
 Works
 ------
 <a name="cadres-managers"></a>
