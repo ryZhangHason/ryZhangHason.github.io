@@ -85,3 +85,19 @@
 .email-copy-toast__close:focus-visible { outline:2px solid #4385a8; outline-offset:2px; }
 @media (max-width:600px) { .email-copy-toast { right:16px; bottom:16px; left:16px; width:auto; max-width:none; } }
 @media (prefers-reduced-motion:reduce) { .email-copy-toast { transition-duration:1ms; } }
+
+/* Keep work-title links visually consistent with their surrounding headings and text. */
+.archive-record h3 a:link,
+.archive-record h3 a:visited,
+.archive-text-source__entry ul li > a:first-child:link,
+.archive-text-source__entry ul li > a:first-child:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.archive-record h3 a:hover,
+.archive-record h3 a:focus,
+.archive-text-source__entry ul li > a:first-child:hover,
+.archive-text-source__entry ul li > a:first-child:focus {
+  color: inherit;
+  text-decoration: none;
+}
