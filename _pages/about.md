@@ -123,8 +123,6 @@ redirect_from:
 
 I am a graduate student in the Department of Politics and Public Administration, The University of Hong Kong, researching the fields of Public Management, Organization Studies, and Computational Methods in Social Science.
 
-<p class="works-text-link">Prefer a text-first view? <a href="/works/">Read all selected works and descriptions</a>.</p>
-
 Works
 ------
 <a name="cadres-managers"></a>
@@ -317,6 +315,14 @@ In our exploration of political text analysis, we set out to address the challen
 Contact
 ------
 Feel free to reach out via email: ruiyuzh@connect.hku.hk
+
+Selected Research Summaries
+---------------------------
+
+The selected works above are also presented here as a complete, readable text list.
+
+{% include selective-works-text.md %}
+
   </div> <!-- end of main-text-content -->
   
   <div class="publications-sidebar">
